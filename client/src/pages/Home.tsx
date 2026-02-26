@@ -247,7 +247,6 @@ export default function Home() {
           </Button>
         </div>
       </nav>
-
       {/* Hero Section */}
       <section id="about" className="min-h-screen flex items-center pt-24 container mx-auto px-6 relative">
         <div className="absolute top-0 right-0 -z-10 w-[70vw] h-[70vw] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
@@ -286,7 +285,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Interactive Introduction Section */}
       <section id="intro" className="py-32 bg-secondary/50 relative">
         <div className="container mx-auto px-6">
@@ -311,7 +309,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Categorized Skills Section */}
       <section id="skills" className="py-32 container mx-auto px-6">
         <motion.div {...fadeIn} className="text-center mb-24">
@@ -342,7 +339,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* Engagement Gallery (ESG Projects) */}
       <section id="projects" className="py-32 bg-primary/5">
         <div className="container mx-auto px-6">
@@ -383,7 +379,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Science-Driven Sustainability Section */}
       <section id="science" className="py-32 relative">
         <div className="container mx-auto px-6">
@@ -391,7 +386,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-6xl font-serif font-bold mb-6">Science-Driven <br /><span className="text-primary italic">Sustainability.</span></h2>
               <div className="w-20 h-1 bg-primary rounded-full mb-8" />
-              <p className="text-xl text-muted-foreground leading-relaxed italic">"My biology background provides the scientific ground-truth that makes corporate sustainability strategy credible and impactful."</p>
+              <p className="text-xl text-muted-foreground leading-relaxed italic">My biology background provides the scientific ground-truth that makes corporate sustainability strategy credible and impactful.</p>
             </div>
           </motion.div>
 
@@ -413,7 +408,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Professional Journey & Social Impact (Centered Timeline) */}
       <section id="journey" className="py-32 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-10" />
@@ -448,7 +442,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-32 container mx-auto px-6">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -485,7 +478,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Project Modal */}
       <AnimatePresence>
         {selectedProject && (
@@ -536,7 +528,6 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-
       <footer className="py-20 text-center border-t border-border/20">
         <p className="text-xs font-black tracking-[0.4em] text-primary/40 uppercase">Novia Amanda Dwiputri • 2026</p>
       </footer>
