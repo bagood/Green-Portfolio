@@ -8,7 +8,13 @@ import {
   ShieldCheck, 
   FileText, 
   Droplets,
-  ExternalLink
+  ExternalLink,
+  GraduationCap,
+  Users,
+  Target,
+  Zap,
+  Globe,
+  Settings
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -57,6 +63,21 @@ export default function Home() {
     }
   ];
 
+  const leadership = [
+    {
+      role: "Vice President of Branding",
+      company: "Student Energy at Padjadjaran University",
+      period: "Jun 2023 – Dec 2023",
+      description: "Directed cross-functional teams in Renewable Energy advocacy and youth awareness. Built partnerships with 3 renewable energy and youth-led stakeholders. Boosted engagement by 30% to promote sustainable energy awareness."
+    },
+    {
+      role: "Project Officer of The Biological Exhibition",
+      company: "Padjadjaran University",
+      period: "Sep 2022 – Dec 2022",
+      description: "Led a 50+ member team to execute a large-scale biodiversity & environmental education exhibition for 300+ participants focusing on biological conservation and ecological impact."
+    }
+  ];
+
   const projects = [
     {
       title: "Carbon Accounting & GHG Inventory",
@@ -88,10 +109,27 @@ export default function Home() {
     }
   ];
 
-  const skills = [
-    "GRI 2021 Standards", "SASB Standards", "SEOJK 16", "Materiality Assessment", 
-    "Carbon Accounting (GHG)", "Sustainability Reporting", "Bioremediation", 
-    "Renewable Energy", "Biodiversity", "Project Coordination", "Data-driven Reporting"
+  const skillCategories = [
+    {
+      title: "Sustainability & ESG",
+      icon: <Target className="w-6 h-6 text-primary" />,
+      skills: ["GRI 2021 Standards", "SASB Standards", "SEOJK 16", "Materiality Assessment", "Carbon Accounting (GHG)", "Sustainability Report Development"]
+    },
+    {
+      title: "Environmental Science",
+      icon: <Globe className="w-6 h-6 text-primary" />,
+      skills: ["Bioremediation", "Renewable Energy Awareness", "Biodiversity Awareness", "Ecosystem Impact Analysis"]
+    },
+    {
+      title: "Project & Data Management",
+      icon: <Zap className="w-6 h-6 text-primary" />,
+      skills: ["Project Coordination", "Timeline Planning", "Event Logistics", "Stakeholder Communication", "Performance Tracking", "Data-driven Reporting"]
+    },
+    {
+      title: "Tools & Platforms",
+      icon: <Settings className="w-6 h-6 text-primary" />,
+      skills: ["Trello", "Notion", "Figma", "Google Workspace", "Microsoft Office Suite", "Collaborative Tools"]
+    }
   ];
 
   return (
@@ -102,8 +140,9 @@ export default function Home() {
           <span className="font-serif text-xl font-bold tracking-tight text-primary">NA.</span>
           <div className="hidden md:flex gap-8 text-sm font-medium">
             <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
+            <a href="#experience" className="hover:text-primary transition-colors">Journey</a>
             <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
+            <a href="#skills" className="hover:text-primary transition-colors">Expertise</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
           <Button variant="default" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
@@ -130,9 +169,19 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6">
               Driving <span className="text-primary italic">Corporate</span> Sustainability.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-4 leading-relaxed">
               I am <strong className="text-foreground font-semibold">Novia Amanda Dwiputri</strong>, an adaptable professional blending scientific literacy with large-scale project management to create meaningful environmental and social impact.
             </p>
+            
+            {/* Education Highlight */}
+            <div className="flex items-start gap-3 mb-8 p-4 bg-secondary/20 rounded-2xl border border-primary/10 max-w-lg">
+              <GraduationCap className="w-6 h-6 text-primary shrink-0 mt-1" />
+              <div>
+                <p className="text-sm font-bold text-foreground">Bachelor of Science in Biology</p>
+                <p className="text-xs text-muted-foreground">Padjadjaran University • GPA 3.79/4.00</p>
+              </div>
+            </div>
+
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90" asChild>
                 <a href="#projects">
@@ -163,120 +212,112 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-24 bg-secondary/30">
+      {/* Professional Journey (Centered Timeline) */}
+      <section id="experience" className="py-24 bg-secondary/30 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div 
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeIn}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl font-serif font-bold mb-4">Professional Journey</h2>
+            <div className="w-20 h-1 bg-primary rounded-full mx-auto"></div>
+          </motion.div>
+
+          <div className="relative max-w-5xl mx-auto">
+            {/* Central Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-primary/20 hidden md:block" />
+
+            <div className="space-y-16">
+              {experiences.map((exp, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`relative flex flex-col md:flex-row items-center gap-8 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-20 hidden md:block" />
+                  
+                  <div className="w-full md:w-1/2">
+                    <Card className="bg-card p-8 rounded-[2rem] shadow-sm border border-border/50 hover:shadow-xl transition-all duration-300">
+                      <div className="flex items-center justify-between mb-4">
+                        <Badge variant="outline" className="border-primary/20 text-primary bg-primary/5">
+                          {exp.period}
+                        </Badge>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-1">{exp.role}</h3>
+                      <h4 className="text-lg font-serif italic text-primary mb-4">{exp.company}</h4>
+                      <p className="text-muted-foreground leading-relaxed text-sm">{exp.description}</p>
+                    </Card>
+                  </div>
+                  <div className="md:w-1/2" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership & Community Experience */}
+      <section className="py-24 container mx-auto px-6">
+        <motion.div 
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Users className="w-8 h-8 text-primary" />
+            <h2 className="text-4xl font-serif font-bold">Leadership & Impact</h2>
+          </div>
+          <div className="w-20 h-1 bg-primary rounded-full"></div>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {leadership.map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+            >
+              <Card className="p-8 rounded-[2rem] border-none shadow-lg bg-primary/5 h-full hover:bg-primary/10 transition-colors">
+                <div className="flex justify-between items-start mb-6">
+                  <Badge className="bg-primary/10 text-primary border-none">{item.period}</Badge>
+                </div>
+                <h3 className="text-xl font-bold mb-2">{item.role}</h3>
+                <p className="text-primary font-serif italic mb-4">{item.company}</p>
+                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-24 bg-secondary/10">
         <div className="container mx-auto px-6">
           <motion.div 
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
-            className="mb-16"
+            className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
           >
-            <h2 className="text-4xl font-serif font-bold mb-4">Professional Journey</h2>
-            <div className="w-20 h-1 bg-primary rounded-full"></div>
-          </motion.div>
-
-          <div className="max-w-3xl border-l-2 border-primary/20 pl-8 space-y-12 relative">
-            {experiences.map((exp, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="relative"
-              >
-                <div className="absolute -left-[41px] top-2 w-5 h-5 rounded-full bg-background border-4 border-primary" />
-                <div className="bg-card p-8 rounded-2xl shadow-sm border border-border/50 hover:shadow-md transition-shadow">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                    <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>
-                    <Badge variant="outline" className="w-fit border-primary/20 text-primary bg-primary/5">
-                      {exp.period}
-                    </Badge>
-                  </div>
-                  <h4 className="text-lg font-serif italic text-muted-foreground mb-4">{exp.company}</h4>
-                  <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-24 container mx-auto px-6">
-        <motion.div 
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-          className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
-        >
-          <div>
-            <h2 className="text-4xl font-serif font-bold mb-4">Selected Projects</h2>
-            <div className="w-20 h-1 bg-primary rounded-full mb-4"></div>
-            <p className="text-muted-foreground max-w-xl">
-              Practical applications of ESG frameworks, carbon accounting, and environmental policy research.
-            </p>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
-        >
-          {projects.map((project, idx) => (
-            <motion.div key={idx} variants={fadeIn}>
-              <Card className="group overflow-hidden rounded-2xl border-none shadow-lg bg-card hover:shadow-xl transition-all duration-300 h-full flex flex-col cursor-pointer">
-                <div className="relative h-64 overflow-hidden">
-                  <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute top-4 left-4 z-20">
-                    <Badge className="bg-background/90 text-foreground backdrop-blur-sm hover:bg-background border-none flex items-center gap-1.5 px-3 py-1">
-                      {project.icon}
-                      {project.category}
-                    </Badge>
-                  </div>
-                </div>
-                <CardContent className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-serif font-bold mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed flex-grow">
-                    {project.description}
-                  </p>
-                  <div className="mt-6 flex items-center text-primary font-medium text-sm">
-                    View Details <ExternalLink className="w-4 h-4 ml-2" />
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6">
-          <motion.div 
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <h2 className="text-4xl font-serif font-bold mb-6">Competencies & Expertise</h2>
-            <p className="text-primary-foreground/80 text-lg">
-              Equipped with a diverse skill set spanning environmental science, corporate sustainability frameworks, and data-driven project management.
-            </p>
+            <div>
+              <h2 className="text-4xl font-serif font-bold mb-4">Selected Projects</h2>
+              <div className="w-20 h-1 bg-primary rounded-full mb-4"></div>
+              <p className="text-muted-foreground max-w-xl">
+                Practical applications of ESG frameworks, carbon accounting, and environmental policy research.
+              </p>
+            </div>
           </motion.div>
 
           <motion.div 
@@ -284,24 +325,88 @@ export default function Home() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto"
+            className="grid md:grid-cols-2 gap-8"
           >
-            {skills.map((skill, idx) => (
+            {projects.map((project, idx) => (
               <motion.div key={idx} variants={fadeIn}>
-                <div className="px-6 py-3 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 backdrop-blur-sm text-primary-foreground font-medium hover:bg-primary-foreground hover:text-primary transition-colors cursor-default">
-                  {skill}
-                </div>
+                <Card className="group overflow-hidden rounded-[2.5rem] border-none shadow-lg bg-card hover:shadow-2xl transition-all duration-500 h-full flex flex-col cursor-pointer">
+                  <div className="relative h-64 overflow-hidden">
+                    <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute top-6 left-6 z-20">
+                      <Badge className="bg-background/90 text-foreground backdrop-blur-sm hover:bg-background border-none flex items-center gap-1.5 px-4 py-1.5 rounded-full shadow-sm">
+                        {project.icon}
+                        {project.category}
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-10 flex flex-col flex-grow">
+                    <h3 className="text-2xl font-serif font-bold mb-3 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed flex-grow text-sm">
+                      {project.description}
+                    </p>
+                    <div className="mt-8 flex items-center text-primary font-bold text-sm tracking-wider uppercase">
+                      View details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
+      {/* Categorized Skills Section */}
+      <section id="skills" className="py-24 container mx-auto px-6">
+        <motion.div 
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
+          <h2 className="text-4xl font-serif font-bold mb-6">Competencies & Expertise</h2>
+          <div className="w-20 h-1 bg-primary rounded-full mx-auto"></div>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {skillCategories.map((cat, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-card p-8 rounded-[2rem] border border-border/50 hover:border-primary/30 transition-colors shadow-sm"
+            >
+              <div className="mb-6 p-3 bg-primary/5 rounded-2xl w-fit">
+                {cat.icon}
+              </div>
+              <h3 className="text-lg font-bold mb-6 min-h-[3rem]">{cat.title}</h3>
+              <ul className="space-y-3">
+                {cat.skills.map((skill, sIdx) => (
+                  <li key={sIdx} className="text-sm text-muted-foreground flex items-start gap-2">
+                    <div className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0" />
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-24 container mx-auto px-6">
-        <div className="max-w-4xl mx-auto bg-card rounded-[3rem] p-10 md:p-20 text-center shadow-2xl border border-border/50 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+        <div className="max-w-4xl mx-auto bg-primary rounded-[4rem] p-10 md:p-20 text-center shadow-2xl relative overflow-hidden text-primary-foreground">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-[100px] opacity-20" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-background/10 rounded-full blur-[100px] opacity-20" />
           
           <motion.div
             initial="initial"
@@ -310,20 +415,20 @@ export default function Home() {
             variants={fadeIn}
             className="relative z-10"
           >
-            <Leaf className="w-12 h-12 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Let's Connect</h2>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Open to opportunities in sustainability, ESG reporting, and impactful project management. Let's work together to drive positive change.
+            <Leaf className="w-16 h-16 text-primary-foreground/40 mx-auto mb-8 animate-bounce-slow" />
+            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8">Let's build a sustainable future.</h2>
+            <p className="text-xl text-primary-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Open to opportunities in sustainability, ESG reporting, and impactful project management.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg" asChild>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Button size="lg" className="rounded-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 h-16 px-10 text-lg font-bold" asChild>
                 <a href="mailto:noviamnda09@gmail.com">
-                  <Mail className="mr-2 w-5 h-5" /> noviamnda09@gmail.com
+                  <Mail className="mr-3 w-6 h-6" /> Email Me
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full border-primary/20 hover:bg-primary/5 h-14 px-8 text-lg bg-background" asChild>
+              <Button size="lg" variant="outline" className="rounded-full border-primary-foreground/30 hover:bg-primary-foreground/10 h-16 px-10 text-lg font-bold" asChild>
                 <a href="https://www.linkedin.com/in/novia-amanda/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="mr-2 w-5 h-5 text-[#0A66C2]" /> LinkedIn Profile
+                  <Linkedin className="mr-3 w-6 h-6" /> LinkedIn
                 </a>
               </Button>
             </div>
@@ -332,8 +437,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-8 text-center text-muted-foreground">
-        <p>© 2026 Novia Amanda Dwiputri. Sustainability Portfolio.</p>
+      <footer className="py-12 text-center text-muted-foreground border-t border-border/20">
+        <p className="text-sm tracking-widest uppercase font-bold text-primary/40">NA • 2026</p>
       </footer>
     </div>
   );
