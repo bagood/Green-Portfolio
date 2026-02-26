@@ -297,7 +297,7 @@ export default function Home() {
               <div className="space-y-8 text-3xl md:text-5xl font-serif leading-tight">
                 <p>Hi! I'm <span className="text-primary underline decoration-2 underline-offset-8 italic">Novia Amanda</span>.</p>
                 <p className="text-muted-foreground text-[40px]">Imagine a world where biological ecosystems and corporate strategies don't just coexist, but thrive together. That's where I come in.</p>
-                <p>I hold a degree in <span className="text-primary font-bold">Biology</span>, giving me the scientific literacy to truly understand environmental impacts. But I'm also a <span className="text-primary font-bold">Project Manager</span> with a track record of handling innovation for 17,000+ people.</p>
+                <p className="text-[40px]">I hold a degree in <span className="text-primary font-bold">Biology</span>, giving me the scientific literacy to truly understand environmental impacts. But I'm also a <span className="text-primary font-bold">Project Manager</span> with a track record of handling innovation for 17,000+ people.</p>
                 <p className="text-muted-foreground">Most recently, I've spent three intensive months deep-diving into <span className="text-foreground italic">Environmental Social Governance (ESG)</span>. Now, I'm on a mission: <span className="text-foreground">Bridging Biological Science and Corporate Strategy through Data-Driven ESG Frameworks.</span></p>
               </div>
               <div className="pt-12">
