@@ -36,11 +36,12 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
+  const [selectedScienceProject, setSelectedScienceProject] = useState<any>(null);
+
   // Animation variants
   const fadeIn = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-100px" },
     transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
   };
 
@@ -166,21 +167,36 @@ export default function Home() {
       role: "Policy Review",
       description: "Conducted a policy review of the PT PHE ONWJ oil spill incident for academic and stakeholder reference.",
       image: projectOcean,
-      badge: "Oil Spill Research"
+      badge: "Oil Spill Research",
+      details: {
+        objective: "To evaluate the legal and environmental policy frameworks triggered by the PT PHE ONWJ incident.",
+        highlights: "In-depth review of maritime law and corporate accountability protocols.",
+        impact: "Provided a comprehensive reference for stakeholders to understand policy gaps in incident response."
+      }
     },
     {
       title: "SDGs Data Matrix",
       role: "Classified Database",
       description: "A classified database of 169 targets relevant to Renewable Energy and Bioremediation.",
       image: projectCarbon,
-      badge: "Renewable Energy"
+      badge: "Renewable Energy",
+      details: {
+        objective: "To streamline research accessibility by mapping SDG targets to specific technical solutions.",
+        highlights: "Classification of 169 targets against bioremediation and renewable energy metrics.",
+        impact: "Significantly improved research efficiency for academic and professional stakeholders."
+      }
     },
     {
       title: "The Biological Exhibition",
       role: "Leadership",
       description: "Leadership of a 50+ member team for a biodiversity-focused educational event for 300+ participants.",
       image: heroBg,
-      badge: "Conservation Education"
+      badge: "Conservation Education",
+      details: {
+        objective: "To raise awareness about biodiversity conservation through an immersive educational event.",
+        highlights: "Coordination of 50+ members and logistics for 300+ public participants.",
+        impact: "Achieved 93% positive feedback and successfully promoted local ecological awareness."
+      }
     }
   ];
 
@@ -253,10 +269,10 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div {...fadeIn}>
             <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground leading-[1.05] mb-8">
-              Innovating <br /><span className="text-primary italic">for a Greener</span> future.
+              Decoding Sustainability: <br /><span className="text-primary italic">Where Rigorous Research Meets</span> Large-Scale Social Impact.
             </h1>
             <p className="text-xl md:text-2xl font-medium text-primary leading-tight max-w-xl mb-10">
-              Bridging Biological Science and Corporate Strategy through Data-Driven ESG Frameworks.
+              Harnessing an investigative lens to synthesize technical ESG data into strategic corporate action at scale.
             </p>
             <div className="flex flex-wrap gap-6">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 h-16 px-10 text-lg font-bold" asChild>
@@ -277,7 +293,7 @@ export default function Home() {
             <img src={heroBg} className="absolute inset-0 w-full h-full object-cover" alt="Hero" />
             <div className="absolute inset-0 bg-primary/30 mix-blend-multiply" />
             <div className="absolute bottom-10 left-10 right-10 p-8 bg-background/20 backdrop-blur-xl rounded-3xl border border-white/20">
-              <p className="text-white font-serif italic text-2xl">"Data is the foundation of sustainability reporting, but science is the soul of our strategy."</p>
+              <p className="text-white font-serif italic text-2xl">"The first law of ecology is that everything is related to everything else."</p>
             </div>
           </motion.div>
         </div>
@@ -294,8 +310,8 @@ export default function Home() {
               <div className="space-y-8 text-3xl md:text-5xl font-serif leading-tight">
                 <p>Hi! I'm <span className="text-primary underline decoration-2 underline-offset-8 italic">Novia Amanda</span>.</p>
                 <p className="text-muted-foreground text-[40px]">Imagine a world where biological ecosystems and corporate strategies don't just coexist, but thrive together. That's where I come in.</p>
-                <p className="text-[40px]">I hold a degree in <span className="text-primary font-bold">Biology</span>, giving me the scientific literacy to truly understand environmental impacts. But I'm also a <span className="text-primary font-bold">Project Manager</span> with a track record of handling innovation for 17,000+ people.</p>
-                <p className="text-muted-foreground text-[40px]">Most recently, I've spent three intensive months deep-diving into <span className="text-foreground italic">Environmental Social Governance (ESG)</span>. Now, I'm on a mission: <span className="text-foreground">Bridging Biological Science and Corporate Strategy through Data-Driven ESG Frameworks.</span></p>
+                <p className="text-[40px]">I hold a degree in <span className="text-primary font-bold">Biology</span>, providing me with the <span className="text-primary font-bold">foundation as an investigative researcher capable of performing in-depth analysis on complex systems.</span> But I'm also a <span className="text-primary font-bold">Project Manager</span> with a track record of handling innovation for 17,000+ people.</p>
+                <p className="text-muted-foreground text-[40px]">Most recently, I've spent three intensive months deep-diving into <span className="text-foreground italic">Environmental Social Governance (ESG)</span>. Now, I'm on a mission: <span className="text-foreground">Bridging the gap between rigorous research and large-scale social coordination through an investigative lens to drive strategic ESG impact.</span></p>
               </div>
               <div className="pt-12">
                 <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground h-16 px-10 font-bold uppercase tracking-wider" asChild>
@@ -340,9 +356,9 @@ export default function Home() {
       <section id="projects" className="py-32 bg-primary/5">
         <div className="container mx-auto px-6">
           <motion.div {...fadeIn} className="mb-24 text-center">
-            <h2 className="text-6xl font-serif font-bold mb-6 italic text-primary">Strategic ESG Gallery.</h2>
+            <h2 className="text-6xl font-serif font-bold mb-6 italic text-primary">ESG Project Portfolio.</h2>
             <div className="w-40 h-1 bg-primary mx-auto mb-8 rounded-full" />
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Deep-diving into Greenhouse Gas inventory, sustainability benchmarking, and risk compliance.</p>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">A collection of practical applications in carbon accounting, GRI/SASB compliance, and sustainability reporting developed during the Rise Social ESG Bootcamp.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -366,7 +382,6 @@ export default function Home() {
                 <div className="p-10">
                   <div className="flex items-center gap-3 text-primary mb-4">
                     {project.icon}
-                    <span className="text-xs font-black uppercase tracking-widest">ESG Milestone</span>
                   </div>
                   <h3 className="text-2xl font-serif font-bold mb-6 group-hover:text-primary transition-colors">{project.title}</h3>
                   <Button variant="link" className="p-0 text-primary font-bold h-auto">View Case Study <ChevronRight className="ml-1 w-4 h-4" /></Button>
@@ -392,13 +407,15 @@ export default function Home() {
               <motion.div 
                 key={idx}
                 {...fadeIn}
-                className="relative group p-1 rounded-[3rem] bg-gradient-to-b from-primary/20 to-transparent"
+                onClick={() => setSelectedScienceProject(item)}
+                className="relative group p-1 rounded-[3rem] bg-gradient-to-b from-primary/20 to-transparent cursor-pointer"
               >
                 <div className="bg-background rounded-[2.9rem] p-8 h-full">
                   <Badge variant="outline" className="mb-6 border-primary/20 text-primary bg-primary/5 uppercase font-black text-[10px] tracking-widest">{item.badge}</Badge>
-                  <h3 className="text-2xl font-serif font-bold mb-4">{item.title}</h3>
+                  <h3 className="text-2xl font-serif font-bold mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
                   <p className="text-sm font-bold text-primary mb-6">{item.role}</p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-8">{item.description}</p>
+                  <Button variant="link" className="p-0 text-primary font-bold h-auto">View Details <ChevronRight className="ml-1 w-4 h-4" /></Button>
                 </div>
               </motion.div>
             ))}
@@ -525,6 +542,58 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Science Project Modal */}
+      <AnimatePresence>
+        {selectedScienceProject && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-background/80 backdrop-blur-md"
+            onClick={() => setSelectedScienceProject(null)}
+          >
+            <motion.div 
+              initial={{ scale: 0.9, y: 50, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 50, opacity: 0 }}
+              className="bg-card w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[3.5rem] shadow-2xl border border-border/50 relative"
+              onClick={e => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setSelectedScienceProject(null)}
+                className="absolute top-8 right-8 p-4 bg-background/50 hover:bg-background rounded-full transition-all z-10"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <div className="grid md:grid-cols-2">
+                <div className="h-64 md:h-auto overflow-hidden">
+                  <img src={selectedScienceProject.image} className="w-full h-full object-cover" alt={selectedScienceProject.title} />
+                </div>
+                <div className="p-10 md:p-16">
+                  <Badge className="bg-primary/10 text-primary border-none mb-6">{selectedScienceProject.badge}</Badge>
+                  <h3 className="text-4xl font-serif font-bold mb-8">{selectedScienceProject.title}</h3>
+                  <div className="space-y-10">
+                    <div>
+                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Objective</h4>
+                      <p className="text-muted-foreground leading-relaxed italic">"{selectedScienceProject.details.objective}"</p>
+                    </div>
+                    <div>
+                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Program Highlights</h4>
+                      <p className="text-muted-foreground leading-relaxed">{selectedScienceProject.details.highlights}</p>
+                    </div>
+                    <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10">
+                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Impact / Outcome</h4>
+                      <p className="text-foreground font-bold leading-relaxed">{selectedScienceProject.details.impact}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <footer className="py-20 text-center border-t border-border/20">
         <p className="text-xs font-black tracking-[0.4em] text-primary/40 uppercase">Novia Amanda Dwiputri • 2026</p>
       </footer>
