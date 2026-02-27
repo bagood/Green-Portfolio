@@ -252,9 +252,6 @@ export default function Home() {
         <div className="absolute top-0 right-0 -z-10 w-[70vw] h-[70vw] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div {...fadeIn}>
-            <Badge variant="secondary" className="mb-8 bg-primary/10 text-primary border-primary/20 px-6 py-2 rounded-full text-sm font-bold tracking-wide uppercase">
-              Now Boarding Sustainability
-            </Badge>
             <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground leading-[1.05] mb-8">
               Innovating <br /><span className="text-primary italic">for a Greener</span> future.
             </h1>
