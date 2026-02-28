@@ -31,6 +31,7 @@ import heroBg from "@/assets/images/hero-bg.jpg";
 import projectCarbon from "@/assets/images/project-carbon.jpg";
 import projectOcean from "@/assets/images/project-ocean.jpg";
 import projectReport from "@/assets/images/project-report.jpg";
+import profileImg from "@assets/IMG_0106_1772308375318.JPG";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
@@ -355,24 +356,39 @@ export default function Home() {
       {/* Interactive Introduction Section */}
       <section id="intro" className="py-32 bg-secondary/50 relative">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div {...fadeIn} className="space-y-12">
-              <div className="inline-flex items-center gap-4 text-primary mb-4 font-bold tracking-[0.2em] uppercase text-xs">
-                <div className="w-8 h-px bg-primary" />
-                Nice to meet you
-              </div>
-              <div className="space-y-8 text-3xl md:text-5xl font-serif leading-tight">
-                <p>Hi! I'm <span className="text-primary underline decoration-2 underline-offset-8 italic">Novia Amanda</span>.</p>
-                <p className="text-muted-foreground text-[40px]">Imagine a world where biological ecosystems and corporate strategies don't just coexist, but thrive together. That's where I come in.</p>
-                <p className="text-[40px]">I hold a degree in <span className="text-primary font-bold">Biology</span>, providing me with the <span className="text-primary font-bold">foundation as an investigative researcher capable of performing in-depth analysis on complex systems.</span> But I'm also a <span className="text-primary font-bold">Project Manager</span> with a track record of handling innovation for 17,000+ people.</p>
-                <p className="text-muted-foreground text-[40px]">Most recently, I've spent three intensive months deep-diving into <span className="text-foreground italic">Environmental Social Governance (ESG)</span>. Now, I'm on a mission: <span className="text-foreground">Bridging the gap between rigorous research and large-scale social coordination through an investigative lens to drive strategic ESG impact.</span></p>
-              </div>
-              <div className="pt-12">
-                <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground h-16 px-10 font-bold uppercase tracking-wider" asChild>
-                  <a href="#skills">See my expertise</a>
-                </Button>
-              </div>
-            </motion.div>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-background rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+                  <img src={profileImg} className="w-full h-full object-cover" alt="Novia Amanda" />
+                </div>
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10" />
+              </motion.div>
+
+              <motion.div {...fadeIn} className="space-y-8">
+                <div className="inline-flex items-center gap-4 text-primary mb-4 font-bold tracking-[0.2em] uppercase text-xs">
+                  <div className="w-8 h-px bg-primary" />
+                  Nice to meet you
+                </div>
+                <div className="space-y-6 text-2xl md:text-3xl font-serif leading-tight">
+                  <p>Hi! I'm <span className="text-primary underline decoration-2 underline-offset-8 italic font-bold">Novia Amanda</span>.</p>
+                  <p className="text-muted-foreground">Imagine a world where biological ecosystems and corporate strategies don't just coexist, but thrive together. That's where I come in.</p>
+                  <p>I hold a degree in <span className="text-primary font-bold">Biology</span>, providing me with the <span className="text-primary font-bold">foundation as an investigative researcher capable of performing in-depth analysis on complex systems.</span> But I'm also a <span className="text-primary font-bold">Project Manager</span> with a track record of handling innovation for 17,000+ people.</p>
+                  <p className="text-muted-foreground text-lg italic border-l-4 border-primary pl-6 py-2">"Bridging the gap between rigorous research and large-scale social coordination through an investigative lens to drive strategic ESG impact."</p>
+                </div>
+                <div className="pt-8">
+                  <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground h-16 px-10 font-bold uppercase tracking-wider" asChild>
+                    <a href="#skills">See my expertise</a>
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
