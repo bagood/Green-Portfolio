@@ -576,78 +576,115 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-background/80 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div 
-              initial={{ scale: 0.9, y: 50, opacity: 0 }}
+              initial={{ scale: 0.95, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.9, y: 50, opacity: 0 }}
-              className="bg-card w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[3.5rem] shadow-2xl border border-border/50 relative"
+              exit={{ scale: 0.95, y: 20, opacity: 0 }}
+              className="bg-card w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative flex flex-col md:flex-row"
               onClick={e => e.stopPropagation()}
             >
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-8 right-8 p-4 bg-background/50 hover:bg-background rounded-full transition-all z-10"
+                className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
-              <div className="grid md:grid-cols-2">
-                <div className="h-64 md:h-auto overflow-hidden">
-                  <img src={selectedProject.image} className="w-full h-full object-cover" alt={selectedProject.title} />
+
+              <div className="w-full md:w-2/5 h-48 md:h-auto relative">
+                <img src={selectedProject.image} className="w-full h-full object-cover" alt={selectedProject.title} />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:bg-gradient-to-r" />
+              </div>
+
+              <div className="w-full md:w-3/5 p-8 md:p-16 overflow-y-auto custom-scrollbar">
+                <div className="flex flex-wrap items-center gap-3 mb-6">
+                  <Badge className="bg-primary/10 text-primary border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    {selectedProject.category}
+                  </Badge>
+                  {selectedProject.details.cta && (
+                    <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-8 hover:bg-primary/5" asChild>
+                      <a href={selectedProject.details.cta} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 w-3.5 h-3.5" /> View Document
+                      </a>
+                    </Button>
+                  )}
                 </div>
-                  <div className="p-10 md:p-16">
-                    <div className="flex gap-2 mb-6">
-                      <Badge className="bg-primary/10 text-primary border-none">{selectedProject.category}</Badge>
-                      {selectedProject.details.cta && (
-                        <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-7" asChild>
-                          <a href={selectedProject.details.cta} target="_blank">View Document</a>
-                        </Button>
-                      )}
+
+                <h3 className="text-3xl md:text-5xl font-serif font-bold mb-10 leading-tight text-foreground">{selectedProject.title}</h3>
+                
+                <div className="space-y-12">
+                  <section className="relative pl-8 border-l-2 border-primary/10">
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
                     </div>
-                    <h3 className="text-4xl font-serif font-bold mb-8">{selectedProject.title}</h3>
-                    <div className="space-y-10">
-                      <div>
-                        <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Objective</h4>
-                        <p className="text-muted-foreground leading-relaxed italic">"{selectedProject.details.objective || selectedProject.details.problem}"</p>
+                    <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-4">Core Objective</h4>
+                    <p className="text-lg md:text-xl font-medium leading-relaxed italic text-foreground/90">
+                      "{selectedProject.details.objective || selectedProject.details.problem}"
+                    </p>
+                  </section>
+                  
+                  {selectedProject.details.technical && (
+                    <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
+                      <div className="flex items-center gap-3 mb-6">
+                        <Settings className="w-5 h-5 text-primary" />
+                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Technical Application</h4>
                       </div>
-                      
-                      {selectedProject.details.technical && (
-                        <div>
-                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Technical Application</h4>
-                          <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{selectedProject.details.technical}</div>
-                        </div>
-                      )}
+                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-base">
+                        {selectedProject.details.technical}
+                      </div>
+                    </section>
+                  )}
 
-                      {selectedProject.details.process && (
-                        <div>
-                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Process & Highlights</h4>
-                          <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{selectedProject.details.process}</div>
-                        </div>
-                      )}
+                  {selectedProject.details.process && (
+                    <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
+                      <div className="flex items-center gap-3 mb-6">
+                        <Search className="w-5 h-5 text-primary" />
+                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Process & Highlights</h4>
+                      </div>
+                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-base">
+                        {selectedProject.details.process}
+                      </div>
+                    </section>
+                  )}
 
-                      {selectedProject.details.highlights && !selectedProject.details.technical && !selectedProject.details.process && (
-                        <div>
-                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Highlights</h4>
-                          <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{selectedProject.details.highlights}</div>
-                        </div>
-                      )}
+                  {selectedProject.details.highlights && !selectedProject.details.technical && !selectedProject.details.process && (
+                    <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
+                      <div className="flex items-center gap-3 mb-6">
+                        <Zap className="w-5 h-5 text-primary" />
+                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Highlights</h4>
+                      </div>
+                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-base">
+                        {selectedProject.details.highlights}
+                      </div>
+                    </section>
+                  )}
 
-                      {selectedProject.details.outcome && (
-                        <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10">
-                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Outcome</h4>
-                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap">{selectedProject.details.outcome}</div>
-                        </div>
-                      )}
+                  {selectedProject.details.outcome && (
+                    <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
+                      <div className="flex items-center gap-3 mb-6">
+                        <CheckCircle2 className="w-6 h-6 text-primary" />
+                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Strategic Outcome</h4>
+                      </div>
+                      <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
+                        {selectedProject.details.outcome}
+                      </div>
+                    </section>
+                  )}
 
-                      {!selectedProject.details.outcome && selectedProject.details.impact && (
-                        <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10">
-                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Impact / Conclusion</h4>
-                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap">{selectedProject.details.impact || selectedProject.details.conclusion}</div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                  {!selectedProject.details.outcome && (selectedProject.details.impact || selectedProject.details.conclusion) && (
+                    <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
+                      <div className="flex items-center gap-3 mb-6">
+                        <Target className="w-6 h-6 text-primary" />
+                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact & Conclusion</h4>
+                      </div>
+                      <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
+                        {selectedProject.details.impact || selectedProject.details.conclusion}
+                      </div>
+                    </section>
+                  )}
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -661,50 +698,74 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-background/80 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
             onClick={() => setSelectedExperience(null)}
           >
             <motion.div 
-              initial={{ scale: 0.9, y: 50, opacity: 0 }}
+              initial={{ scale: 0.95, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.9, y: 50, opacity: 0 }}
-              className="bg-card w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[3.5rem] shadow-2xl border border-border/50 relative p-10 md:p-16"
+              exit={{ scale: 0.95, y: 20, opacity: 0 }}
+              className="bg-card w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative p-8 md:p-16 custom-scrollbar"
               onClick={e => e.stopPropagation()}
             >
               <button 
                 onClick={() => setSelectedExperience(null)}
-                className="absolute top-8 right-8 p-4 bg-background/50 hover:bg-background rounded-full transition-all z-10"
+                className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
               
-              <div className="flex flex-wrap gap-2 mb-8">
-                <Badge className="bg-primary/10 text-primary border-none">{selectedExperience.type}</Badge>
-                <Badge className="bg-secondary text-secondary-foreground border-none">{selectedExperience.period}</Badge>
+              <div className="flex flex-wrap items-center gap-3 mb-8">
+                <Badge className="bg-accent text-accent-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
+                  {selectedExperience.type}
+                </Badge>
+                <Badge className="bg-secondary text-secondary-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
+                  {selectedExperience.period}
+                </Badge>
               </div>
 
-              <h3 className="text-4xl font-serif font-bold mb-2">{selectedExperience.role}</h3>
-              <h4 className="text-2xl font-serif italic text-primary mb-12">{selectedExperience.company}</h4>
+              <div className="mb-12">
+                <h3 className="text-3xl md:text-5xl font-serif font-bold mb-3 text-foreground">{selectedExperience.role}</h3>
+                <h4 className="text-xl md:text-2xl font-serif italic text-primary">{selectedExperience.company}</h4>
+              </div>
 
-              <div className="space-y-12">
-                <div>
-                  <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-4">Objective</h4>
-                  <p className="text-xl font-medium leading-relaxed italic text-foreground/80">"{selectedExperience.details.objective}"</p>
-                </div>
+              <div className="space-y-16">
+                <section className="relative pl-8 border-l-2 border-primary/10">
+                  <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                  </div>
+                  <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-4">Strategic Objective</h4>
+                  <p className="text-xl md:text-2xl font-medium leading-relaxed italic text-foreground/80">
+                    "{selectedExperience.details.objective}"
+                  </p>
+                </section>
                 
-                <div>
-                  <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-4">The Strategy & Highlights</h4>
-                  <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap space-y-4">
-                    {selectedExperience.details.highlights}
+                <section className="grid gap-12">
+                  <div>
+                    <div className="flex items-center gap-3 mb-8">
+                      <Zap className="w-5 h-5 text-primary" />
+                      <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Execution & Highlights</h4>
+                    </div>
+                    <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-base md:text-lg space-y-6">
+                      {selectedExperience.details.highlights}
+                    </div>
                   </div>
-                </div>
 
-                <div className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10">
-                  <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-4">The Impact</h4>
-                  <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap">
-                    {selectedExperience.details.impact}
+                  <div className="p-10 md:p-12 bg-primary/5 rounded-[3rem] border border-primary/10 shadow-sm relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-8 opacity-10">
+                      <CheckCircle2 className="w-24 h-24 text-primary" />
+                    </div>
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-3 mb-8">
+                        <Target className="w-6 h-6 text-primary" />
+                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Impact</h4>
+                      </div>
+                      <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-xl md:text-2xl font-serif italic">
+                        {selectedExperience.details.impact}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </section>
               </div>
             </motion.div>
           </motion.div>
@@ -718,50 +779,74 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-background/80 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
             onClick={() => setSelectedScienceProject(null)}
           >
             <motion.div 
-              initial={{ scale: 0.9, y: 50, opacity: 0 }}
+              initial={{ scale: 0.95, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.9, y: 50, opacity: 0 }}
-              className="bg-card w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[3.5rem] shadow-2xl border border-border/50 relative"
+              exit={{ scale: 0.95, y: 20, opacity: 0 }}
+              className="bg-card w-full max-w-5xl max-h-[90vh] overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative flex flex-col md:flex-row"
               onClick={e => e.stopPropagation()}
             >
               <button 
                 onClick={() => setSelectedScienceProject(null)}
-                className="absolute top-8 right-8 p-4 bg-background/50 hover:bg-background rounded-full transition-all z-10"
+                className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
-              <div className="grid md:grid-cols-2">
-                <div className="h-64 md:h-auto overflow-hidden">
-                  <img src={selectedScienceProject.image} className="w-full h-full object-cover" alt={selectedScienceProject.title} />
+
+              <div className="w-full md:w-2/5 h-48 md:h-auto relative">
+                <img src={selectedScienceProject.image} className="w-full h-full object-cover" alt={selectedScienceProject.title} />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:bg-gradient-to-r" />
+              </div>
+
+              <div className="w-full md:w-3/5 p-8 md:p-16 overflow-y-auto custom-scrollbar">
+                <div className="flex flex-wrap items-center gap-3 mb-6">
+                  <Badge className="bg-primary/10 text-primary border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    {selectedScienceProject.badge}
+                  </Badge>
+                  {selectedScienceProject.details.cta && (
+                    <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-8 hover:bg-primary/5" asChild>
+                      <a href={selectedScienceProject.details.cta} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 w-3.5 h-3.5" /> View Document
+                      </a>
+                    </Button>
+                  )}
                 </div>
-                <div className="p-10 md:p-16">
-                  <div className="flex gap-2 mb-6">
-                    <Badge className="bg-primary/10 text-primary border-none">{selectedScienceProject.badge}</Badge>
-                    {selectedScienceProject.details.cta && (
-                      <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-7" asChild>
-                        <a href={selectedScienceProject.details.cta} target="_blank">View Document</a>
-                      </Button>
-                    )}
-                  </div>
-                  <h3 className="text-4xl font-serif font-bold mb-8">{selectedScienceProject.title}</h3>
-                  <div className="space-y-10">
-                    <div>
-                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Objective</h4>
-                      <p className="text-muted-foreground leading-relaxed italic">"{selectedScienceProject.details.objective}"</p>
+
+                <h3 className="text-3xl md:text-5xl font-serif font-bold mb-10 leading-tight text-foreground">{selectedScienceProject.title}</h3>
+                
+                <div className="space-y-12">
+                  <section className="relative pl-8 border-l-2 border-primary/10">
+                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
                     </div>
-                    <div>
-                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Program Highlights</h4>
-                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{selectedScienceProject.details.highlights}</div>
+                    <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-4">Research Objective</h4>
+                    <p className="text-lg md:text-xl font-medium leading-relaxed italic text-foreground/90">
+                      "{selectedScienceProject.details.objective}"
+                    </p>
+                  </section>
+                  
+                  <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
+                    <div className="flex items-center gap-3 mb-6">
+                      <Globe className="w-5 h-5 text-primary" />
+                      <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Program Highlights</h4>
                     </div>
-                    <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10">
-                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Impact / Outcome</h4>
-                      <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap">{selectedScienceProject.details.impact}</div>
+                    <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-base">
+                      {selectedScienceProject.details.highlights}
                     </div>
-                  </div>
+                  </section>
+
+                  <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
+                    <div className="flex items-center gap-3 mb-6">
+                      <ShieldCheck className="w-6 h-6 text-primary" />
+                      <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact / Outcome</h4>
+                    </div>
+                    <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif italic">
+                      {selectedScienceProject.details.impact}
+                    </div>
+                  </section>
                 </div>
               </div>
             </motion.div>
