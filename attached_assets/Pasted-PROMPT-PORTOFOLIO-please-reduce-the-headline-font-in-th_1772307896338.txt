@@ -1,0 +1,209 @@
+PROMPT PORTOFOLIO
+please reduce the headline font, in the hook section its toooo big
+
+For the download cv call to action: add this file https://docs.google.com/document/d/1dShDcLryJxTyye3mo5ZwpyfmGmqnxxPj/edit?usp=sharing&ouid=113258424421884384056&rtpof=true&sd=true 
+
+
+For professional journey & social impact section: 
+make the “professional experience” and “community leadership” as label/chip in each experience
+
+
+Add a deep dive call to action for each experience
+
+Enter “ Role: B2B Project Officer
+Objective: To lead the governance and execution of employee innovation bootcamps, driving cross-functional engagement and internal social development through rigorous project management.
+The Strategy & Highlights
+Operational Governance: Managed the end to end lifecycle of logistics, schedules, and documentation for a specialized innovation bootcamp.
+Stakeholder Coordination: Facilitated internal social development and cross-functional engagement for 18 participants, ensuring seamless project flow.
+Deliverable Management: Maintained a high volume of 20+ program deliverables, ensuring every milestone met corporate quality standards.
+Proactive Communication: Executed a stakeholder communication strategy that ensured transparency and alignment throughout the event execution.
+The Impact
+Excellence in Execution: Achieved a 4.6/5 participant satisfaction score, proving the efficacy of the event’s design and logistical management.
+Organizational Development: Successfully fostered a collaborative environment that strengthened internal bonds and social engagement within the cohort.
+Quality Assurance: Delivered 100% of program requirements on schedule, establishing a baseline for professional B2B service delivery.“ to “ b2b project officer binar“ most recent experience card
+
+
+
+Enter “ Role: Project Officer (Employee Innovation)
+Objective: To direct the end-to-end execution of a company-wide innovation program for a top-tier financial institution, ensuring strategic alignment between corporate growth and massive-scale participant engagement .
+The Strategy & Highlights
+Operational Governance: Directed the management of a 17,000+ participant pool, overseeing the complex logistics of registration, data verification, and communication flows to foster a culture of corporate innovation .
+Investigative Feedback Synthesis: Applied a researcher’s lens to analyze participant sentiment and program data, identifying friction points to optimize the user experience.
+Stakeholder Liaison: Served as the primary bridge between technical innovation teams and executive leadership, optimizing vendor management and logistics for executive-level demo days.
+Data-Driven Reporting: Developed comprehensive performance reports for the board of directors, translating raw engagement numbers into actionable strategic insights.
+The Impact
+Strategic Growth: Successfully increased overall program satisfaction by 15% through targeted improvements in communication and logistical coordination.
+Scaled Impact: Managed one of the largest talent innovation programs in the Indonesian banking sector, proving the capacity to maintain rigorous standards under massive organizational scale .
+Efficiency Gains: Streamlined the documentation and verification process for thousands of concurrent users, reducing administrative bottlenecks for high-stakes deliverables.“ to “ employee innovation project officer“ experience card
+
+
+
+
+
+Enter “ Role: Vice President of Branding 
+ESG Focus: Renewable Energy Advocacy & Stakeholder Engagement
+Objective: To direct large-scale communication strategies and build strategic partnerships that accelerate renewable energy literacy and stakeholder engagement.
+The Strategy & Highlights
+Cross-Functional Leadership: Directed diverse, multidisciplinary teams to design and deliver large-scale renewable energy advocacy programs.
+Strategic Partnership Building: Formulated and executed a networking strategy that secured three high-value partnerships with renewable energy and youth-led stakeholders, expanding the organization’s professional ecosystem.
+Digital Infrastructure Management: Oversaw the governance of digital communication platforms to ensure consistent messaging and high-impact outreach across all stakeholder groups.
+Training & Capacity Building: Facilitated the development of educational content designed to translate complex energy transition data into actionable insights for the community.
+The Impact
+Measurable Network Expansion: Successfully expanded the organization’s total digital reach by 15% through targeted branding and engagement strategies.
+Community Growth: Boosted active community engagement by 30%, turning passive followers into active advocates for the energy transition.
+Stakeholder Value: Delivered a professional-grade networking framework that bridged the gap between student innovators and industrial energy leaders.“ to “ vice president of branding“ experience card
+
+
+
+
+
+
+
+Enter “ Role: B2B Project Officer
+Objective: To execute large scale training programs that bridge the gap between student needs and organizational social impact goals while maximizing operational resource efficiency.
+The Strategy & Highlights
+Program Engineering: Executed 7 student-centric training programs, focusing on aligning participant development with broader social impact objectives.
+Database Leveraging: Utilized feedback databases to identify performance gaps and drive evidence-based program improvements.
+Resource Optimization: Managed operational workflows to maximize output while maintaining high standards of educational quality.
+Cross-Functional Leadership: Coordinated between diverse learning tracks to ensure a unified and consistent experience for all participants.
+The Impact
+Financial Efficiency: Successfully reduced operational costs by 10% through strategic resource management and workflow optimization.
+Outcome Improvement: Improved overall participant outcomes by 20%, demonstrating the power of data-driven instructional adjustments.
+Total Engagement: Achieved 100% participant engagement across multiple learning tracks, proving the programs' relevance and quality.“ to “ b2b project officer binar“ other experience card
+
+
+For esg project portfolio section:
+Enter this short description in front of each card:
+·   Carbon Accounting: Conducted Greenhouse Gas (GHG) emission inventories and simplified calculations for corporate operations.
+·   Greenwashing Risk & Compliance Analysis: Analyzed corporate disclosures against GRI 2021 standards to identify potential greenwashing risks and verify alignment with sustainability commitments.
+·   Strategic Program Alignment: Mapped corporate initiatives to relevant GRI materiality topics and evaluate the consistency between program implementation and company sustainability strategy.
+·   Sustainability Reporting & Framework Benchmarking: Benchmarked disclosure quality between two companies against GRI 2021 and SASB standards to determine the relationship between strategic reporting and ESG ratings.
+·   Data Collection & Sustainability Report Development: Conducted end-to-end data collection and report structure for a telecommunications sector sustainability report in compliance with SEOJK 16 and GRI 2021 requirements.
+
+
+Enter “ Objective
+To demonstrate technical mastery of the GHG Protocol by calculating and classifying carbon emissions across complex industrial scenarios, specifically for the Finance and Mining sectors.
+The Technical Application
+Scope Classification: I accurately categorized organizational activities into the three standard reporting tiers:
+Scope 1 (Direct): Diesel combustion from onsite gensets.
+Scope 2 (Indirect): Purchased electricity from the national grid.
+Scope 3 (Value Chain): Downstream impacts, focusing on aviation-based business travel.
+Quantification Methodology: Applied a rigorous investigative approach using the standard carbon accounting formula:
+Emisi GHG = Data Aktivitas * EF * Global Warming Potential
+Renewable Energy Integration: Analyzed the decarbonization impact of a 2,000 kWp solar panel system, calculating how it offsets direct grid dependence and reduces overall Scope 2 totals.
+Key Highlights
+Financial Sector Simulation: Calculated the monthly footprint for a 10-branch network consuming 1,000,000 kWh and 5,000 liters of diesel.
+Mining Sector Simulation: Modeled high-intensity emissions for a facility consuming 3.4 million kWh and 1 million liters of diesel per month.
+Analytical Accuracy: Ensured all outputs were measured in ton CO2eq, aligning with international sustainability reporting requirements. “ for deepdive in “ Carbon Accounting & GHG Inventory“ card
+Add a call to action to this file: https://docs.google.com/document/d/1gZ2QhxNor1ai8Lnx121xVPXr238DJ-8B0W6V-WxQq98/edit?usp=drive_link 
+
+Enter “ Objective
+To analyze corporate sustainability disclosures for Bayan Resources against GRI 2021 Standards, identifying specific greenwashing risks and verifying if operational activities truly align with their stated environmental and social commitments.
+The Process & Highlights
+Investigative Disclosure Audit: Performed a deep-dive audit of the 2023 Sustainability Report for Bayan Resources, scrutinizing the "Evidence Gaps" between their public narratives and their technical performance data.
+Compliance Screening: Evaluated the company against GRI 2 (General Disclosures) and GRI 3 (Material Topics) to detect common greenwashing red flags, such as "Selective Disclosure" or "Vague Commitments" regarding their core environmental impact.
+Sector-Specific Analysis (Mining):
+The Narrative Risk: Analyzed how Bayan Resources emphasizes social programs and land reclamation while potentially providing less granular, year-by-year data on Scope 1 and 2 emissions or direct biodiversity loss.
+Accountability Check: Investigated the presence (or absence) of time-bound, measurable targets for decarbonization, contrasting active programs with the lack of a clear, verifiable roadmap to Net Zero.
+Operational Verification: Analyzed whether community-focused programs (Social pillar) were being used as a "green distraction" to shift focus away from the inherent environmental risks of coal mining operations.
+The Outcome
+The project resulted in a Forensic ESG Audit Report that provided:
+Risk Identification: A technical breakdown of where corporate narratives failed to provide the quantitative evidence required by GRI 302 (Energy), GRI 304 (Biodiversity), and GRI 305 (Emissions).
+Governance Corrective Actions: Developed a series of recommendations for Bayan Resources to improve transparency by adopting the target-setting rigor required for investor-grade reporting.
+Strategic Compliance Roadmap: Proved that for a mining firm to be "future-proof," it must move away from general CSR storytelling and toward the goal-based outcomes mandated by SEOJK 16.“ for deepdive in “Greenwashing Risk & Compliance“ card
+Add call to action to this file: https://drive.google.com/file/d/1WZw56we-EUp-oZzYIsnBeccswmaNp4KM/view?usp=sharing 
+
+Enter “ Objective
+To perform a rigorous strategic audit of a corporate campaign to evaluate its disclosure quality against GRI 2021 Materiality Topics and determine if it authentically fulfills the company’s stated sustainability commitments.
+The Process & Highlights
+Investigative Program Audit: I selected SheHacks 2023, a program by Indosat Ooredoo Hutchison designed to reduce the gender gap in Indonesia’s tech industry by providing mentorship and funding to female entrepreneurs.
+GRI Materiality Mapping: I conducted a deep-dive analysis to find the technical "address" for this social program within the GRI 2021 framework:
+Social (S): GRI 413 (Local Communities): Evaluated how the program functions as a community engagement tool that drives local economic inclusion.
+Governance (G): GRI 3-3 (Management of Material Topics): Analyzed how Indosat manages "Digital Inclusion" as a material topic to mitigate social risk and drive sustainable growth.
+Commitment Verification: I investigated whether this program truly answered Indosat’s sustainability pillar of "Digital Nation," verifying that the initiative provides the evidence required to back up their high-level ESG claims.
+The Outcome
+The result is a Strategic Alignment Matrix that provides a blueprint for authentic corporate transparency:
+Verified Social Impact: Successfully translated a "Community Development" campaign into a technical disclosure, proving that female empowerment is a measurable driver of ESG performance.
+Governance Audit: Provided a clear rationale for how Indosat uses digital literacy as a tool to meet GRI 413 requirements for social responsibility to local communities.
+Strategic Roadmap: Demonstrated that the program is not just a "cost center" but a core component of Indosat's long-term commitment to a more inclusive digital economy in Indonesia.“ for deepdive in “strategic program alignment“ card
+Add a call to action to this file: https://drive.google.com/file/d/1kQBjhYNLxetBqvWydqxV9TLtePyljhf_/view?usp=sharing 
+Enter “ Objective
+To conduct a comparative technical audit of the sustainability reports of two leading telecommunications providers (Telkomsel and Indosat Ooredoo Hutchison) to evaluate their disclosure quality against GRI 2021 and SASB standards and determine the direct relationship between strategic reporting and global ESG Ratings.
+The Process & Highlights
+Investigative Benchmarking: I performed a deep-dive analysis of the 2022–2023 disclosures for both companies, comparing how each organization manages industry-specific material risks.
+Dual-Framework Mapping: I audited the reports across two critical international standards to ensure a holistic evaluation:
+GRI 2021 (Impact-Focused): Evaluated how each company reports its multi-pillar impact on the economy, environment, and people.
+SASB (Investor-Focused): Focused on the Telecommunications Services Standard, specifically auditing disclosures on Data Privacy, Data Security, and Product End-of-Life Management.
+ESG Rating Correlation: I researched the external ESG scores, Sustainalytics used by IDX, for both firms to verify if superior disclosure quality—such as Telkomsel’s comprehensive Greenhouse Gas (GHG) reporting—resulted in a higher market rating.
+Gap Analysis: I identified critical "blind spots" in reporting, such as using year-by-year benchmarks to prove genuine progress toward net-zero and social inclusion goals.
+The Outcome
+The project resulted in a Strategic Reporting Audit that provides:
+Compliance Leadership Assessment: Evidence that Telkomsel’s integration of national regulations into their corporate strategy provides a more "future-proof" ESG profile than Indosat’s.
+Transparency Gap Analysis: A technical breakdown showing that "telling a story" (Indosat) is not a substitute for "setting a target" (Telkomsel) when it comes to investor-grade reporting.
+Governance Roadmap: A series of recommendations for how telecommunications firms can bridge the gap between reporting on activities and reporting on goal-based outcomes.“ for deepdive in “sustainability reporting benchmarking“ card
+Add a call to action to this file: https://drive.google.com/file/d/1taLIHKW7spFJQ25edL6yrQIV6YcI_7Od/view?usp=sharing 
+
+
+Enter “ Objective
+To develop a comprehensive, "dummy" 2025 Sustainability Report for Telkom Indonesia by performing quantitative data forensics on historical disclosures (2022–2024) and applying trend-based forecasting to ensure strategic GRI compliance.
+The Process & Highlights
+Investigative Data Collection: Conducted a deep-dive analysis of Telkom’s 2024 Sustainability Report to extract multi-year quantitative performance metrics across the E, S, and G pillars.
+Predictive Trend Modeling: Used a researcher’s lens to analyze historical performance patterns and project 2025 data points, transforming a static report into a forward-looking strategic model.
+Customized GRI Framework: Selected and implemented industry-specific GRI standards to address the material risks unique to the telecommunications sector:
+Foundational Standards: General Disclosures (GRI 2-1 to 2-5, 2-7, 2-8, 2-29) and Materiality Analysis (GRI 3-1, 3-2, 3-3).
+Governance (G): Investigated metrics for Anti-corruption (GRI 205) and Anti-competitive Behavior (GRI 206) to ensure corporate integrity.
+Environmental (E): Quantified impacts for Energy (GRI 302), Emissions (GRI 305), and Waste (GRI 306).
+Social (S): Focused on Employment (GRI 401), Training (GRI 404), Diversity (GRI 405), and the industry-critical Customer Privacy (GRI 418).
+Technical Compliance: Bridged the gap between raw data and professional disclosure requirements, ensuring the final report structure met the transparency expectations of GRI 2021 and SEOJK 16.
+The Outcome
+The project resulted in two high-stakes technical deliverables that serve as a professional model for corporate transparency:
+Consolidated ESG Data Matrix (2022–2025): A 4-year quantitative inventory that aligns historical data with projected 2025 performance. This matrix centralizes critical KPIs, transforming hundreds of pages of fragmented reporting into a single, scannable, and audit-ready data asset.
+GRI-Compliant Transparency Blueprint: A structured Sustainability Report draft that maps corporate activities to international disclosure requirements. This deliverable proves the ability to translate complex "Social" and "Governance" data into the precise technical language required by global investors and the SEOJK 16 regulatory framework.“ for deepdive in “sustainability report development“ card
+Add a call to action to this file: https://docs.google.com/document/d/1w_xZMDbmiP_9XJ8Z1n0I0MyCnVTOswUMf9QOZ-_lhQg/edit?usp=drive_link & https://docs.google.com/spreadsheets/d/1Y3o4HumGfAsU7MEAZm4BRyF9Ren1rf6gEaba_sVRYhI/edit?usp=sharing 
+
+
+
+
+
+
+
+For science driven sustainability section:
+Enter “ Objective
+To conduct a comprehensive investigative analysis of the 169 UN SDG targets to determine the technical and strategic alignment of bioremediation and renewable energy technologies with global sustainability goals.
+The Process & Highlights
+Systems-Level Analysis: Evaluated each of the 17 Sustainable Development Goals to identify where technical biological processes (bioremediation) intersect with social, environmental, and economic targets.
+Evidence-Based Mapping: Synthesized findings from over 10+ academic sources (including Bala et al., 2022 and Arora, 2018) to justify the relationship between microbial technology and specific targets like food security (SDG 2) and clean water (SDG 6).
+Critical Evaluation: Beyond identifying "green" benefits, I applied a rigorous lens to identify "no-relationship" zones (such as gender parity or financial regulations), ensuring a realistic and transparent assessment of the technology’s scope.
+Multi-Pillar Integration: Analyzed the "Social" impact of environmental technology, such as how soil restoration directly improves agricultural productivity for small-scale farmers (Target 2.3).
+The Outcome
+The result is a 169-target classified matrix that serves as a strategic reference for how bioremediation acts as a catalyst for:
+Resource Security: Enhancing food safety and water accessibility through the removal of heavy metals and pollutants.
+Decarbonization: Linking phytoremediation to the production of clean biofuels, contributing to a 14% potential share of global energy demand.
+Responsible Industry: Providing a low-cost, low-energy alternative for industrial waste management and urban air quality (Target 11.6). “ for deepdive in “SDGs data matrix “ card
+Add a call to action to this file: https://docs.google.com/spreadsheets/d/1am_qHhNfdAHt1lKa04R2J-6WCauwCrZykGl6GdBuGeY/edit?usp=sharing
+
+Enter “ Objective
+To investigate an unresolved real-world marine crisis, 2019 and 2021 oil spill incidents by PT Pertamina Hulu Energi Offshore North West Java (PHE ONWJ), evaluating corporate accountability against Indonesian environmental law and researching bioremediation as a sustainable, low-toxicity alternative to traditional chemical and physical responses.
+The Process & Highlights
+Identification of an Unresolved Crisis: Investigated the root causes of two major spills—from the July 2019 gas bubble failure at well YYA-1 to the April 2021 subsea pipeline corrosion—which together severely impacted over 12 coastal villages.
+Legal & Policy Audit: Performed a rigorous analysis of corporate responses based on Law No. 32 of 2009, focusing on Article 54 (Environmental Restoration) and Article 88 (Absolute Responsibility/Polluter Pays Principle).
+Technical Critique: Evaluated the limitations of physical and chemical responses, identifying that the use of chemical dispersants can lead to higher toxicity levels in marine ecosystems than the crude oil itself.
+Bioremediation Research: Developed a strategic alternative using a microbial consortium of Bacillus subtilis and Pseudomonas putida, capable of achieving 70–95% hydrocarbon removal within a 1–2 month timeframe.
+The Outcome
+A comprehensive investigative report and technical roadmap proving that bioremediation is a viable, cost-effective, and low-impact solution for long-term industrial environmental recovery.“ for deepdive in “oil spill policy “ card
+
+Add a call to action to this file: https://drive.google.com/file/d/1uKmiWsIIQ0ePt-EbW5AsxoFKdGKGj6rc/view?usp=sharing 
+
+Enter “ Role: Project Officer
+ESG Focus: Biodiversity Awareness & Governance (Leadership)
+Objective: To lead a high-stakes educational initiative designed to bridge the gap between biological research and community awareness through strategic large-scale coordination .
+The Strategy & Highlights
+Team Governance: Directed a 50+ member multidisciplinary team, managing the end-to-end project lifecycle from initial logistics to final educational content design.
+Resource Coordination: Oversaw complex registration systems, participant documentation, and venue logistics to ensure seamless execution for hundreds of stakeholders.
+Content Integration: Facilitated the curation of biological photography and imaging from the team, transforming raw field data into an engaging public exhibition focused on the Padjadjaran University Arboretum.
+Quality Assurance: Implemented a rigorous internal evaluation process to ensure all educational materials met high academic and professional standards.
+The Impact
+Large-Scale Engagement: Successfully delivered the program to 300+ participants, significantly increasing local awareness of regional biodiversity and ecological conservation.
+Performance Excellence: Achieved an A-grade evaluation for project execution and a 93% positive feedback score from participants.
+Professional Leadership: Demonstrated the ability to manage large human systems and complex data sets, providing a foundation for future corporate ESG coordination .“ for deepdive in “the biological exhibition “ card
+Add a call to action to this file: https://www.youtube.com/watch?v=AVgHvqpRUOA 

@@ -38,6 +38,8 @@ export default function Home() {
 
   const [selectedScienceProject, setSelectedScienceProject] = useState<any>(null);
 
+  const [selectedExperience, setSelectedExperience] = useState<any>(null);
+
   // Animation variants
   const fadeIn = {
     initial: { opacity: 0, y: 30 },
@@ -98,65 +100,86 @@ export default function Home() {
       id: "carbon",
       title: "Carbon Accounting & GHG Inventory",
       category: "Sustainability Implementation",
-      description: "Conducted Greenhouse Gas (GHG) emission inventories and simplified calculations for corporate operations.",
+      description: "Carbon Accounting: Conducted Greenhouse Gas (GHG) emission inventories and simplified calculations for corporate operations.",
       image: projectCarbon,
       icon: <BarChart3 className="w-5 h-5" />,
       details: {
         problem: "Corporate operations often lack clear visibility into their indirect emission sources, leading to incomplete sustainability disclosures.",
         methodology: "GHG Protocol Corporate Standard, simplified emission factors for scope 1 and 2 emissions.",
-        conclusion: "Identified that energy-intensive office cooling accounted for 65% of indirect emissions, suggesting targeted renewable energy procurement."
+        conclusion: "Identified that energy-intensive office cooling accounted for 65% of indirect emissions, suggesting targeted renewable energy procurement.",
+        objective: "To demonstrate technical mastery of the GHG Protocol by calculating and classifying carbon emissions across complex industrial scenarios, specifically for the Finance and Mining sectors.",
+        technical: "Scope Classification: I accurately categorized organizational activities into the three standard reporting tiers:\nScope 1 (Direct): Diesel combustion from onsite gensets.\nScope 2 (Indirect): Purchased electricity from the national grid.\nScope 3 (Value Chain): Downstream impacts, focusing on aviation-based business travel.\nQuantification Methodology: Applied a rigorous investigative approach using the standard carbon accounting formula: Emisi GHG = Data Aktivitas * EF * Global Warming Potential\nRenewable Energy Integration: Analyzed the decarbonization impact of a 2,000 kWp solar panel system, calculating how it offsets direct grid dependence and reduces overall Scope 2 totals.",
+        highlights: "Financial Sector Simulation: Calculated the monthly footprint for a 10-branch network consuming 1,000,000 kWh and 5,000 liters of diesel.\nMining Sector Simulation: Modeled high-intensity emissions for a facility consuming 3.4 million kWh and 1 million liters of diesel per month.",
+        impact: "Analytical Accuracy: Ensured all outputs were measured in ton CO2eq, aligning with international sustainability reporting requirements.",
+        cta: "https://docs.google.com/document/d/1gZ2QhxNor1ai8Lnx121xVPXr238DJ-8B0W6V-WxQq98/edit?usp=drive_link"
       }
     },
     {
       id: "greenwash",
       title: "Greenwashing Risk & Compliance",
       category: "Strategic Analysis",
-      description: "Analyzed corporate disclosures against GRI 2021 standards to identify potential greenwashing risks.",
+      description: "Greenwashing Risk & Compliance Analysis: Analyzed corporate disclosures against GRI 2021 standards to identify potential greenwashing risks and verify alignment with sustainability commitments.",
       image: heroBg,
       icon: <ShieldCheck className="w-5 h-5" />,
       details: {
         problem: "Vague environmental claims in annual reports often misalign with actual project implementation, creating legal and reputational risks.",
         methodology: "GRI 2021 Disclosure Gap Analysis, verification against external sustainability commitments.",
-        conclusion: "Found discrepancies in 'Net Zero' timelines where carbon offsets were prioritized over absolute reduction strategies."
+        conclusion: "Found discrepancies in 'Net Zero' timelines where carbon offsets were prioritized over absolute reduction strategies.",
+        objective: "To analyze corporate sustainability disclosures for Bayan Resources against GRI 2021 Standards, identifying specific greenwashing risks and verifying if operational activities truly align with their stated environmental and social commitments.",
+        process: "Investigative Disclosure Audit: Performed a deep-dive audit of the 2023 Sustainability Report for Bayan Resources, scrutinizing the \"Evidence Gaps\" between their public narratives and their technical performance data.\nCompliance Screening: Evaluated the company against GRI 2 (General Disclosures) and GRI 3 (Material Topics) to detect common greenwashing red flags, such as \"Selective Disclosure\" or \"Vague Commitments\" regarding their core environmental impact.\nSector-Specific Analysis (Mining):\nThe Narrative Risk: Analyzed how Bayan Resources emphasizes social programs and land reclamation while potentially providing less granular, year-by-year data on Scope 1 and 2 emissions or direct biodiversity loss.\nAccountability Check: Investigated the presence (or absence) of time-bound, measurable targets for decarbonization, contrasting active programs with the lack of a clear, verifiable roadmap to Net Zero.\nOperational Verification: Analyzed whether community-focused programs (Social pillar) were being used as a \"green distraction\" to shift focus away from the inherent environmental risks of coal mining operations.",
+        outcome: "The project resulted in a Forensic ESG Audit Report that provided:\nRisk Identification: A technical breakdown of where corporate narratives failed to provide the quantitative evidence required by GRI 302 (Energy), GRI 304 (Biodiversity), and GRI 305 (Emissions).\nGovernance Corrective Actions: Developed a series of recommendations for how Bayan Resources to improve transparency by adopting the target-setting rigor required for investor-grade reporting.\nStrategic Compliance Roadmap: Proved that for a mining firm to be \"future-proof,\" it must move away from general CSR storytelling and toward the goal-based outcomes mandated by SEOJK 16.",
+        cta: "https://drive.google.com/file/d/1WZw56we-EUp-oZzYIsnBeccswmaNp4KM/view?usp=sharing"
       }
     },
     {
       id: "materiality",
       title: "Strategic Program Alignment",
       category: "ESG Strategy",
-      description: "Mapped corporate initiatives to relevant GRI materiality topics and evaluated strategic consistency.",
+      description: "Strategic Program Alignment: Mapped corporate initiatives to relevant GRI materiality topics and evaluate the consistency between program implementation and company sustainability strategy.",
       image: projectReport,
       icon: <FileText className="w-5 h-5" />,
       details: {
         problem: "CSR programs often operate in silos, disconnected from the core business's most significant environmental and social impacts.",
         methodology: "Double Materiality Assessment, Stakeholder Engagement Matrix.",
-        conclusion: "Proposed realigning the community fund toward water sanitation projects to match the company's high local water dependency."
+        conclusion: "Proposed realigning the community fund toward water sanitation projects to match the company's high local water dependency.",
+        objective: "To perform a rigorous strategic audit of a corporate campaign to evaluate its disclosure quality against GRI 2021 Materiality Topics and determine if it authentically fulfills the company’s stated sustainability commitments.",
+        process: "Investigative Program Audit: I selected SheHacks 2023, a program by Indosat Ooredoo Hutchison designed to reduce the gender gap in Indonesia’s tech industry by providing mentorship and funding to female entrepreneurs.\nGRI Materiality Mapping: I conducted a deep-dive analysis to find the technical \"address\" for this social program within the GRI 2021 framework:\nSocial (S): GRI 413 (Local Communities): Evaluated how the program functions as a community engagement tool that drives local economic inclusion.\nGovernance (G): GRI 3-3 (Management of Material Topics): Analyzed how Indosat manages \"Digital Inclusion\" as a material topic to mitigate social risk and drive sustainable growth.\nCommitment Verification: I investigated whether this program truly answered Indosat’s sustainability pillar of \"Digital Nation,\" verifying that the initiative provides the evidence required to back up their high-level ESG claims.",
+        outcome: "The result is a Strategic Alignment Matrix that provides a blueprint for authentic corporate transparency:\nVerified Social Impact: Successfully translated a \"Community Development\" campaign into a technical disclosure, proving that female empowerment is a measurable driver of ESG performance.\nGovernance Audit: Provided a clear rationale for how Indosat uses digital literacy as a tool to meet GRI 413 requirements for social responsibility to local communities.\nStrategic Roadmap: Demonstrated that the program is not just a \"cost center\" but a core component of Indosat's long-term commitment to a more inclusive digital economy in Indonesia.",
+        cta: "https://drive.google.com/file/d/1kQBjhYNLxetBqvWydqxV9TLtePyljhf_/view?usp=sharing"
       }
     },
     {
       id: "benchmarking",
       title: "Sustainability Reporting Benchmarking",
       category: "Disclosure Quality",
-      description: "Benchmarked disclosure quality between sector leaders against GRI and SASB standards.",
+      description: "Sustainability Reporting & Framework Benchmarking: Benchmarked disclosure quality between two companies against GRI 2021 and SASB standards to determine the relationship between strategic reporting and ESG ratings.",
       image: projectReport,
       icon: <Search className="w-5 h-5" />,
       details: {
         problem: "Companies often struggle to understand how their disclosures impact their ESG ratings relative to industry peers.",
         methodology: "GRI 2021 vs. SASB Comparison Framework.",
-        conclusion: "Telkomsel showed higher quantitative transparency in data privacy compared to Indosat, leading to better social pillar scores."
+        conclusion: "Telkomsel showed higher quantitative transparency in data privacy compared to Indosat, leading to better social pillar scores.",
+        objective: "To conduct a comparative technical audit of the sustainability reports of two leading telecommunications providers (Telkomsel and Indosat Ooredoo Hutchison) to evaluate their disclosure quality against GRI 2021 and SASB standards and determine the direct relationship between strategic reporting and global ESG Ratings.",
+        process: "Investigative Benchmarking: I performed a deep-dive analysis of the 2022–2023 disclosures for both companies, comparing how each organization manages industry-specific material risks.\nDual-Framework Mapping: I audited the reports across two critical international standards to ensure a holistic evaluation:\nGRI 2021 (Impact-Focused): Evaluated how each company reports its multi-pillar impact on the economy, environment, and people.\nSASB (Investor-Focused): Focused on the Telecommunications Services Standard, specifically auditing disclosures on Data Privacy, Data Security, and Product End-of-Life Management.\nESG Rating Correlation: I researched the external ESG scores, Sustainalytics used by IDX, for both firms to verify if superior disclosure quality—such as Telkomsel’s comprehensive Greenhouse Gas (GHG) reporting—resulted in a higher market rating.\nGap Analysis: I identified critical \"blind spots\" in reporting, such as using year-by-year benchmarks to prove genuine progress toward net-zero and social inclusion goals.",
+        outcome: "The project resulted in a Strategic Reporting Audit that provides:\nCompliance Leadership Assessment: Evidence that Telkomsel’s integration of national regulations into their corporate strategy provides a more \"future-proof\" ESG profile than Indosat’s.\nTransparency Gap Analysis: A technical breakdown showing that \"telling a story\" (Indosat) is not a substitute for \"setting a target\" (Telkomsel) when it comes to investor-grade reporting.\nGovernance Roadmap: A series of recommendations for how telecommunications firms can bridge the gap between reporting on activities and reporting on goal-based outcomes.",
+        cta: "https://drive.google.com/file/d/1taLIHKW7spFJQ25edL6yrQIV6YcI_7Od/view?usp=sharing"
       }
     },
     {
       id: "report-dev",
       title: "Sustainability Report Development",
       category: "Reporting Frameworks",
-      description: "End-to-end data collection and report structure for a telecommunications sector report.",
+      description: "Data Collection & Sustainability Report Development: Conducted end-to-end data collection and report structure for a telecommunications sector sustainability report in compliance with SEOJK 16 and GRI 2021 requirements.",
       image: projectReport,
       icon: <CheckCircle2 className="w-5 h-5" />,
       details: {
         problem: "Merging SEOJK 16 (local) and GRI 2021 (global) requirements into a single, cohesive reporting structure.",
         methodology: "SEOJK 16 & GRI 2021 Integration Mapping.",
-        conclusion: "Streamlined data collection by 20% by creating a unified template that satisfied both regulatory and international standards."
+        conclusion: "Streamlined data collection by 20% by creating a unified template that satisfied both regulatory and international standards.",
+        objective: "To develop a comprehensive, \"dummy\" 2025 Sustainability Report for Telkom Indonesia by performing quantitative data forensics on historical disclosures (2022–2024) and applying trend-based forecasting to ensure strategic GRI compliance.",
+        process: "Investigative Data Collection: Conducted a deep-dive analysis of Telkom’s 2024 Sustainability Report to extract multi-year quantitative performance metrics across the E, S, and G pillars.\nPredictive Trend Modeling: Used a researcher’s lens to analyze historical performance patterns and project 2025 data points, transforming a static report into a forward-looking strategic model.\nCustomized GRI Framework: Selected and implemented industry-specific GRI standards to address the material risks unique to the telecommunications sector:\nFoundational Standards: General Disclosures (GRI 2-1 to 2-5, 2-7, 2-8, 2-29) and Materiality Analysis (GRI 3-1, 3-2, 3-3).\nGovernance (G): Investigated metrics for Anti-corruption (GRI 205) and Anti-competitive Behavior (GRI 206) to ensure corporate integrity.\nEnvironmental (E): Quantified impacts for Energy (GRI 302), Emissions (GRI 305), and Waste (GRI 306).\nSocial (S): Focused on Employment (GRI 401), Training (GRI 404), Diversity (GRI 405), and the industry-critical Customer Privacy (GRI 418).\nTechnical Compliance: Bridged the gap between raw data and professional disclosure requirements, ensuring the final report structure met the transparency expectations of GRI 2021 and SEOJK 16.",
+        outcome: "The project resulted in two high-stakes technical deliverables that serve as a professional model for corporate transparency:\nConsolidated ESG Data Matrix (2022–2025): A 4-year quantitative inventory that aligns historical data with projected 2025 performance. This matrix centralizes critical KPIs, transforming hundreds of pages of fragmented reporting into a single, scannable, and audit-ready data asset.\nGRI-Compliant Transparency Blueprint: A structured Sustainability Report draft that maps corporate activities to international disclosure requirements. This deliverable proves the ability to translate complex \"Social\" and \"Governance\" data into the precise technical language required by global investors and the SEOJK 16 regulatory framework.",
+        cta: "https://docs.google.com/document/d/1w_xZMDbmiP_9XJ8Z1n0I0MyCnVTOswUMf9QOZ-_lhQg/edit?usp=drive_link"
       }
     }
   ];
@@ -169,9 +192,10 @@ export default function Home() {
       image: projectOcean,
       badge: "Oil Spill Research",
       details: {
-        objective: "To evaluate the legal and environmental policy frameworks triggered by the PT PHE ONWJ incident.",
-        highlights: "In-depth review of maritime law and corporate accountability protocols.",
-        impact: "Provided a comprehensive reference for stakeholders to understand policy gaps in incident response."
+        objective: "To investigate an unresolved real-world marine crisis, 2019 and 2021 oil spill incidents by PT Pertamina Hulu Energi Offshore North West Java (PHE ONWJ), evaluating corporate accountability against Indonesian environmental law and researching bioremediation as a sustainable, low-toxicity alternative to traditional chemical and physical responses.",
+        highlights: "Identification of an Unresolved Crisis: Investigated the root causes of two major spills—from the July 2019 gas bubble failure at well YYA-1 to the April 2021 subsea pipeline corrosion—which together severely impacted over 12 coastal villages.\nLegal & Policy Audit: Performed a rigorous analysis of corporate responses based on Law No. 32 of 2009, focusing on Article 54 (Environmental Restoration) and Article 88 (Absolute Responsibility/Polluter Pays Principle).\nTechnical Critique: Evaluated the limitations of physical and chemical responses, identifying that the use of chemical dispersants can lead to higher toxicity levels in marine ecosystems than the crude oil itself.\nBioremediation Research: Developed a strategic alternative using a microbial consortium of Bacillus subtilis and Pseudomonas putida, capable of achieving 70–95% hydrocarbon removal within a 1–2 month timeframe.",
+        impact: "A comprehensive investigative report and technical roadmap proving that bioremediation is a viable, cost-effective, and low-impact solution for long-term industrial environmental recovery.",
+        cta: "https://drive.google.com/file/d/1uKmiWsIIQ0ePt-EbW5AsxoFKdGKGj6rc/view?usp=sharing"
       }
     },
     {
@@ -181,9 +205,10 @@ export default function Home() {
       image: projectCarbon,
       badge: "Renewable Energy",
       details: {
-        objective: "To streamline research accessibility by mapping SDG targets to specific technical solutions.",
-        highlights: "Classification of 169 targets against bioremediation and renewable energy metrics.",
-        impact: "Significantly improved research efficiency for academic and professional stakeholders."
+        objective: "To conduct a comprehensive investigative analysis of the 169 UN SDG targets to determine the technical and strategic alignment of bioremediation and renewable energy technologies with global sustainability goals.",
+        highlights: "Systems-Level Analysis: Evaluated each of the 17 Sustainable Development Goals to identify where technical biological processes (bioremediation) intersect with social, environmental, and economic targets.\nEvidence-Based Mapping: Synthesized findings from over 10+ academic sources (including Bala et al., 2022 and Arora, 2018) to justify the relationship between microbial technology and specific targets like food security (SDG 2) and clean water (SDG 6).\nCritical Evaluation: Beyond identifying \"green\" benefits, I applied a rigorous lens to identify \"no-relationship\" zones (such as gender parity or financial regulations), ensuring a realistic and transparent assessment of the technology’s scope.\nMulti-Pillar Integration: Analyzed the \"Social\" impact of environmental technology, such as how soil restoration directly improves agricultural productivity for small-scale farmers (Target 2.3).",
+        impact: "The result is a 169-target classified matrix that serves as a strategic reference for how bioremediation acts as a catalyst for:\nResource Security: Enhancing food safety and water accessibility through the removal of heavy metals and pollutants.\nDecarbonization: Linking phytoremediation to the production of clean biofuels, contributing to a 14% potential share of global energy demand.\nResponsible Industry: Providing a low-cost, low-energy alternative for industrial waste management and urban air quality (Target 11.6).",
+        cta: "https://docs.google.com/spreadsheets/d/1am_qHhNfdAHt1lKa04R2J-6WCauwCrZykGl6GdBuGeY/edit?usp=sharing"
       }
     },
     {
@@ -193,9 +218,10 @@ export default function Home() {
       image: heroBg,
       badge: "Conservation Education",
       details: {
-        objective: "To raise awareness about biodiversity conservation through an immersive educational event.",
-        highlights: "Coordination of 50+ members and logistics for 300+ public participants.",
-        impact: "Achieved 93% positive feedback and successfully promoted local ecological awareness."
+        objective: "To lead a high-stakes educational initiative designed to bridge the gap between biological research and community awareness through strategic large-scale coordination.",
+        highlights: "Team Governance: Directed a 50+ member multidisciplinary team, managing the end-to-end project lifecycle from initial logistics to final educational content design.\nResource Coordination: Oversaw complex registration systems, participant documentation, and venue logistics to ensure seamless execution for hundreds of stakeholders.\nContent Integration: Facilitated the curation of biological photography and imaging from the team, transforming raw field data into an engaging public exhibition focused on the Padjadjaran University Arboretum.\nQuality Assurance: Implemented a rigorous internal evaluation process to ensure all educational materials met high academic and professional standards.",
+        impact: "Large-Scale Engagement: Successfully delivered the program to 300+ participants, significantly increasing local awareness of regional biodiversity and ecological conservation.\nPerformance Excellence: Achieved an A-grade evaluation for project execution and a 93% positive feedback score from participants.\nProfessional Leadership: Demonstrated the ability to manage large human systems and complex data sets, providing a foundation for future corporate ESG coordination.",
+        cta: "https://www.youtube.com/watch?v=AVgHvqpRUOA"
       }
     }
   ];
@@ -203,27 +229,55 @@ export default function Home() {
   const combinedJourney = [
     {
       role: "B2B Project Officer",
-      company: "Binar Academy (Professional Experience)",
+      company: "Binar Academy",
+      type: "Professional Experience",
       period: "Sept 2024 – Nov 2024",
-      description: "Managed logistics and documentation for employee innovation bootcamp, achieving 4.6/5 participant satisfaction."
+      description: "Managed logistics and documentation for employee innovation bootcamp, achieving 4.6/5 participant satisfaction.",
+      details: {
+        role: "Role: B2B Project Officer",
+        objective: "Objective: To lead the governance and execution of employee innovation bootcamps, driving cross-functional engagement and internal social development through rigorous project management.",
+        highlights: "The Strategy & Highlights\nOperational Governance: Managed the end to end lifecycle of logistics, schedules, and documentation for a specialized innovation bootcamp.\nStakeholder Coordination: Facilitated internal social development and cross-functional engagement for 18 participants, ensuring seamless project flow.\nDeliverable Management: Maintained a high volume of 20+ program deliverables, ensuring every milestone met corporate quality standards.\nProactive Communication: Executed a stakeholder communication strategy that ensured transparency and alignment throughout the event execution.",
+        impact: "The Impact\nExcellence in Execution: Achieved a 4.6/5 participant satisfaction score, proving the efficacy of the event’s design and logistical management.\nOrganizational Development: Successfully fostered a collaborative environment that strengthened internal bonds and social engagement within the cohort.\nQuality Assurance: Delivered 100% of program requirements on schedule, establishing a baseline for professional B2B service delivery."
+      }
     },
     {
       role: "Employee Innovation Project Officer",
-      company: "Bank Syariah Indonesia (Professional Experience)",
+      company: "Bank Syariah Indonesia",
+      type: "Professional Experience",
       period: "Dec 2023 – Mar 2024",
-      description: "Directed company-wide innovation program for 17,000+ participants, increasing program satisfaction by 15%."
+      description: "Directed company-wide innovation program for 17,000+ participants, increasing program satisfaction by 15%.",
+      details: {
+        role: "Role: Project Officer (Employee Innovation)",
+        objective: "Objective: To direct the end-to-end execution of a company-wide innovation program for a top-tier financial institution, ensuring strategic alignment between corporate growth and massive-scale participant engagement.",
+        highlights: "The Strategy & Highlights\nOperational Governance: Directed the management of a 17,000+ participant pool, overseeing the complex logistics of registration, data verification, and communication flows to foster a culture of corporate innovation.\nInvestigative Feedback Synthesis: Applied a researcher’s lens to analyze participant sentiment and program data, identifying friction points to optimize the user experience.\nStakeholder Liaison: Served as the primary bridge between technical innovation teams and executive leadership, optimizing vendor management and logistics for executive-level demo days.\nData-Driven Reporting: Developed comprehensive performance reports for the board of directors, translating raw engagement numbers into actionable strategic insights.",
+        impact: "The Impact\nStrategic Growth: Successfully increased overall program satisfaction by 15% through targeted improvements in communication and logistical coordination.\nScaled Impact: Managed one of the largest talent innovation programs in the Indonesian banking sector, proving the capacity to maintain rigorous standards under massive organizational scale.\nEfficiency Gains: Streamlined the documentation and verification process for thousands of concurrent users, reducing administrative bottlenecks for high-stakes deliverables."
+      }
     },
     {
       role: "Vice President of Branding",
-      company: "Student Energy at Padjadjaran University (Community Leadership)",
+      company: "Student Energy at Padjadjaran University",
+      type: "Community Leadership",
       period: "Jun 2023 – Dec 2023",
-      description: "Directed Renewable Energy advocacy and youth awareness, building partnerships with 3 renewable energy stakeholders."
+      description: "Directed Renewable Energy advocacy and youth awareness, building partnerships with 3 renewable energy stakeholders.",
+      details: {
+        role: "Role: Vice President of Branding",
+        objective: "ESG Focus: Renewable Energy Advocacy & Stakeholder Engagement\nObjective: To direct large-scale communication strategies and build strategic partnerships that accelerate renewable energy literacy and stakeholder engagement.",
+        highlights: "The Strategy & Highlights\nCross-Functional Leadership: Directed diverse, multidisciplinary teams to design and deliver large-scale renewable energy advocacy programs.\nStrategic Partnership Building: Formulated and executed a networking strategy that secured three high-value partnerships with renewable energy and youth-led stakeholders, expanding the organization’s professional ecosystem.\nDigital Infrastructure Management: Oversaw the governance of digital communication platforms to ensure consistent messaging and high-impact outreach across all stakeholder groups.\nTraining & Capacity Building: Facilitated the development of educational content designed to translate complex energy transition data into actionable insights for the community.",
+        impact: "The Impact\nMeasurable Network Expansion: Successfully expanded the organization’s total digital reach by 15% through targeted branding and engagement strategies.\nCommunity Growth: Boosted active community engagement by 30%, turning passive followers into active advocates for the energy transition.\nStakeholder Value: Delivered a professional-grade networking framework that bridged the gap between student innovators and industrial energy leaders."
+      }
     },
     {
       role: "B2B Project Officer",
-      company: "Binar Academy (Professional Experience)",
+      company: "Binar Academy",
+      type: "Professional Experience",
       period: "Aug 2023 – Dec 2023",
-      description: "Executed 7 student-centric training programs, reducing operational costs by 10% and improving outcomes by 20%."
+      description: "Executed 7 student-centric training programs, reducing operational costs by 10% and improving outcomes by 20%.",
+      details: {
+        role: "Role: B2B Project Officer",
+        objective: "Objective: To execute large scale training programs that bridge the gap between student needs and organizational social impact goals while maximizing operational resource efficiency.",
+        highlights: "The Strategy & Highlights\nProgram Engineering: Executed 7 student-centric training programs, focusing on aligning participant development with broader social impact objectives.\nDatabase Leveraging: Utilized feedback databases to identify performance gaps and drive evidence-based program improvements.\nResource Optimization: Managed operational workflows to maximize output while maintaining high standards of educational quality.\nCross-Functional Leadership: Coordinated between diverse learning tracks to ensure a unified and consistent experience for all participants.",
+        impact: "The Impact\nFinancial Efficiency: Successfully reduced operational costs by 10% through strategic resource management and workflow optimization.\nOutcome Improvement: Improved overall participant outcomes by 20%, demonstrating the power of data-driven instructional adjustments.\nTotal Engagement: Achieved 100% participant engagement across multiple learning tracks, proving the programs' relevance and quality."
+      }
     }
   ];
 
@@ -257,7 +311,7 @@ export default function Home() {
             ))}
           </div>
           <Button variant="default" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 px-6 font-bold" asChild>
-            <a href="/cv.pdf" download>
+            <a href="https://docs.google.com/document/d/1dShDcLryJxTyye3mo5ZwpyfmGmqnxxPj/edit?usp=sharing&ouid=113258424421884384056&rtpof=true&sd=true" target="_blank">
               <Download className="mr-2 w-4 h-4" /> Download CV
             </a>
           </Button>
@@ -268,7 +322,7 @@ export default function Home() {
         <div className="absolute top-0 right-0 -z-10 w-[70vw] h-[70vw] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div {...fadeIn}>
-            <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground leading-[1.05] mb-8">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-[1.05] mb-8">
               Decoding Sustainability: <br /><span className="text-primary italic">Where Rigorous Research Meets</span> Large-Scale Social Impact.
             </h1>
             <p className="text-xl md:text-2xl font-medium text-primary leading-tight max-w-xl mb-10">
@@ -442,11 +496,18 @@ export default function Home() {
                 >
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-primary-foreground border-8 border-primary z-20 hidden md:block shadow-xl" />
                   <div className="w-full md:w-1/2">
-                    <div className={`p-10 rounded-[3.5rem] bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 shadow-2xl ${idx % 2 === 0 ? 'hover:-translate-x-2' : 'hover:translate-x-2'}`}>
-                      <Badge className="mb-6 bg-accent text-accent-foreground font-black tracking-widest text-[10px] uppercase border-none">{exp.period}</Badge>
+                    <div 
+                      onClick={() => setSelectedExperience(exp)}
+                      className={`p-10 rounded-[3.5rem] bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 shadow-2xl cursor-pointer ${idx % 2 === 0 ? 'hover:-translate-x-2' : 'hover:translate-x-2'}`}
+                    >
+                      <div className="flex flex-wrap gap-2 mb-6 justify-end">
+                        <Badge className="bg-accent text-accent-foreground font-black tracking-widest text-[10px] uppercase border-none">{exp.type}</Badge>
+                        <Badge className="bg-white/10 text-white font-black tracking-widest text-[10px] uppercase border-none">{exp.period}</Badge>
+                      </div>
                       <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
                       <h4 className="text-lg font-serif italic text-accent/80 mb-6">{exp.company}</h4>
-                      <p className="text-primary-foreground/70 leading-relaxed">{exp.description}</p>
+                      <p className="text-primary-foreground/70 leading-relaxed mb-6">{exp.description}</p>
+                      <Button variant="link" className="p-0 text-accent font-bold h-auto">View Deep Dive <ChevronRight className="ml-1 w-4 h-4" /></Button>
                     </div>
                   </div>
                   <div className="md:w-1/2" />
@@ -519,22 +580,113 @@ export default function Home() {
                 <div className="h-64 md:h-auto overflow-hidden">
                   <img src={selectedProject.image} className="w-full h-full object-cover" alt={selectedProject.title} />
                 </div>
-                <div className="p-10 md:p-16">
-                  <Badge className="bg-primary/10 text-primary border-none mb-6">{selectedProject.category}</Badge>
-                  <h3 className="text-4xl font-serif font-bold mb-8">{selectedProject.title}</h3>
-                  <div className="space-y-10">
-                    <div>
-                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Problem</h4>
-                      <p className="text-muted-foreground leading-relaxed italic">"{selectedProject.details.problem}"</p>
+                  <div className="p-10 md:p-16">
+                    <div className="flex gap-2 mb-6">
+                      <Badge className="bg-primary/10 text-primary border-none">{selectedProject.category}</Badge>
+                      {selectedProject.details.cta && (
+                        <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-7" asChild>
+                          <a href={selectedProject.details.cta} target="_blank">View Document</a>
+                        </Button>
+                      )}
                     </div>
-                    <div>
-                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Methodology</h4>
-                      <p className="text-muted-foreground leading-relaxed">{selectedProject.details.methodology}</p>
+                    <h3 className="text-4xl font-serif font-bold mb-8">{selectedProject.title}</h3>
+                    <div className="space-y-10">
+                      <div>
+                        <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Objective</h4>
+                        <p className="text-muted-foreground leading-relaxed italic">"{selectedProject.details.objective || selectedProject.details.problem}"</p>
+                      </div>
+                      
+                      {selectedProject.details.technical && (
+                        <div>
+                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Technical Application</h4>
+                          <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{selectedProject.details.technical}</div>
+                        </div>
+                      )}
+
+                      {selectedProject.details.process && (
+                        <div>
+                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Process & Highlights</h4>
+                          <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{selectedProject.details.process}</div>
+                        </div>
+                      )}
+
+                      {selectedProject.details.highlights && !selectedProject.details.technical && !selectedProject.details.process && (
+                        <div>
+                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Highlights</h4>
+                          <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{selectedProject.details.highlights}</div>
+                        </div>
+                      )}
+
+                      {selectedProject.details.outcome && (
+                        <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10">
+                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Outcome</h4>
+                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap">{selectedProject.details.outcome}</div>
+                        </div>
+                      )}
+
+                      {!selectedProject.details.outcome && selectedProject.details.impact && (
+                        <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10">
+                          <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Impact / Conclusion</h4>
+                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap">{selectedProject.details.impact || selectedProject.details.conclusion}</div>
+                        </div>
+                      )}
                     </div>
-                    <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10">
-                      <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">The Strategic Conclusion</h4>
-                      <p className="text-foreground font-bold leading-relaxed">{selectedProject.details.conclusion}</p>
-                    </div>
+                  </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Experience Deep Dive Modal */}
+      <AnimatePresence>
+        {selectedExperience && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-background/80 backdrop-blur-md"
+            onClick={() => setSelectedExperience(null)}
+          >
+            <motion.div 
+              initial={{ scale: 0.9, y: 50, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 50, opacity: 0 }}
+              className="bg-card w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[3.5rem] shadow-2xl border border-border/50 relative p-10 md:p-16"
+              onClick={e => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setSelectedExperience(null)}
+                className="absolute top-8 right-8 p-4 bg-background/50 hover:bg-background rounded-full transition-all z-10"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              
+              <div className="flex flex-wrap gap-2 mb-8">
+                <Badge className="bg-primary/10 text-primary border-none">{selectedExperience.type}</Badge>
+                <Badge className="bg-secondary text-secondary-foreground border-none">{selectedExperience.period}</Badge>
+              </div>
+
+              <h3 className="text-4xl font-serif font-bold mb-2">{selectedExperience.role}</h3>
+              <h4 className="text-2xl font-serif italic text-primary mb-12">{selectedExperience.company}</h4>
+
+              <div className="space-y-12">
+                <div>
+                  <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-4">Objective</h4>
+                  <p className="text-xl font-medium leading-relaxed italic text-foreground/80">"{selectedExperience.details.objective}"</p>
+                </div>
+                
+                <div>
+                  <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-4">The Strategy & Highlights</h4>
+                  <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap space-y-4">
+                    {selectedExperience.details.highlights}
+                  </div>
+                </div>
+
+                <div className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10">
+                  <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-4">The Impact</h4>
+                  <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap">
+                    {selectedExperience.details.impact}
                   </div>
                 </div>
               </div>
@@ -571,7 +723,14 @@ export default function Home() {
                   <img src={selectedScienceProject.image} className="w-full h-full object-cover" alt={selectedScienceProject.title} />
                 </div>
                 <div className="p-10 md:p-16">
-                  <Badge className="bg-primary/10 text-primary border-none mb-6">{selectedScienceProject.badge}</Badge>
+                  <div className="flex gap-2 mb-6">
+                    <Badge className="bg-primary/10 text-primary border-none">{selectedScienceProject.badge}</Badge>
+                    {selectedScienceProject.details.cta && (
+                      <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-7" asChild>
+                        <a href={selectedScienceProject.details.cta} target="_blank">View Document</a>
+                      </Button>
+                    )}
+                  </div>
                   <h3 className="text-4xl font-serif font-bold mb-8">{selectedScienceProject.title}</h3>
                   <div className="space-y-10">
                     <div>
@@ -580,11 +739,11 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Program Highlights</h4>
-                      <p className="text-muted-foreground leading-relaxed">{selectedScienceProject.details.highlights}</p>
+                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{selectedScienceProject.details.highlights}</div>
                     </div>
                     <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10">
                       <h4 className="text-xs uppercase font-black tracking-[0.2em] text-primary mb-3">Impact / Outcome</h4>
-                      <p className="text-foreground font-bold leading-relaxed">{selectedScienceProject.details.impact}</p>
+                      <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap">{selectedScienceProject.details.impact}</div>
                     </div>
                   </div>
                 </div>
