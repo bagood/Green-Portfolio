@@ -109,9 +109,9 @@ export default function Home() {
         methodology: "GHG Protocol Corporate Standard, simplified emission factors for scope 1 and 2 emissions.",
         conclusion: "Identified that energy-intensive office cooling accounted for 65% of indirect emissions, suggesting targeted renewable energy procurement.",
         objective: "To demonstrate technical mastery of the GHG Protocol by calculating and classifying carbon emissions across complex industrial scenarios, specifically for the Finance and Mining sectors.",
-        technical: "Scope Classification: I accurately categorized organizational activities into the three standard reporting tiers:\nScope 1 (Direct): Diesel combustion from onsite gensets.\nScope 2 (Indirect): Purchased electricity from the national grid.\nScope 3 (Value Chain): Downstream impacts, focusing on aviation-based business travel.\nQuantification Methodology: Applied a rigorous investigative approach using the standard carbon accounting formula: Emisi GHG = Data Aktivitas * EF * Global Warming Potential\nRenewable Energy Integration: Analyzed the decarbonization impact of a 2,000 kWp solar panel system, calculating how it offsets direct grid dependence and reduces overall Scope 2 totals.",
-        highlights: "Financial Sector Simulation: Calculated the monthly footprint for a 10-branch network consuming 1,000,000 kWh and 5,000 liters of diesel.\nMining Sector Simulation: Modeled high-intensity emissions for a facility consuming 3.4 million kWh and 1 million liters of diesel per month.",
-        impact: "Analytical Accuracy: Ensured all outputs were measured in ton CO2eq, aligning with international sustainability reporting requirements.",
+        technical: "### Scope Classification\nI accurately categorized organizational activities into the three standard reporting tiers:\n- **Scope 1 (Direct)**: Diesel combustion from onsite gensets.\n- **Scope 2 (Indirect)**: Purchased electricity from the national grid.\n- **Scope 3 (Value Chain)**: Downstream impacts, focusing on aviation-based business travel.\n\n### Quantification Methodology\nApplied a rigorous investigative approach using the standard carbon accounting formula:\n*Emisi GHG = Data Aktivitas * EF * Global Warming Potential*\n\n### Renewable Energy Integration\nAnalyzed the decarbonization impact of a **2,000 kWp solar panel system**, calculating how it offsets direct grid dependence and reduces overall Scope 2 totals.",
+        highlights: "### Financial Sector Simulation\nCalculated the monthly footprint for a 10-branch network consuming *1,000,000 kWh* and *5,000 liters* of diesel.\n\n### Mining Sector Simulation\nModeled high-intensity emissions for a facility consuming *3.4 million kWh* and *1 million liters* of diesel per month.",
+        impact: "### Analytical Accuracy\nEnsured all outputs were measured in **ton CO2eq**, aligning with international sustainability reporting requirements.",
         cta: "https://docs.google.com/document/d/1gZ2QhxNor1ai8Lnx121xVPXr238DJ-8B0W6V-WxQq98/edit?usp=drive_link"
       }
     },
@@ -126,9 +126,9 @@ export default function Home() {
         problem: "Vague environmental claims in annual reports often misalign with actual project implementation, creating legal and reputational risks.",
         methodology: "GRI 2021 Disclosure Gap Analysis, verification against external sustainability commitments.",
         conclusion: "Found discrepancies in 'Net Zero' timelines where carbon offsets were prioritized over absolute reduction strategies.",
-        objective: "To analyze corporate sustainability disclosures for Bayan Resources against GRI 2021 Standards, identifying specific greenwashing risks and verifying if operational activities truly align with their stated environmental and social commitments.",
-        process: "Investigative Disclosure Audit: Performed a deep-dive audit of the 2023 Sustainability Report for Bayan Resources, scrutinizing the \"Evidence Gaps\" between their public narratives and their technical performance data.\nCompliance Screening: Evaluated the company against GRI 2 (General Disclosures) and GRI 3 (Material Topics) to detect common greenwashing red flags, such as \"Selective Disclosure\" or \"Vague Commitments\" regarding their core environmental impact.\nSector-Specific Analysis (Mining):\nThe Narrative Risk: Analyzed how Bayan Resources emphasizes social programs and land reclamation while potentially providing less granular, year-by-year data on Scope 1 and 2 emissions or direct biodiversity loss.\nAccountability Check: Investigated the presence (or absence) of time-bound, measurable targets for decarbonization, contrasting active programs with the lack of a clear, verifiable roadmap to Net Zero.\nOperational Verification: Analyzed whether community-focused programs (Social pillar) were being used as a \"green distraction\" to shift focus away from the inherent environmental risks of coal mining operations.",
-        outcome: "The project resulted in a Forensic ESG Audit Report that provided:\nRisk Identification: A technical breakdown of where corporate narratives failed to provide the quantitative evidence required by GRI 302 (Energy), GRI 304 (Biodiversity), and GRI 305 (Emissions).\nGovernance Corrective Actions: Developed a series of recommendations for how Bayan Resources to improve transparency by adopting the target-setting rigor required for investor-grade reporting.\nStrategic Compliance Roadmap: Proved that for a mining firm to be \"future-proof,\" it must move away from general CSR storytelling and toward the goal-based outcomes mandated by SEOJK 16.",
+        objective: "To analyze corporate sustainability disclosures for **Bayan Resources** against GRI 2021 Standards, identifying specific greenwashing risks and verifying if operational activities truly align with their stated environmental and social commitments.",
+        process: "### Investigative Disclosure Audit\nPerformed a deep-dive audit of the 2023 Sustainability Report for Bayan Resources, scrutinizing the **\"Evidence Gaps\"** between their public narratives and their technical performance data.\n\n### Compliance Screening\nEvaluated the company against **GRI 2** (General Disclosures) and **GRI 3** (Material Topics) to detect common greenwashing red flags, such as *\"Selective Disclosure\"* or *\"Vague Commitments\"* regarding their core environmental impact.\n\n### Sector-Specific Analysis (Mining)\n- **The Narrative Risk**: Analyzed how Bayan Resources emphasizes social programs and land reclamation while potentially providing less granular, year-by-year data on Scope 1 and 2 emissions or direct biodiversity loss.\n- **Accountability Check**: Investigated the presence (or absence) of time-bound, measurable targets for decarbonization, contrasting active programs with the lack of a clear, verifiable roadmap to Net Zero.\n- **Operational Verification**: Analyzed whether community-focused programs (Social pillar) were being used as a *\"green distraction\"* to shift focus away from the inherent environmental risks of coal mining operations.",
+        outcome: "The project resulted in a **Forensic ESG Audit Report** that provided:\n\n- **Risk Identification**: A technical breakdown of where corporate narratives failed to provide the quantitative evidence required by **GRI 302 (Energy)**, **GRI 304 (Biodiversity)**, and **GRI 305 (Emissions)**.\n- **Governance Corrective Actions**: Developed a series of recommendations for how Bayan Resources to improve transparency by adopting the target-setting rigor required for investor-grade reporting.\n- **Strategic Compliance Roadmap**: Proved that for a mining firm to be *\"future-proof,\"* it must move away from general CSR storytelling and toward the goal-based outcomes mandated by **SEOJK 16**.",
         cta: "https://drive.google.com/file/d/1WZw56we-EUp-oZzYIsnBeccswmaNp4KM/view?usp=sharing"
       }
     },
@@ -143,9 +143,9 @@ export default function Home() {
         problem: "CSR programs often operate in silos, disconnected from the core business's most significant environmental and social impacts.",
         methodology: "Double Materiality Assessment, Stakeholder Engagement Matrix.",
         conclusion: "Proposed realigning the community fund toward water sanitation projects to match the company's high local water dependency.",
-        objective: "To perform a rigorous strategic audit of a corporate campaign to evaluate its disclosure quality against GRI 2021 Materiality Topics and determine if it authentically fulfills the company’s stated sustainability commitments.",
-        process: "Investigative Program Audit: I selected SheHacks 2023, a program by Indosat Ooredoo Hutchison designed to reduce the gender gap in Indonesia’s tech industry by providing mentorship and funding to female entrepreneurs.\nGRI Materiality Mapping: I conducted a deep-dive analysis to find the technical \"address\" for this social program within the GRI 2021 framework:\nSocial (S): GRI 413 (Local Communities): Evaluated how the program functions as a community engagement tool that drives local economic inclusion.\nGovernance (G): GRI 3-3 (Management of Material Topics): Analyzed how Indosat manages \"Digital Inclusion\" as a material topic to mitigate social risk and drive sustainable growth.\nCommitment Verification: I investigated whether this program truly answered Indosat’s sustainability pillar of \"Digital Nation,\" verifying that the initiative provides the evidence required to back up their high-level ESG claims.",
-        outcome: "The result is a Strategic Alignment Matrix that provides a blueprint for authentic corporate transparency:\nVerified Social Impact: Successfully translated a \"Community Development\" campaign into a technical disclosure, proving that female empowerment is a measurable driver of ESG performance.\nGovernance Audit: Provided a clear rationale for how Indosat uses digital literacy as a tool to meet GRI 413 requirements for social responsibility to local communities.\nStrategic Roadmap: Demonstrated that the program is not just a \"cost center\" but a core component of Indosat's long-term commitment to a more inclusive digital economy in Indonesia.",
+        objective: "To perform a rigorous strategic audit of a corporate campaign to evaluate its disclosure quality against **GRI 2021 Materiality Topics** and determine if it authentically fulfills the company’s stated sustainability commitments.",
+        process: "### Investigative Program Audit\nI selected **SheHacks 2023**, a program by Indosat Ooredoo Hutchison designed to reduce the gender gap in Indonesia’s tech industry by providing mentorship and funding to female entrepreneurs.\n\n### GRI Materiality Mapping\nI conducted a deep-dive analysis to find the technical *\"address\"* for this social program within the GRI 2021 framework:\n- **Social (S): GRI 413 (Local Communities)**: Evaluated how the program functions as a community engagement tool that drives local economic inclusion.\n- **Governance (G): GRI 3-3 (Management of Material Topics)**: Analyzed how Indosat manages *\"Digital Inclusion\"* as a material topic to mitigate social risk and drive sustainable growth.\n\n### Commitment Verification\nI investigated whether this program truly answered Indosat’s sustainability pillar of **\"Digital Nation,\"** verifying that the initiative provides the evidence required to back up their high-level ESG claims.",
+        outcome: "The result is a **Strategic Alignment Matrix** that provides a blueprint for authentic corporate transparency:\n\n- **Verified Social Impact**: Successfully translated a *\"Community Development\"* campaign into a technical disclosure, proving that female empowerment is a measurable driver of ESG performance.\n- **Governance Audit**: Provided a clear rationale for how Indosat uses digital literacy as a tool to meet **GRI 413** requirements for social responsibility to local communities.\n- **Strategic Roadmap**: Demonstrated that the program is not just a *\"cost center\"* but a core component of Indosat's long-term commitment to a more inclusive digital economy in Indonesia.",
         cta: "https://drive.google.com/file/d/1kQBjhYNLxetBqvWydqxV9TLtePyljhf_/view?usp=sharing"
       }
     },
@@ -160,9 +160,9 @@ export default function Home() {
         problem: "Companies often struggle to understand how their disclosures impact their ESG ratings relative to industry peers.",
         methodology: "GRI 2021 vs. SASB Comparison Framework.",
         conclusion: "Telkomsel showed higher quantitative transparency in data privacy compared to Indosat, leading to better social pillar scores.",
-        objective: "To conduct a comparative technical audit of the sustainability reports of two leading telecommunications providers (Telkomsel and Indosat Ooredoo Hutchison) to evaluate their disclosure quality against GRI 2021 and SASB standards and determine the direct relationship between strategic reporting and global ESG Ratings.",
-        process: "Investigative Benchmarking: I performed a deep-dive analysis of the 2022–2023 disclosures for both companies, comparing how each organization manages industry-specific material risks.\nDual-Framework Mapping: I audited the reports across two critical international standards to ensure a holistic evaluation:\nGRI 2021 (Impact-Focused): Evaluated how each company reports its multi-pillar impact on the economy, environment, and people.\nSASB (Investor-Focused): Focused on the Telecommunications Services Standard, specifically auditing disclosures on Data Privacy, Data Security, and Product End-of-Life Management.\nESG Rating Correlation: I researched the external ESG scores, Sustainalytics used by IDX, for both firms to verify if superior disclosure quality—such as Telkomsel’s comprehensive Greenhouse Gas (GHG) reporting—resulted in a higher market rating.\nGap Analysis: I identified critical \"blind spots\" in reporting, such as using year-by-year benchmarks to prove genuine progress toward net-zero and social inclusion goals.",
-        outcome: "The project resulted in a Strategic Reporting Audit that provides:\nCompliance Leadership Assessment: Evidence that Telkomsel’s integration of national regulations into their corporate strategy provides a more \"future-proof\" ESG profile than Indosat’s.\nTransparency Gap Analysis: A technical breakdown showing that \"telling a story\" (Indosat) is not a substitute for \"setting a target\" (Telkomsel) when it comes to investor-grade reporting.\nGovernance Roadmap: A series of recommendations for how telecommunications firms can bridge the gap between reporting on activities and reporting on goal-based outcomes.",
+        objective: "To conduct a comparative technical audit of the sustainability reports of two leading telecommunications providers (**Telkomsel** and **Indosat Ooredoo Hutchison**) to evaluate their disclosure quality against **GRI 2021** and **SASB** standards and determine the direct relationship between strategic reporting and global **ESG Ratings**.",
+        process: "### Investigative Benchmarking\nI performed a deep-dive analysis of the 2022–2023 disclosures for both companies, comparing how each organization manages industry-specific material risks.\n\n### Dual-Framework Mapping\nI audited the reports across two critical international standards to ensure a holistic evaluation:\n- **GRI 2021 (Impact-Focused)**: Evaluated how each company reports its multi-pillar impact on the economy, environment, and people.\n- **SASB (Investor-Focused)**: Focused on the Telecommunications Services Standard, specifically auditing disclosures on *Data Privacy, Data Security, and Product End-of-Life Management*.\n\n### ESG Rating Correlation\nI researched the external ESG scores, **Sustainalytics** used by IDX, for both firms to verify if superior disclosure quality—such as Telkomsel’s comprehensive Greenhouse Gas (GHG) reporting—resulted in a higher market rating.\n\n### Gap Analysis\nI identified critical *\"blind spots\"* in reporting, such as using year-by-year benchmarks to prove genuine progress toward net-zero and social inclusion goals.",
+        outcome: "The project resulted in a **Strategic Reporting Audit** that provides:\n\n- **Compliance Leadership Assessment**: Evidence that Telkomsel’s integration of national regulations into their corporate strategy provides a more *\"future-proof\"* ESG profile than Indosat’s.\n- **Transparency Gap Analysis**: A technical breakdown showing that *\"telling a story\"* (Indosat) is not a substitute for *\"setting a target\"* (Telkomsel) when it comes to investor-grade reporting.\n- **Governance Roadmap**: A series of recommendations for how telecommunications firms can bridge the gap between reporting on activities and reporting on goal-based outcomes.",
         cta: "https://drive.google.com/file/d/1taLIHKW7spFJQ25edL6yrQIV6YcI_7Od/view?usp=sharing"
       }
     },
@@ -177,9 +177,9 @@ export default function Home() {
         problem: "Merging SEOJK 16 (local) and GRI 2021 (global) requirements into a single, cohesive reporting structure.",
         methodology: "SEOJK 16 & GRI 2021 Integration Mapping.",
         conclusion: "Streamlined data collection by 20% by creating a unified template that satisfied both regulatory and international standards.",
-        objective: "To develop a comprehensive, \"dummy\" 2025 Sustainability Report for Telkom Indonesia by performing quantitative data forensics on historical disclosures (2022–2024) and applying trend-based forecasting to ensure strategic GRI compliance.",
-        process: "Investigative Data Collection: Conducted a deep-dive analysis of Telkom’s 2024 Sustainability Report to extract multi-year quantitative performance metrics across the E, S, and G pillars.\nPredictive Trend Modeling: Used a researcher’s lens to analyze historical performance patterns and project 2025 data points, transforming a static report into a forward-looking strategic model.\nCustomized GRI Framework: Selected and implemented industry-specific GRI standards to address the material risks unique to the telecommunications sector:\nFoundational Standards: General Disclosures (GRI 2-1 to 2-5, 2-7, 2-8, 2-29) and Materiality Analysis (GRI 3-1, 3-2, 3-3).\nGovernance (G): Investigated metrics for Anti-corruption (GRI 205) and Anti-competitive Behavior (GRI 206) to ensure corporate integrity.\nEnvironmental (E): Quantified impacts for Energy (GRI 302), Emissions (GRI 305), and Waste (GRI 306).\nSocial (S): Focused on Employment (GRI 401), Training (GRI 404), Diversity (GRI 405), and the industry-critical Customer Privacy (GRI 418).\nTechnical Compliance: Bridged the gap between raw data and professional disclosure requirements, ensuring the final report structure met the transparency expectations of GRI 2021 and SEOJK 16.",
-        outcome: "The project resulted in two high-stakes technical deliverables that serve as a professional model for corporate transparency:\nConsolidated ESG Data Matrix (2022–2025): A 4-year quantitative inventory that aligns historical data with projected 2025 performance. This matrix centralizes critical KPIs, transforming hundreds of pages of fragmented reporting into a single, scannable, and audit-ready data asset.\nGRI-Compliant Transparency Blueprint: A structured Sustainability Report draft that maps corporate activities to international disclosure requirements. This deliverable proves the ability to translate complex \"Social\" and \"Governance\" data into the precise technical language required by global investors and the SEOJK 16 regulatory framework.",
+        objective: "To develop a comprehensive, **\"dummy\" 2025 Sustainability Report for Telkom Indonesia** by performing quantitative data forensics on historical disclosures (2022–2024) and applying trend-based forecasting to ensure strategic GRI compliance.",
+        process: "### Investigative Data Collection\nConducted a deep-dive analysis of Telkom’s 2024 Sustainability Report to extract multi-year quantitative performance metrics across the **E, S, and G pillars**.\n\n### Predictive Trend Modeling\nUsed a researcher’s lens to analyze historical performance patterns and project **2025 data points**, transforming a static report into a forward-looking strategic model.\n\n### Customized GRI Framework\nSelected and implemented industry-specific GRI standards to address the material risks unique to the telecommunications sector:\n- **Foundational Standards**: General Disclosures (GRI 2-1 to 2-5, 2-7, 2-8, 2-29) and Materiality Analysis (GRI 3-1, 3-2, 3-3).\n- **Governance (G)**: Investigated metrics for Anti-corruption (GRI 205) and Anti-competitive Behavior (GRI 206) to ensure corporate integrity.\n- **Environmental (E)**: Quantified impacts for Energy (GRI 302), Emissions (GRI 305), and Waste (GRI 306).\n- **Social (S)**: Focused on Employment (GRI 401), Training (GRI 404), Diversity (GRI 405), and the industry-critical Customer Privacy (GRI 418).\n\n### Technical Compliance\nBridged the gap between raw data and professional disclosure requirements, ensuring the final report structure met the transparency expectations of **GRI 2021** and **SEOJK 16**.",
+        outcome: "The project resulted in two high-stakes technical deliverables that serve as a professional model for corporate transparency:\n\n- **Consolidated ESG Data Matrix (2022–2025)**: A 4-year quantitative inventory that aligns historical data with projected 2025 performance. This matrix centralizes critical KPIs, transforming hundreds of pages of fragmented reporting into a single, scannable, and audit-ready data asset.\n- **GRI-Compliant Transparency Blueprint**: A structured Sustainability Report draft that maps corporate activities to international disclosure requirements. This deliverable proves the ability to translate complex *\"Social\"* and *\"Governance\"* data into the precise technical language required by global investors and the **SEOJK 16** regulatory framework.",
         cta: "https://docs.google.com/document/d/1w_xZMDbmiP_9XJ8Z1n0I0MyCnVTOswUMf9QOZ-_lhQg/edit?usp=drive_link"
       }
     }
@@ -193,9 +193,9 @@ export default function Home() {
       image: projectOcean,
       badge: "Oil Spill Research",
       details: {
-        objective: "To investigate an unresolved real-world marine crisis, 2019 and 2021 oil spill incidents by PT Pertamina Hulu Energi Offshore North West Java (PHE ONWJ), evaluating corporate accountability against Indonesian environmental law and researching bioremediation as a sustainable, low-toxicity alternative to traditional chemical and physical responses.",
-        highlights: "Identification of an Unresolved Crisis: Investigated the root causes of two major spills—from the July 2019 gas bubble failure at well YYA-1 to the April 2021 subsea pipeline corrosion—which together severely impacted over 12 coastal villages.\nLegal & Policy Audit: Performed a rigorous analysis of corporate responses based on Law No. 32 of 2009, focusing on Article 54 (Environmental Restoration) and Article 88 (Absolute Responsibility/Polluter Pays Principle).\nTechnical Critique: Evaluated the limitations of physical and chemical responses, identifying that the use of chemical dispersants can lead to higher toxicity levels in marine ecosystems than the crude oil itself.\nBioremediation Research: Developed a strategic alternative using a microbial consortium of Bacillus subtilis and Pseudomonas putida, capable of achieving 70–95% hydrocarbon removal within a 1–2 month timeframe.",
-        impact: "A comprehensive investigative report and technical roadmap proving that bioremediation is a viable, cost-effective, and low-impact solution for long-term industrial environmental recovery.",
+        objective: "To investigate an unresolved real-world marine crisis, **2019 and 2021 oil spill incidents by PT Pertamina Hulu Energi Offshore North West Java (PHE ONWJ)**, evaluating corporate accountability against Indonesian environmental law and researching bioremediation as a sustainable, low-toxicity alternative to traditional chemical and physical responses.",
+        highlights: "### Identification of an Unresolved Crisis\nInvestigated the root causes of two major spills—from the July 2019 gas bubble failure at well YYA-1 to the April 2021 subsea pipeline corrosion—which together severely impacted over **12 coastal villages**.\n\n### Legal & Policy Audit\nPerformed a rigorous analysis of corporate responses based on **Law No. 32 of 2009**, focusing on *Article 54 (Environmental Restoration)* and *Article 88 (Absolute Responsibility/Polluter Pays Principle)*.\n\n### Technical Critique\nEvaluated the limitations of physical and chemical responses, identifying that the use of chemical dispersants can lead to higher toxicity levels in marine ecosystems than the crude oil itself.\n\n### Bioremediation Research\nDeveloped a strategic alternative using a microbial consortium of **Bacillus subtilis** and **Pseudomonas putida**, capable of achieving **70–95% hydrocarbon removal** within a 1–2 month timeframe.",
+        impact: "A comprehensive **investigative report and technical roadmap** proving that bioremediation is a viable, cost-effective, and low-impact solution for long-term industrial environmental recovery.",
         cta: "https://drive.google.com/file/d/1uKmiWsIIQ0ePt-EbW5AsxoFKdGKGj6rc/view?usp=sharing"
       }
     },
@@ -206,9 +206,9 @@ export default function Home() {
       image: projectCarbon,
       badge: "Renewable Energy",
       details: {
-        objective: "To conduct a comprehensive investigative analysis of the 169 UN SDG targets to determine the technical and strategic alignment of bioremediation and renewable energy technologies with global sustainability goals.",
-        highlights: "Systems-Level Analysis: Evaluated each of the 17 Sustainable Development Goals to identify where technical biological processes (bioremediation) intersect with social, environmental, and economic targets.\nEvidence-Based Mapping: Synthesized findings from over 10+ academic sources (including Bala et al., 2022 and Arora, 2018) to justify the relationship between microbial technology and specific targets like food security (SDG 2) and clean water (SDG 6).\nCritical Evaluation: Beyond identifying \"green\" benefits, I applied a rigorous lens to identify \"no-relationship\" zones (such as gender parity or financial regulations), ensuring a realistic and transparent assessment of the technology’s scope.\nMulti-Pillar Integration: Analyzed the \"Social\" impact of environmental technology, such as how soil restoration directly improves agricultural productivity for small-scale farmers (Target 2.3).",
-        impact: "The result is a 169-target classified matrix that serves as a strategic reference for how bioremediation acts as a catalyst for:\nResource Security: Enhancing food safety and water accessibility through the removal of heavy metals and pollutants.\nDecarbonization: Linking phytoremediation to the production of clean biofuels, contributing to a 14% potential share of global energy demand.\nResponsible Industry: Providing a low-cost, low-energy alternative for industrial waste management and urban air quality (Target 11.6).",
+        objective: "To conduct a comprehensive investigative analysis of the **169 UN SDG targets** to determine the technical and strategic alignment of bioremediation and renewable energy technologies with global sustainability goals.",
+        highlights: "### Systems-Level Analysis\nEvaluated each of the 17 Sustainable Development Goals to identify where technical biological processes (bioremediation) intersect with **social, environmental, and economic targets**.\n\n### Evidence-Based Mapping\nSynthesized findings from over **10+ academic sources** (including *Bala et al., 2022* and *Arora, 2018*) to justify the relationship between microbial technology and specific targets like food security (**SDG 2**) and clean water (**SDG 6**).\n\n### Critical Evaluation\nBeyond identifying \"green\" benefits, I applied a rigorous lens to identify **\"no-relationship\" zones** (such as gender parity or financial regulations), ensuring a realistic and transparent assessment of the technology’s scope.\n\n### Multi-Pillar Integration\nAnalyzed the **\"Social\"** impact of environmental technology, such as how soil restoration directly improves agricultural productivity for small-scale farmers (**Target 2.3**).",
+        impact: "The result is a **169-target classified matrix** that serves as a strategic reference for how bioremediation acts as a catalyst for:\n\n- **Resource Security**: Enhancing food safety and water accessibility through the removal of heavy metals and pollutants.\n- **Decarbonization**: Linking phytoremediation to the production of clean biofuels, contributing to a **14% potential share** of global energy demand.\n- **Responsible Industry**: Providing a low-cost, low-energy alternative for industrial waste management and urban air quality (**Target 11.6**).",
         cta: "https://docs.google.com/spreadsheets/d/1am_qHhNfdAHt1lKa04R2J-6WCauwCrZykGl6GdBuGeY/edit?usp=sharing"
       }
     },
@@ -220,8 +220,8 @@ export default function Home() {
       badge: "Conservation Education",
       details: {
         objective: "To lead a high-stakes educational initiative designed to bridge the gap between biological research and community awareness through strategic large-scale coordination.",
-        highlights: "Team Governance: Directed a 50+ member multidisciplinary team, managing the end-to-end project lifecycle from initial logistics to final educational content design.\nResource Coordination: Oversaw complex registration systems, participant documentation, and venue logistics to ensure seamless execution for hundreds of stakeholders.\nContent Integration: Facilitated the curation of biological photography and imaging from the team, transforming raw field data into an engaging public exhibition focused on the Padjadjaran University Arboretum.\nQuality Assurance: Implemented a rigorous internal evaluation process to ensure all educational materials met high academic and professional standards.",
-        impact: "Large-Scale Engagement: Successfully delivered the program to 300+ participants, significantly increasing local awareness of regional biodiversity and ecological conservation.\nPerformance Excellence: Achieved an A-grade evaluation for project execution and a 93% positive feedback score from participants.\nProfessional Leadership: Demonstrated the ability to manage large human systems and complex data sets, providing a foundation for future corporate ESG coordination.",
+        highlights: "### Team Governance\nDirected a 50+ member multidisciplinary team, managing the end-to-end project lifecycle from initial logistics to final educational content design.\n\n### Resource Coordination\nOversaw complex registration systems, participant documentation, and venue logistics to ensure seamless execution for hundreds of stakeholders.\n\n### Content Integration\nFacilitated the curation of biological photography and imaging from the team, transforming raw field data into an engaging public exhibition focused on the Padjadjaran University Arboretum.\n\n### Quality Assurance\nImplemented a rigorous internal evaluation process to ensure all educational materials met high academic and professional standards.",
+        impact: "### Large-Scale Engagement\nSuccessfully delivered the program to 300+ participants, significantly increasing local awareness of regional biodiversity and ecological conservation.\n\n### Performance Excellence\nAchieved an A-grade evaluation for project execution and a 93% positive feedback score from participants.\n\n### Professional Leadership\nDemonstrated the ability to manage large human systems and complex data sets, providing a foundation for future corporate ESG coordination.",
         cta: "https://www.youtube.com/watch?v=AVgHvqpRUOA"
       }
     }
@@ -593,9 +593,15 @@ export default function Home() {
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="w-full md:w-2/5 h-48 md:h-auto relative">
-                <img src={selectedProject.image} className="w-full h-full object-cover" alt={selectedProject.title} />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:bg-gradient-to-r" />
+              <div className="w-full md:w-2/5 h-48 md:h-auto relative group overflow-hidden">
+                <a href={selectedProject.details.cta} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
+                  <img src={selectedProject.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={selectedProject.title} />
+                  <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white backdrop-blur-sm">
+                    <ExternalLink className="w-10 h-10 mb-2" />
+                    <span className="font-bold uppercase tracking-widest text-xs">Preview Project Files</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:bg-gradient-to-r" />
+                </a>
               </div>
 
               <div className="w-full md:w-3/5 p-8 md:p-16 overflow-y-auto custom-scrollbar">
@@ -606,7 +612,7 @@ export default function Home() {
                   {selectedProject.details.cta && (
                     <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-8 hover:bg-primary/5" asChild>
                       <a href={selectedProject.details.cta} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 w-3.5 h-3.5" /> View Document
+                        <ExternalLink className="mr-2 w-3.5 h-3.5" /> Open Document
                       </a>
                     </Button>
                   )}
@@ -631,8 +637,15 @@ export default function Home() {
                         <Settings className="w-5 h-5 text-primary" />
                         <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Technical Application</h4>
                       </div>
-                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-base">
-                        {selectedProject.details.technical}
+                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
+                        <div className="space-y-4">
+                          {selectedProject.details.technical.split('\n\n').map((para: string, idx: number) => {
+                            if (para.startsWith('###')) {
+                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                            }
+                            return <p key={idx}>{para}</p>;
+                          })}
+                        </div>
                       </div>
                     </section>
                   )}
@@ -643,8 +656,15 @@ export default function Home() {
                         <Search className="w-5 h-5 text-primary" />
                         <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Process & Highlights</h4>
                       </div>
-                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-base">
-                        {selectedProject.details.process}
+                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
+                        <div className="space-y-4">
+                          {selectedProject.details.process.split('\n\n').map((para: string, idx: number) => {
+                             if (para.startsWith('###')) {
+                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                            }
+                            return <p key={idx}>{para}</p>;
+                          })}
+                        </div>
                       </div>
                     </section>
                   )}
@@ -655,8 +675,15 @@ export default function Home() {
                         <Zap className="w-5 h-5 text-primary" />
                         <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Highlights</h4>
                       </div>
-                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-base">
-                        {selectedProject.details.highlights}
+                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
+                        <div className="space-y-4">
+                          {selectedProject.details.highlights.split('\n\n').map((para: string, idx: number) => {
+                             if (para.startsWith('###')) {
+                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                            }
+                            return <p key={idx}>{para}</p>;
+                          })}
+                        </div>
                       </div>
                     </section>
                   )}
@@ -668,7 +695,14 @@ export default function Home() {
                         <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Strategic Outcome</h4>
                       </div>
                       <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
-                        {selectedProject.details.outcome}
+                        <div className="space-y-4">
+                          {selectedProject.details.outcome.split('\n\n').map((para: string, idx: number) => {
+                             if (para.startsWith('###')) {
+                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                            }
+                            return <p key={idx}>{para}</p>;
+                          })}
+                        </div>
                       </div>
                     </section>
                   )}
@@ -680,7 +714,14 @@ export default function Home() {
                         <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact & Conclusion</h4>
                       </div>
                       <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
-                        {selectedProject.details.impact || selectedProject.details.conclusion}
+                        <div className="space-y-4">
+                          {(selectedProject.details.impact || selectedProject.details.conclusion).split('\n\n').map((para: string, idx: number) => {
+                             if (para.startsWith('###')) {
+                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                            }
+                            return <p key={idx}>{para}</p>;
+                          })}
+                        </div>
                       </div>
                     </section>
                   )}
@@ -796,9 +837,15 @@ export default function Home() {
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="w-full md:w-2/5 h-48 md:h-auto relative">
-                <img src={selectedScienceProject.image} className="w-full h-full object-cover" alt={selectedScienceProject.title} />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:bg-gradient-to-r" />
+              <div className="w-full md:w-2/5 h-48 md:h-auto relative group overflow-hidden">
+                <a href={selectedScienceProject.details.cta} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
+                  <img src={selectedScienceProject.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={selectedScienceProject.title} />
+                  <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white backdrop-blur-sm">
+                    <ExternalLink className="w-10 h-10 mb-2" />
+                    <span className="font-bold uppercase tracking-widest text-xs">Preview Project Files</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:bg-gradient-to-r" />
+                </a>
               </div>
 
               <div className="w-full md:w-3/5 p-8 md:p-16 overflow-y-auto custom-scrollbar">
@@ -809,7 +856,7 @@ export default function Home() {
                   {selectedScienceProject.details.cta && (
                     <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-8 hover:bg-primary/5" asChild>
                       <a href={selectedScienceProject.details.cta} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 w-3.5 h-3.5" /> View Document
+                        <ExternalLink className="mr-2 w-3.5 h-3.5" /> Open Document
                       </a>
                     </Button>
                   )}
@@ -833,8 +880,15 @@ export default function Home() {
                       <Globe className="w-5 h-5 text-primary" />
                       <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Program Highlights</h4>
                     </div>
-                    <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-base">
-                      {selectedScienceProject.details.highlights}
+                    <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
+                      <div className="space-y-4">
+                        {selectedScienceProject.details.highlights.split('\n\n').map((para: string, idx: number) => {
+                          if (para.startsWith('###')) {
+                            return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                          }
+                          return <p key={idx}>{para}</p>;
+                        })}
+                      </div>
                     </div>
                   </section>
 
@@ -844,7 +898,14 @@ export default function Home() {
                       <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact / Outcome</h4>
                     </div>
                     <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif italic">
-                      {selectedScienceProject.details.impact}
+                      <div className="space-y-4">
+                        {selectedScienceProject.details.impact.split('\n\n').map((para: string, idx: number) => {
+                          if (para.startsWith('###')) {
+                            return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                          }
+                          return <p key={idx}>{para}</p>;
+                        })}
+                      </div>
                     </div>
                   </section>
                 </div>
