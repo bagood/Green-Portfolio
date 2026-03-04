@@ -639,29 +639,37 @@ export default function Home() {
                       </div>
                       <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
                         <div className="space-y-4">
-                          {para.split('\n').map((line: string, lIdx: number) => {
-                            if (line.startsWith('- ')) {
-                              return (
-                                <div key={lIdx} className="flex gap-3 mb-2">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                  <p>{line.substring(2)}</p>
-                                </div>
-                              );
+                          {selectedProject.details.technical.split('\n\n').map((para: string, idx: number) => {
+                             if (para.startsWith('###')) {
+                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                             }
-                            // Color bold text matching the intro style
-                            const parts = line.split(/(\*\*.*?\*\*|:)/);
                             return (
-                              <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
-                                {parts.map((part, pIdx) => {
-                                  if (part.startsWith('**') && part.endsWith('**')) {
-                                    return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
+                              <div key={idx} className="space-y-2">
+                                {para.split('\n').map((line: string, lIdx: number) => {
+                                  if (line.startsWith('- ')) {
+                                    return (
+                                      <div key={lIdx} className="flex gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                        <p>{line.substring(2)}</p>
+                                      </div>
+                                    );
                                   }
-                                  if (part === ':') {
-                                    return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
-                                  }
-                                  return part;
+                                  const parts = line.split(/(\*\*.*?\*\*|:)/);
+                                  return (
+                                    <p key={lIdx} className="mb-2">
+                                      {parts.map((part, pIdx) => {
+                                        if (part.startsWith('**') && part.endsWith('**')) {
+                                          return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
+                                        }
+                                        if (part === ':') {
+                                          return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                        }
+                                        return part;
+                                      })}
+                                    </p>
+                                  );
                                 })}
-                              </p>
+                              </div>
                             );
                           })}
                         </div>
