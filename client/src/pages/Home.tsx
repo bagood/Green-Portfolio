@@ -236,9 +236,9 @@ export default function Home() {
       description: "Managed logistics and documentation for employee innovation bootcamp, achieving 4.6/5 participant satisfaction.",
       details: {
         role: "Role: B2B Project Officer",
-        objective: "Objective: To lead the governance and execution of employee innovation bootcamps, driving cross-functional engagement and internal social development through rigorous project management.",
-        highlights: "The Strategy & Highlights\nOperational Governance: Managed the end to end lifecycle of logistics, schedules, and documentation for a specialized innovation bootcamp.\nStakeholder Coordination: Facilitated internal social development and cross-functional engagement for 18 participants, ensuring seamless project flow.\nDeliverable Management: Maintained a high volume of 20+ program deliverables, ensuring every milestone met corporate quality standards.\nProactive Communication: Executed a stakeholder communication strategy that ensured transparency and alignment throughout the event execution.",
-        impact: "The Impact\nExcellence in Execution: Achieved a 4.6/5 participant satisfaction score, proving the efficacy of the event’s design and logistical management.\nOrganizational Development: Successfully fostered a collaborative environment that strengthened internal bonds and social engagement within the cohort.\nQuality Assurance: Delivered 100% of program requirements on schedule, establishing a baseline for professional B2B service delivery."
+        objective: "To lead the governance and execution of employee innovation bootcamps, driving cross-functional engagement and internal social development through rigorous project management.",
+        highlights: "### Operational Governance\nManaged the end to end lifecycle of **logistics, schedules, and documentation** for a specialized innovation bootcamp.\n\n### Stakeholder Coordination\nFacilitated internal social development and cross-functional engagement for **18 participants**, ensuring seamless project flow.\n\n### Deliverable Management\nMaintained a high volume of **20+ program deliverables**, ensuring every milestone met corporate quality standards.\n\n### Proactive Communication\nExecuted a **stakeholder communication strategy** that ensured transparency and alignment throughout the event execution.",
+        impact: "### Excellence in Execution\nAchieved a **4.6/5 participant satisfaction score**, proving the efficacy of the event’s design and logistical management.\n\n### Organizational Development\nSuccessfully fostered a **collaborative environment** that strengthened internal bonds and social engagement within the cohort.\n\n### Quality Assurance\nDelivered **100% of program requirements** on schedule, establishing a baseline for professional B2B service delivery."
       }
     },
     {
@@ -249,9 +249,9 @@ export default function Home() {
       description: "Directed company-wide innovation program for 17,000+ participants, increasing program satisfaction by 15%.",
       details: {
         role: "Role: Project Officer (Employee Innovation)",
-        objective: "Objective: To direct the end-to-end execution of a company-wide innovation program for a top-tier financial institution, ensuring strategic alignment between corporate growth and massive-scale participant engagement.",
-        highlights: "The Strategy & Highlights\nOperational Governance: Directed the management of a 17,000+ participant pool, overseeing the complex logistics of registration, data verification, and communication flows to foster a culture of corporate innovation.\nInvestigative Feedback Synthesis: Applied a researcher’s lens to analyze participant sentiment and program data, identifying friction points to optimize the user experience.\nStakeholder Liaison: Served as the primary bridge between technical innovation teams and executive leadership, optimizing vendor management and logistics for executive-level demo days.\nData-Driven Reporting: Developed comprehensive performance reports for the board of directors, translating raw engagement numbers into actionable strategic insights.",
-        impact: "The Impact\nStrategic Growth: Successfully increased overall program satisfaction by 15% through targeted improvements in communication and logistical coordination.\nScaled Impact: Managed one of the largest talent innovation programs in the Indonesian banking sector, proving the capacity to maintain rigorous standards under massive organizational scale.\nEfficiency Gains: Streamlined the documentation and verification process for thousands of concurrent users, reducing administrative bottlenecks for high-stakes deliverables."
+        objective: "To direct the end-to-end execution of a company-wide innovation program for a top-tier financial institution, ensuring strategic alignment between corporate growth and massive-scale participant engagement.",
+        highlights: "### Operational Governance\nDirected the management of a **17,000+ participant pool**, overseeing the complex logistics of registration, data verification, and communication flows to foster a culture of corporate innovation.\n\n### Investigative Feedback Synthesis\nApplied a researcher’s lens to analyze participant sentiment and program data, identifying friction points to optimize the user experience.\n\n### Stakeholder Liaison\nServed as the primary bridge between technical innovation teams and executive leadership, optimizing vendor management and logistics for executive-level demo days.\n\n### Data-Driven Reporting\nDeveloped comprehensive performance reports for the board of directors, translating raw engagement numbers into actionable strategic insights.",
+        impact: "### Strategic Growth\nSuccessfully increased overall program satisfaction by **15%** through targeted improvements in communication and logistical coordination.\n\n### Scaled Impact\nManaged one of the largest talent innovation programs in the Indonesian banking sector, proving the capacity to maintain rigorous standards under massive organizational scale.\n\n### Efficiency Gains\nStreamlined the documentation and verification process for **thousands of concurrent users**, reducing administrative bottlenecks for high-stakes deliverables."
       }
     },
     {
@@ -262,9 +262,9 @@ export default function Home() {
       description: "Directed Renewable Energy advocacy and youth awareness, building partnerships with 3 renewable energy stakeholders.",
       details: {
         role: "Role: Vice President of Branding",
-        objective: "ESG Focus: Renewable Energy Advocacy & Stakeholder Engagement\nObjective: To direct large-scale communication strategies and build strategic partnerships that accelerate renewable energy literacy and stakeholder engagement.",
-        highlights: "The Strategy & Highlights\nCross-Functional Leadership: Directed diverse, multidisciplinary teams to design and deliver large-scale renewable energy advocacy programs.\nStrategic Partnership Building: Formulated and executed a networking strategy that secured three high-value partnerships with renewable energy and youth-led stakeholders, expanding the organization’s professional ecosystem.\nDigital Infrastructure Management: Oversaw the governance of digital communication platforms to ensure consistent messaging and high-impact outreach across all stakeholder groups.\nTraining & Capacity Building: Facilitated the development of educational content designed to translate complex energy transition data into actionable insights for the community.",
-        impact: "The Impact\nMeasurable Network Expansion: Successfully expanded the organization’s total digital reach by 15% through targeted branding and engagement strategies.\nCommunity Growth: Boosted active community engagement by 30%, turning passive followers into active advocates for the energy transition.\nStakeholder Value: Delivered a professional-grade networking framework that bridged the gap between student innovators and industrial energy leaders."
+        objective: "To direct large-scale communication strategies and build strategic partnerships that accelerate renewable energy literacy and stakeholder engagement.",
+        highlights: "### Cross-Functional Leadership\nDirected diverse, multidisciplinary teams to design and deliver **large-scale renewable energy advocacy programs**.\n\n### Strategic Partnership Building\nFormulated and executed a networking strategy that secured **three high-value partnerships** with renewable energy and youth-led stakeholders, expanding the organization’s professional ecosystem.\n\n### Digital Infrastructure Management\nOversaw the governance of digital communication platforms to ensure consistent messaging and high-impact outreach across all stakeholder groups.\n\n### Training & Capacity Building\nFacilitated the development of educational content designed to translate **complex energy transition data** into actionable insights for the community.",
+        impact: "### Measurable Network Expansion\nSuccessfully expanded the organization’s total digital reach by **15%** through targeted branding and engagement strategies.\n\n### Community Growth\nBoosted active community engagement by **30%**, turning passive followers into active advocates for the energy transition.\n\n### Stakeholder Value\nDelivered a professional-grade networking framework that bridged the gap between student innovators and industrial energy leaders."
       }
     },
     {
@@ -275,9 +275,9 @@ export default function Home() {
       description: "Executed 7 student-centric training programs, reducing operational costs by 10% and improving outcomes by 20%.",
       details: {
         role: "Role: B2B Project Officer",
-        objective: "Objective: To execute large scale training programs that bridge the gap between student needs and organizational social impact goals while maximizing operational resource efficiency.",
-        highlights: "The Strategy & Highlights\nProgram Engineering: Executed 7 student-centric training programs, focusing on aligning participant development with broader social impact objectives.\nDatabase Leveraging: Utilized feedback databases to identify performance gaps and drive evidence-based program improvements.\nResource Optimization: Managed operational workflows to maximize output while maintaining high standards of educational quality.\nCross-Functional Leadership: Coordinated between diverse learning tracks to ensure a unified and consistent experience for all participants.",
-        impact: "The Impact\nFinancial Efficiency: Successfully reduced operational costs by 10% through strategic resource management and workflow optimization.\nOutcome Improvement: Improved overall participant outcomes by 20%, demonstrating the power of data-driven instructional adjustments.\nTotal Engagement: Achieved 100% participant engagement across multiple learning tracks, proving the programs' relevance and quality."
+        objective: "To execute large scale training programs that bridge the gap between student needs and organizational social impact goals while maximizing operational resource efficiency.",
+        highlights: "### Program Engineering\nExecuted **7 student-centric training programs**, focusing on aligning participant development with broader social impact objectives.\n\n### Database Leveraging\nUtilized feedback databases to identify performance gaps and drive **evidence-based program improvements**.\n\n### Resource Optimization\nManaged operational workflows to maximize output while maintaining high standards of educational quality.\n\n### Cross-Functional Leadership\nCoordinated between diverse learning tracks to ensure a **unified and consistent experience** for all participants.",
+        impact: "### Financial Efficiency\nSuccessfully reduced operational costs by **10%** through strategic resource management and workflow optimization.\n\n### Outcome Improvement\nImproved overall participant outcomes by **20%**, demonstrating the power of data-driven instructional adjustments.\n\n### Total Engagement\nAchieved **100% participant engagement** across multiple learning tracks, proving the programs' relevance and quality."
       }
     }
   ];
@@ -639,11 +639,30 @@ export default function Home() {
                       </div>
                       <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
                         <div className="space-y-4">
-                          {selectedProject.details.technical.split('\n\n').map((para: string, idx: number) => {
-                            if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                          {para.split('\n').map((line: string, lIdx: number) => {
+                            if (line.startsWith('- ')) {
+                              return (
+                                <div key={lIdx} className="flex gap-3 mb-2">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                  <p>{line.substring(2)}</p>
+                                </div>
+                              );
                             }
-                            return <p key={idx}>{para}</p>;
+                            // Color bold text matching the intro style
+                            const parts = line.split(/(\*\*.*?\*\*|:)/);
+                            return (
+                              <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
+                                {parts.map((part, pIdx) => {
+                                  if (part.startsWith('**') && part.endsWith('**')) {
+                                    return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
+                                  }
+                                  if (part === ':') {
+                                    return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                  }
+                                  return part;
+                                })}
+                              </p>
+                            );
                           })}
                         </div>
                       </div>
@@ -662,7 +681,34 @@ export default function Home() {
                              if (para.startsWith('###')) {
                               return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                             }
-                            return <p key={idx}>{para}</p>;
+                            return (
+                              <div key={idx} className="space-y-2">
+                                {para.split('\n').map((line: string, lIdx: number) => {
+                                  if (line.startsWith('- ')) {
+                                    return (
+                                      <div key={lIdx} className="flex gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                        <p>{line.substring(2)}</p>
+                                      </div>
+                                    );
+                                  }
+                                  const parts = line.split(/(\*\*.*?\*\*|:)/);
+                                  return (
+                                    <p key={lIdx} className="mb-2">
+                                      {parts.map((part, pIdx) => {
+                                        if (part.startsWith('**') && part.endsWith('**')) {
+                                          return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
+                                        }
+                                        if (part === ':') {
+                                          return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                        }
+                                        return part;
+                                      })}
+                                    </p>
+                                  );
+                                })}
+                              </div>
+                            );
                           })}
                         </div>
                       </div>
@@ -681,7 +727,26 @@ export default function Home() {
                              if (para.startsWith('###')) {
                               return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                             }
-                            return <p key={idx}>{para}</p>;
+                            return (
+                              <div key={idx} className="space-y-2">
+                                {para.split('\n').map((line: string, lIdx: number) => {
+                                  const parts = line.split(/(\*\*.*?\*\*|\*.*?\*)/);
+                                  return (
+                                    <p key={lIdx}>
+                                      {parts.map((part, pIdx) => {
+                                        if (part.startsWith('**') && part.endsWith('**')) {
+                                          return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
+                                        }
+                                        if (part.startsWith('*') && part.endsWith('*')) {
+                                          return <span key={pIdx} className="italic text-primary/80">{part.slice(1, -1)}</span>;
+                                        }
+                                        return part;
+                                      })}
+                                    </p>
+                                  );
+                                })}
+                              </div>
+                            );
                           })}
                         </div>
                       </div>
@@ -698,9 +763,36 @@ export default function Home() {
                         <div className="space-y-4">
                           {selectedProject.details.outcome.split('\n\n').map((para: string, idx: number) => {
                              if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
                             }
-                            return <p key={idx}>{para}</p>;
+                            return (
+                              <div key={idx} className="space-y-4">
+                                {para.split('\n').map((line: string, lIdx: number) => {
+                                  if (line.startsWith('- ')) {
+                                    return (
+                                      <div key={lIdx} className="flex gap-4 items-start py-1">
+                                        <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0 shadow-sm shadow-primary/20" />
+                                        <p className="flex-1">{line.substring(2)}</p>
+                                      </div>
+                                    );
+                                  }
+                                  const parts = line.split(/(\*\*.*?\*\*|:)/);
+                                  return (
+                                    <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
+                                      {parts.map((part, pIdx) => {
+                                        if (part.startsWith('**') && part.endsWith('**')) {
+                                          return <span key={pIdx} className="text-primary underline decoration-primary/30 underline-offset-4">{part.slice(2, -2)}</span>;
+                                        }
+                                        if (part === ':') {
+                                          return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                        }
+                                        return part;
+                                      })}
+                                    </p>
+                                  );
+                                })}
+                              </div>
+                            );
                           })}
                         </div>
                       </div>
@@ -717,9 +809,36 @@ export default function Home() {
                         <div className="space-y-4">
                           {(selectedProject.details.impact || selectedProject.details.conclusion).split('\n\n').map((para: string, idx: number) => {
                              if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
                             }
-                            return <p key={idx}>{para}</p>;
+                            return (
+                              <div key={idx} className="space-y-4">
+                                {para.split('\n').map((line: string, lIdx: number) => {
+                                  if (line.startsWith('- ')) {
+                                    return (
+                                      <div key={lIdx} className="flex gap-4 items-start py-1">
+                                        <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0 shadow-sm shadow-primary/20" />
+                                        <p className="flex-1">{line.substring(2)}</p>
+                                      </div>
+                                    );
+                                  }
+                                  const parts = line.split(/(\*\*.*?\*\*|:)/);
+                                  return (
+                                    <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
+                                      {parts.map((part, pIdx) => {
+                                        if (part.startsWith('**') && part.endsWith('**')) {
+                                          return <span key={pIdx} className="text-primary underline decoration-primary/30 underline-offset-4">{part.slice(2, -2)}</span>;
+                                        }
+                                        if (part === ':') {
+                                          return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                        }
+                                        return part;
+                                      })}
+                                    </p>
+                                  );
+                                })}
+                              </div>
+                            );
                           })}
                         </div>
                       </div>
@@ -788,7 +907,24 @@ export default function Home() {
                       <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Execution & Highlights</h4>
                     </div>
                     <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-base md:text-lg space-y-6">
-                      {selectedExperience.details.highlights}
+                      <div className="space-y-4">
+                        {selectedExperience.details.highlights.split('\n').map((line: string, lIdx: number) => {
+                          const parts = line.split(/(\*\*.*?\*\*|:)/);
+                          return (
+                            <p key={lIdx}>
+                              {parts.map((part, pIdx) => {
+                                if (part.startsWith('**') && part.endsWith('**')) {
+                                  return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
+                                }
+                                if (part === ':') {
+                                  return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                }
+                                return part;
+                              })}
+                            </p>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
 
@@ -802,7 +938,24 @@ export default function Home() {
                         <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Impact</h4>
                       </div>
                       <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-xl md:text-2xl font-serif italic">
-                        {selectedExperience.details.impact}
+                        <div className="space-y-4">
+                          {selectedExperience.details.impact.split('\n').map((line: string, lIdx: number) => {
+                            const parts = line.split(/(\*\*.*?\*\*|:)/);
+                            return (
+                              <p key={lIdx}>
+                                {parts.map((part, pIdx) => {
+                                  if (part.startsWith('**') && part.endsWith('**')) {
+                                    return <span key={pIdx} className="text-primary underline decoration-primary/30 underline-offset-4">{part.slice(2, -2)}</span>;
+                                  }
+                                  if (part === ':') {
+                                    return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                  }
+                                  return part;
+                                })}
+                              </p>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -886,7 +1039,34 @@ export default function Home() {
                           if (para.startsWith('###')) {
                             return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                           }
-                          return <p key={idx}>{para}</p>;
+                          return (
+                            <div key={idx} className="space-y-2">
+                              {para.split('\n').map((line: string, lIdx: number) => {
+                                if (line.startsWith('- ')) {
+                                  return (
+                                    <div key={lIdx} className="flex gap-3">
+                                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                      <p>{line.substring(2)}</p>
+                                    </div>
+                                  );
+                                }
+                                const parts = line.split(/(\*\*.*?\*\*|:)/);
+                                return (
+                                  <p key={lIdx}>
+                                    {parts.map((part, pIdx) => {
+                                      if (part.startsWith('**') && part.endsWith('**')) {
+                                        return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
+                                      }
+                                      if (part === ':') {
+                                        return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                      }
+                                      return part;
+                                    })}
+                                  </p>
+                                );
+                              })}
+                            </div>
+                          );
                         })}
                       </div>
                     </div>
@@ -903,7 +1083,34 @@ export default function Home() {
                           if (para.startsWith('###')) {
                             return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                           }
-                          return <p key={idx}>{para}</p>;
+                          return (
+                            <div key={idx} className="space-y-4">
+                              {para.split('\n').map((line: string, lIdx: number) => {
+                                if (line.startsWith('- ')) {
+                                  return (
+                                    <div key={lIdx} className="flex gap-4 items-start py-1">
+                                      <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0" />
+                                      <p className="flex-1">{line.substring(2)}</p>
+                                    </div>
+                                  );
+                                }
+                                const parts = line.split(/(\*\*.*?\*\*|:)/);
+                                return (
+                                  <p key={lIdx}>
+                                    {parts.map((part, pIdx) => {
+                                      if (part.startsWith('**') && part.endsWith('**')) {
+                                        return <span key={pIdx} className="text-primary underline decoration-primary/30 underline-offset-4">{part.slice(2, -2)}</span>;
+                                      }
+                                      if (part === ':') {
+                                        return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                      }
+                                      return part;
+                                    })}
+                                  </p>
+                                );
+                              })}
+                            </div>
+                          );
                         })}
                       </div>
                     </div>
