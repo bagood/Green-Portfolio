@@ -723,15 +723,7 @@ export default function Home() {
                                   const parts = line.split(/(\*\*.*?\*\*|\*.*?\*)/);
                                   return (
                                     <p key={lIdx}>
-                                      {parts.map((part, pIdx) => {
-                                        if (part.startsWith('**') && part.endsWith('**')) {
-                                          return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
-                                        }
-                                        if (part.startsWith('*') && part.endsWith('*')) {
-                                          return <span key={pIdx} className="italic text-primary/80">{part.slice(1, -1)}</span>;
-                                        }
-                                        return part;
-                                      })}
+                                      {line.replace(/\*\*/g, '').replace(/\*/g, '')}
                                     </p>
                                   );
                                 })}
@@ -762,22 +754,13 @@ export default function Home() {
                                     return (
                                       <div key={lIdx} className="flex gap-4 items-start py-1">
                                         <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0 shadow-sm shadow-primary/20" />
-                                        <p className="flex-1">{line.substring(2)}</p>
+                                        <p className="flex-1">{line.substring(2).replace(/\*\*/g, '').replace(/\*/g, '')}</p>
                                       </div>
                                     );
                                   }
-                                  const parts = line.split(/(\*\*.*?\*\*|:)/);
                                   return (
                                     <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
-                                      {parts.map((part, pIdx) => {
-                                        if (part.startsWith('**') && part.endsWith('**')) {
-                                          return <span key={pIdx} className="text-primary underline decoration-primary/30 underline-offset-4">{part.slice(2, -2)}</span>;
-                                        }
-                                        if (part === ':') {
-                                          return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
-                                        }
-                                        return part;
-                                      })}
+                                      {line.replace(/\*\*/g, '').replace(/\*/g, '')}
                                     </p>
                                   );
                                 })}
