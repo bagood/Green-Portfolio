@@ -296,9 +296,9 @@ export default function Home() {
               { id: "about", label: "Home" },
               { id: "intro", label: "About" },
               { id: "skills", label: "Expertise" },
-              { id: "projects", label: "ESG Gallery" },
-              { id: "science", label: "Science" },
-              { id: "journey", label: "Journey" },
+              { id: "projects", label: "ESG Projects" },
+              { id: "science", label: "RESEARCH" },
+              { id: "journey", label: "PROFESSIONAL JOURNEY" },
               { id: "contact", label: "Contact" }
             ].map(item => (
               <a 
@@ -331,7 +331,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-6">
               <Button size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 h-16 px-10 text-lg font-bold" asChild>
-                <a href="#projects">Discover ESG Gallery</a>
+                <a href="#projects">Discover ESG Projects</a>
               </Button>
               <div className="flex items-center gap-4 text-muted-foreground font-bold">
                 <div className="w-12 h-px bg-border" />
