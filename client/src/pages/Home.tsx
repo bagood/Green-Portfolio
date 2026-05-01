@@ -459,7 +459,7 @@ export default function Home() {
                       {project.category}
                     </Badge>
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
                     View Case Study <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -525,7 +525,7 @@ export default function Home() {
                           {item.badge}
                         </Badge>
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
                         View Details <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
@@ -591,7 +591,7 @@ export default function Home() {
                           {exp.type}
                         </Badge>
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
                         View Details <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
