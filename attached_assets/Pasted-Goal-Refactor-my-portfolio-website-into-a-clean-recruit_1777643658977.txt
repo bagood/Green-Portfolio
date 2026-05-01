@@ -1,0 +1,203 @@
+Goal:
+Refactor my portfolio website into a clean, recruiter-friendly ESG portfolio that is easy to scan, visually consistent, and conversion-focused.
+
+🎯 1. HOMEPAGE (HERO SECTION)
+
+Replace current hero with:
+
+Headline:
+Turning Sustainability Data into Strategic Impact.
+
+Subtext:
+Biology-trained researcher translating complex ESG data into actionable insights, scalable programs, and real-world outcomes.
+
+CTA Buttons:
+
+Explore My Work
+Start a Conversation
+
+Remove:
+
+Long paragraphs
+Generic wording like “Decoding sustainability”
+🎯 2. ABOUT SECTION (REFINED COPY)
+
+Replace About content with:
+
+Hi, I’m Novia Amanda.
+
+I work at the intersection of science, sustainability, and strategy—translating complex environmental data into actionable ESG insights and scalable impact.
+
+With a background in Biology, I bring a rigorous, investigative approach to analyzing complex systems. I connect data to real-world decisions, identifying risks, opportunities, and pathways for sustainable growth.
+
+Beyond research, I’ve led initiatives reaching 17,000+ beneficiaries, turning insights into programs that create measurable impact.
+
+I bridge research and execution—so sustainability strategies don’t just exist, but work in practice.
+
+Button:
+Explore My Work
+
+🎯 3. CAPABILITIES & EXPERIENCE SECTION
+Section Header:
+
+Capabilities & Experience
+I turn analysis, research, and strategy into measurable sustainability impact.
+
+Core Skills (single line, not a full section):
+
+ESG Analysis & Reporting (GRI, SASB, SEOJK 16) • Carbon Accounting (GHG Inventory) • Materiality Assessment • Environmental Systems Analysis • Project & Stakeholder Management • Data Analysis & Reporting • Sustainability Strategy Execution
+
+🔹 STRUCTURE (3 SECTIONS)
+01 — ESG & Sustainability Analysis
+
+Intro:
+Analyzing ESG risks, performance, and disclosures to drive better decisions.
+
+Projects:
+
+Carbon Accounting & GHG Inventory
+Greenwashing Risk & Compliance
+Strategic Program Alignment
+Sustainability Reporting Benchmarking
+02 — Scientific Research & Environmental Systems
+
+Intro:
+Applying scientific rigor to understand environmental systems and inform sustainability decisions.
+
+Projects:
+
+Oil Spill Policy Documentation
+SDGs Data Matrix
+Biological Exhibition
+03 — Strategy & Impact Execution
+
+Intro:
+Turning insights into programs that deliver measurable social and organizational impact.
+
+Experience:
+
+B2B Project Officer — Inco Academy
+Employee Innovation Project Officer — BenihBaik
+Vice President of Branding — Student Energy
+B2B Project Officer — Inco Academy (Earlier Role)
+🎨 4. UI/UX SYSTEM
+General Rules:
+Use consistent card design across ALL sections
+Do NOT create separate pages for each section
+Keep everything on ONE scrollable page
+Layout:
+Desktop: 3-column grid
+Tablet: 2-column
+Mobile: 1-column
+Card Design:
+Rounded corners (16–20px)
+Soft shadow
+Tags (skills) at bottom
+Tags (use general, not detailed):
+
+Examples:
+
+ESG Analysis
+Data
+Strategy
+Research
+Project Management
+Stakeholder Engagement
+⚡ 5. INTERACTION MODEL (IMPORTANT)
+Use: “Preview + Expand” (NOT accordion, NOT separate pages)
+ESG section → fully visible by default
+Other sections → show 2–3 cards only
+
+Add button:
+View More →
+
+On click:
+
+Expand inline (300–400ms animation)
+Reveal all cards
+Change button to:
+View Less ↑
+Hover Interactions:
+
+Cards:
+
+Lift slightly (translateY -4px)
+Shadow increases
+Title color slightly darker
+
+Buttons:
+
+Arrow moves slightly right
+🧭 6. NAVBAR
+Structure:
+
+Left:
+Novia Amanda
+
+Right:
+
+Home
+About
+Capabilities & Experience
+Contact
+
+Actions:
+
+Start a Conversation (primary button)
+LinkedIn icon
+Email icon
+Remove:
+Multiple large buttons
+Long labels like “Send Email”
+📩 7. CONTACT SECTION (HIGH PRIORITY)
+Layout:
+
+Two-column layout
+
+LEFT:
+Headline + CTA
+
+RIGHT:
+Contact info card
+
+Content:
+
+Headline:
+Let’s Turn Sustainability Insights into Impact.
+
+Subtext:
+Open to opportunities in ESG, sustainability strategy, research, and impact-driven project management.
+
+Primary CTA:
+
+Start a Conversation
+→ opens email (mailto)
+
+Secondary:
+Email Me
+LinkedIn
+Download CV
+Footer note:
+
+I typically respond within 1–2 days.
+
+🎯 8. DESIGN PRINCIPLES
+Keep UI minimal, clean, and professional
+Avoid clutter and long text blocks
+Prioritize scannability
+Emphasize ESG section slightly more than others
+Maintain consistent spacing and typography
+🚫 DO NOT:
+Create separate pages for each capability section
+Use full accordion (hides content)
+Overuse animations
+Add long paragraphs
+Use generic phrases
+✅ FINAL GOAL
+
+The website should feel like:
+
+Easy to scan in under 10 seconds
+Clear value proposition
+Strong balance of analysis, research, and execution
+Professional and recruiter-friendly
