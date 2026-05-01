@@ -31,7 +31,7 @@ import heroBg from "@/assets/images/hero-bg.jpg";
 import projectCarbon from "@/assets/images/project-carbon.jpg";
 import projectOcean from "@/assets/images/project-ocean.jpg";
 import projectReport from "@/assets/images/project-report.jpg";
-import profileImg from "@assets/IMG_0106_1772308375318.JPG";
+import profileImg from "@/assets/images/profile.jpg";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
@@ -47,7 +47,7 @@ export default function Home() {
   const fadeIn = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.8 }
   };
 
   const staggerContainer = {
@@ -414,9 +414,11 @@ export default function Home() {
             ))}
           </div>
         </motion.div>
+      </section>
+
       {/* Engagement Gallery (ESG Projects) */}
-      <section id="projects" className="py-32 bg-primary/5">
-        <div className="container mx-auto px-6">
+      <section id="projects" className="pt-10">
+        <div className="container mx-auto">
           <motion.div {...fadeIn} className="mb-24 text-center">
             <h2 className="text-6xl font-serif font-bold mb-6 italic text-primary">ESG Project Portfolio.</h2>
             <div className="w-40 h-1 bg-primary mx-auto mb-8 rounded-full" />
