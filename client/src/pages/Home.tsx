@@ -419,11 +419,7 @@ export default function Home() {
       {/* Engagement Gallery (ESG Projects) */}
       <section id="projects" className="pt-10">
         <div className="container mx-auto">
-          <motion.div {...fadeIn} className="mb-24 text-center">
-            <h2 className="text-6xl font-serif font-bold mb-6 italic text-primary">ESG Project Portfolio.</h2>
-            <div className="w-40 h-1 bg-primary mx-auto mb-8 rounded-full" />
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">A collection of practical applications in carbon accounting, GRI/SASB compliance, and sustainability reporting developed during the Rise Social ESG Bootcamp.</p>
-          </motion.div>
+          
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="md:col-span-2 lg:col-span-3 mb-10">
