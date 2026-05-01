@@ -297,8 +297,7 @@ export default function Home() {
             {[
               { id: "about", label: "Home" },
               { id: "intro", label: "About" },
-              { id: "skills", label: "Capabilities & Experience" },
-              { id: "contact", label: "Contact" }
+              { id: "skills", label: "Capabilities & Experience" }
             ].map(item => (
               <a 
                 key={item.id}
@@ -404,8 +403,8 @@ export default function Home() {
         </div>
       </section>
       {/* Capabilities & Experience Section */}
-      <section id="skills" className="py-32 container mx-auto px-6">
-        <motion.div {...fadeIn} className="text-center mb-24">
+      <section id="skills" className="pt-32 container mx-auto px-6">
+        <motion.div {...fadeIn} className="text-center mb-16">
           <h2 className="text-5xl font-serif font-bold mb-6 italic">Capabilities & Experience.</h2>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto mb-8">I turn analysis, research, and strategy into measurable sustainability impact.</p>
           <div className="flex flex-wrap justify-center gap-3">
@@ -418,37 +417,51 @@ export default function Home() {
 
       {/* Engagement Gallery (ESG Projects) */}
       <section id="projects" className="pt-10">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-6">
           
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div className="md:col-span-2 lg:col-span-3 mb-10">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-px bg-primary" />
-              <h3 className="text-sm font-bold tracking-[0.2em] uppercase text-primary">01 — ESG & Sustainability Analysis</h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="md:col-span-2 lg:col-span-3 mb-6">
+            <div className="flex items-center justify-between border-b border-border/50 pb-4">
+              <div className="flex items-center gap-4">
+                <h3 className="text-xl font-bold font-serif text-primary">01</h3>
+                <h3 className="text-xl font-bold text-foreground">ESG & Sustainability Analysis</h3>
+              </div>
             </div>
-            <p className="text-2xl font-serif italic text-muted-foreground">Analyzing ESG risks, performance, and disclosures to drive better decisions.</p>
+            <p className="text-sm mt-4 text-muted-foreground">Analyzing ESG risks, performance, and disclosures to drive better decisions.</p>
           </div>
           
           {bootcampProjects.map((project, idx) => (
             <motion.div 
               key={idx} 
-              {...fadeIn} 
-              whileHover={{ y: -4 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ y: -8, scale: 1.02 }}
               onClick={() => setSelectedProject(project)}
-              className="group bg-card rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer border border-border/50"
+              className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full"
             >
-              <div className="p-8">
-                <div className="flex items-center gap-3 text-primary mb-6">
-                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              <div className="h-40 overflow-hidden relative">
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
+              </div>
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="flex items-center gap-2 text-primary mb-3">
+                  <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                     {project.icon}
                   </div>
                 </div>
-                <h4 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors min-h-[3.5rem] leading-tight">{project.title}</h4>
-                <div className="flex flex-wrap gap-2 mt-8">
-                  <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-xs font-medium px-3 py-1">
-                    {project.category}
-                  </Badge>
+                <h4 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors leading-tight">{project.title}</h4>
+                <p className="text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{project.description}</p>
+                <div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[10px] font-medium px-2.5 py-0.5">
+                      {project.category}
+                    </Badge>
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    View Case Study <ArrowRight className="w-3 h-3" />
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -456,175 +469,193 @@ export default function Home() {
         </div>
         </div>
       </section>
-      {/* Science-Driven Sustainability Section */}
-      <section id="science" className="py-32 relative">
-        <div className="container mx-auto px-6">
-          <motion.div {...fadeIn} className="flex flex-col md:flex-row items-end justify-between gap-8 mb-24">
-            <div className="max-w-2xl">
-              <h2 className="text-6xl font-serif font-bold mb-6">Science-Driven <br /><span className="text-primary italic">Sustainability.</span></h2>
-              <div className="w-20 h-1 bg-primary rounded-full mb-8" />
-              <p className="text-xl text-muted-foreground leading-relaxed italic">My biology background provides the scientific ground-truth that makes corporate sustainability strategy credible and impactful.</p>
-            </div>
-          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 relative">
-            <div className="md:col-span-2 lg:col-span-3 mb-10">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-px bg-primary" />
-                <h3 className="text-sm font-bold tracking-[0.2em] uppercase text-primary">02 — Scientific Research & Environmental Systems</h3>
+      {/* Science-Driven Sustainability Section */}
+      <section id="science" className="pt-20 pb-10 relative">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+            <div className="md:col-span-2 lg:col-span-3 mb-6">
+              <div className="flex items-center justify-between border-b border-border/50 pb-4">
+                <div className="flex items-center gap-4">
+                  <h3 className="text-xl font-bold font-serif text-primary">02</h3>
+                  <h3 className="text-xl font-bold text-foreground">Scientific Research & Environmental Systems</h3>
+                </div>
+                {scienceProjects.length > 3 && (
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    onClick={() => setExpandedScience(!expandedScience)}
+                    className="text-xs font-bold hover:bg-primary/5 rounded-full"
+                  >
+                    {expandedScience ? "View Less" : "View More"} <ChevronRight className={`w-3 h-3 ml-1 transition-transform ${expandedScience ? "-rotate-90" : ""}`} />
+                  </Button>
+                )}
               </div>
-              <p className="text-2xl font-serif italic text-muted-foreground">Applying scientific rigor to understand environmental systems and inform sustainability decisions.</p>
+              <p className="text-sm mt-4 text-muted-foreground">Applying scientific rigor to understand environmental systems and inform sustainability decisions.</p>
             </div>
             
             <AnimatePresence>
               {(expandedScience ? scienceProjects : scienceProjects.slice(0, 3)).map((item, idx) => (
                 <motion.div 
                   key={idx}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.4 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
                   onClick={() => setSelectedScienceProject(item)}
-                  whileHover={{ y: -4 }}
-                  className="group bg-card rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer border border-border/50"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full"
                 >
-                  <div className="p-8">
-                    <div className="flex items-center gap-3 text-primary mb-6">
-                      <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <Globe className="w-6 h-6" />
+                  <div className="h-40 overflow-hidden relative">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center gap-2 text-primary mb-3">
+                      <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <Globe className="w-4 h-4" />
                       </div>
                     </div>
-                    <h4 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors min-h-[3.5rem] leading-tight">{item.title}</h4>
-                    <div className="flex flex-wrap gap-2 mt-8">
-                      <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-xs font-medium px-3 py-1">
-                        {item.badge}
-                      </Badge>
+                    <h4 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors leading-tight">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{item.description}</p>
+                    <div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[10px] font-medium px-2.5 py-0.5">
+                          {item.badge}
+                        </Badge>
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        View Details <ArrowRight className="w-3 h-3" />
+                      </span>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </AnimatePresence>
-            
-            {scienceProjects.length > 3 && (
-              <div className="col-span-full flex justify-center mt-8">
-                <Button 
-                  variant="ghost" 
-                  onClick={() => setExpandedScience(!expandedScience)}
-                  className="text-primary font-bold hover:bg-primary/5 rounded-full px-6"
-                >
-                  {expandedScience ? "View Less ↑" : "View More →"}
-                </Button>
-              </div>
-            )}
           </div>
         </div>
       </section>
+
       {/* Professional Journey & Social Impact (Centered Timeline) */}
-      <section id="journey" className="py-32 bg-background relative overflow-hidden">
+      <section id="journey" className="pt-10 pb-32 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 relative">
-            <div className="md:col-span-2 lg:col-span-3 mb-10">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-px bg-primary" />
-                <h3 className="text-sm font-bold tracking-[0.2em] uppercase text-primary">03 — Strategy & Impact Execution</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            <div className="md:col-span-2 lg:col-span-4 mb-6">
+              <div className="flex items-center justify-between border-b border-border/50 pb-4">
+                <div className="flex items-center gap-4">
+                  <h3 className="text-xl font-bold font-serif text-primary">03</h3>
+                  <h3 className="text-xl font-bold text-foreground">Strategy & Impact Execution</h3>
+                </div>
+                {combinedJourney.length > 4 && (
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    onClick={() => setExpandedJourney(!expandedJourney)}
+                    className="text-xs font-bold hover:bg-primary/5 rounded-full"
+                  >
+                    {expandedJourney ? "View Less" : "View More"} <ChevronRight className={`w-3 h-3 ml-1 transition-transform ${expandedJourney ? "-rotate-90" : ""}`} />
+                  </Button>
+                )}
               </div>
-              <p className="text-2xl font-serif italic text-muted-foreground">Turning insights into programs that deliver measurable social and organizational impact.</p>
+              <p className="text-sm mt-4 text-muted-foreground">Turning insights into programs that deliver measurable social and organizational impact.</p>
             </div>
             
             <AnimatePresence>
-              {(expandedJourney ? combinedJourney : combinedJourney.slice(0, 3)).map((exp, idx) => (
+              {(expandedJourney ? combinedJourney : combinedJourney.slice(0, 4)).map((exp, idx) => (
                 <motion.div 
                   key={idx}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.4 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
                   onClick={() => setSelectedExperience(exp)}
-                  whileHover={{ y: -4 }}
-                  className="group bg-card rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer border border-border/50"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full"
                 >
-                  <div className="p-8">
-                    <div className="flex items-center gap-3 text-primary mb-6">
-                      <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <Zap className="w-6 h-6" />
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center gap-2 text-primary mb-4">
+                      <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <Zap className="w-4 h-4" />
                       </div>
+                      <span className="text-xs font-bold tracking-widest uppercase text-muted-foreground ml-auto">{exp.period}</span>
                     </div>
-                    <h4 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors min-h-[3.5rem] leading-tight">{exp.role}</h4>
-                    <p className="text-sm font-serif italic text-muted-foreground mb-6">{exp.company}</p>
-                    <div className="flex flex-wrap gap-2 mt-8">
-                      <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-xs font-medium px-3 py-1">
-                        {exp.type}
-                      </Badge>
+                    <h4 className="text-base font-bold mb-1 group-hover:text-primary transition-colors leading-tight">{exp.role}</h4>
+                    <p className="text-sm font-serif italic text-muted-foreground mb-4">{exp.company}</p>
+                    <p className="text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{exp.description}</p>
+                    <div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[10px] font-medium px-2.5 py-0.5">
+                          {exp.type}
+                        </Badge>
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        View Details <ArrowRight className="w-3 h-3" />
+                      </span>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </AnimatePresence>
-            
-            {combinedJourney.length > 3 && (
-              <div className="col-span-full flex justify-center mt-8">
-                <Button 
-                  variant="ghost" 
-                  onClick={() => setExpandedJourney(!expandedJourney)}
-                  className="text-primary font-bold hover:bg-primary/5 rounded-full px-6"
-                >
-                  {expandedJourney ? "View Less ↑" : "View More →"}
-                </Button>
-              </div>
-            )}
           </div>
         </div>
       </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-32 container mx-auto px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <motion.div {...fadeIn}>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Let's Turn Sustainability Insights <br /><span className="text-primary italic">into Impact.</span></h2>
-            <p className="text-xl text-muted-foreground mb-12">Open to opportunities in ESG, sustainability strategy, research, and impact-driven project management.</p>
-            <div className="space-y-6">
-              <Button size="lg" className="w-full sm:w-auto rounded-full bg-primary h-16 px-8 text-lg font-bold" asChild>
-                <a href="mailto:noviamnda09@gmail.com">Start a Conversation</a>
-              </Button>
-              <div className="flex items-center gap-4 pt-4">
-                <a href="mailto:noviamnda09@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
-                  <Mail className="w-5 h-5" /> Email Me
-                </a>
-                <div className="w-1 h-1 rounded-full bg-border" />
-                <a href="https://linkedin.com/in/novia-amanda" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
-                  <Linkedin className="w-5 h-5" /> LinkedIn
-                </a>
-                <div className="w-1 h-1 rounded-full bg-border" />
-                <a href="https://docs.google.com/document/d/1dShDcLryJxTyye3mo5ZwpyfmGmqnxxPj/edit?usp=sharing&ouid=113258424421884384056&rtpof=true&sd=true" target="_blank" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
-                  <Download className="w-5 h-5" /> Download CV
-                </a>
-              </div>
-              <p className="text-sm text-muted-foreground pt-8 italic">I typically respond within 1–2 days.</p>
-            </div>
-          </motion.div>
-          <motion.div {...fadeIn} className="bg-card p-10 rounded-[3rem] border border-border/50 shadow-sm">
-             <div className="flex flex-col gap-8">
-               <div className="flex items-start gap-4">
-                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                   <Mail className="w-5 h-5" />
-                 </div>
-                 <div>
-                   <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Direct Email</p>
-                   <p className="text-lg font-bold">noviamnda09@gmail.com</p>
-                 </div>
+      <section id="contact" className="py-32 bg-secondary/30 relative border-t border-border/50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Let's Turn Sustainability Insights <br /><span className="text-primary italic">into Impact.</span></h2>
+              <p className="text-xl text-muted-foreground mb-8">Open to opportunities in ESG, sustainability strategy, research, and impact-driven project management.</p>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-background p-8 md:p-10 rounded-3xl border border-border shadow-lg"
+            >
+               <div className="flex flex-col gap-6">
+                 <a href="mailto:noviamnda09@gmail.com" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
+                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
+                     <Mail className="w-5 h-5" />
+                   </div>
+                   <div>
+                     <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Direct Email</p>
+                     <p className="text-lg font-bold group-hover:text-primary transition-colors">noviamnda09@gmail.com</p>
+                   </div>
+                 </a>
+                 <div className="w-full h-px bg-border/50" />
+                 <a href="https://linkedin.com/in/novia-amanda" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
+                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
+                     <Linkedin className="w-5 h-5" />
+                   </div>
+                   <div>
+                     <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Professional Network</p>
+                     <p className="text-lg font-bold group-hover:text-primary transition-colors">in/novia-amanda</p>
+                   </div>
+                 </a>
+                 <div className="w-full h-px bg-border/50" />
+                 <a href="https://docs.google.com/document/d/1dShDcLryJxTyye3mo5ZwpyfmGmqnxxPj/edit?usp=sharing&ouid=113258424421884384056&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
+                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
+                     <Download className="w-5 h-5" />
+                   </div>
+                   <div>
+                     <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Curriculum Vitae</p>
+                     <p className="text-lg font-bold group-hover:text-primary transition-colors">Download CV</p>
+                   </div>
+                 </a>
                </div>
-               <div className="w-full h-px bg-border/50" />
-               <div className="flex items-start gap-4">
-                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                   <Linkedin className="w-5 h-5" />
-                 </div>
-                 <div>
-                   <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Professional Network</p>
-                   <p className="text-lg font-bold">in/novia-amanda</p>
-                 </div>
-               </div>
-             </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
       {/* Project Modal */}
