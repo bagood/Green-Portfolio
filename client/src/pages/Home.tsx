@@ -506,22 +506,22 @@ export default function Home() {
               <motion.div 
                 initial={false}
                 animate={{ 
-                  backgroundColor: activeCluster === "01" ? "transparent" : "hsl(var(--secondary)/0.3)",
+                  backgroundColor: "hsl(var(--secondary)/0.3)",
                 }}
-                className={`rounded-3xl transition-all duration-500 overflow-hidden ${activeCluster === "01" ? '' : 'border border-border/40 hover:border-primary/20'}`}
+                className={`group cursor-pointer rounded-3xl transition-all duration-500 overflow-hidden ${activeCluster === "01" ? 'border border-border/20' : 'border border-border/40 hover:border-primary/30 shadow-sm hover:shadow-md'} ${activeCluster !== "01" && 'hover:-translate-y-1'}`}
+                onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}
               >
                 <div 
-                  className={`cursor-pointer group select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "01" ? 'py-4' : 'p-6 md:p-8'}`} 
-                  onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}
+                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "01" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`} 
                 >
                   <div>
                     <div className="flex items-center gap-4">
-                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "01" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>01</h3>
-                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "01" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>ESG & Sustainability Analysis</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "01" ? 'text-primary' : 'text-foreground/80 group-hover:text-primary'}`}>01</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "01" ? 'text-foreground' : 'text-foreground/80 group-hover:text-primary'}`}>ESG & Sustainability Analysis</h3>
                     </div>
                     <p className={`text-sm md:text-base mt-2 max-w-3xl transition-colors ${activeCluster === "01" ? 'text-muted-foreground' : 'text-muted-foreground'}`}>Analyzing ESG risks, performance, and disclosures to drive better decisions.</p>
                   </div>
-                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeCluster === "01" ? 'text-primary' : 'text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary'}`}>
+                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 text-primary`}>
                     {activeCluster === "01" ? (
                       <>View Less <ChevronUp className="w-3 h-3 md:w-4 md:h-4" /></>
                     ) : (
@@ -530,7 +530,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className={`transition-all duration-500 ${activeCluster === "01" ? 'pt-4' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
+                <div className={`transition-all duration-500 ${activeCluster === "01" ? 'p-6 md:p-8 pt-6 md:pt-8' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
                   <div className={`grid gap-4 md:gap-6 ${activeCluster === "01" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                     {bootcampProjects.map((project, idx) => (
                       <CardItem 
@@ -559,22 +559,22 @@ export default function Home() {
               <motion.div 
                 initial={false}
                 animate={{ 
-                  backgroundColor: activeCluster === "02" ? "transparent" : "hsl(var(--secondary)/0.3)",
+                  backgroundColor: "hsl(var(--secondary)/0.3)",
                 }}
-                className={`rounded-3xl transition-all duration-500 overflow-hidden ${activeCluster === "02" ? '' : 'border border-border/40 hover:border-primary/20'}`}
+                className={`group cursor-pointer rounded-3xl transition-all duration-500 overflow-hidden ${activeCluster === "02" ? 'border border-border/20' : 'border border-border/40 hover:border-primary/30 shadow-sm hover:shadow-md'} ${activeCluster !== "02" && 'hover:-translate-y-1'}`}
+                onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}
               >
                 <div 
-                  className={`cursor-pointer group select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "02" ? 'py-4' : 'p-6 md:p-8'}`} 
-                  onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}
+                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "02" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`} 
                 >
                   <div>
                     <div className="flex items-center gap-4">
-                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "02" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>02</h3>
-                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "02" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>Scientific Research & Environmental Systems</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "02" ? 'text-primary' : 'text-foreground/80 group-hover:text-primary'}`}>02</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "02" ? 'text-foreground' : 'text-foreground/80 group-hover:text-primary'}`}>Scientific Research & Environmental Systems</h3>
                     </div>
                     <p className={`text-sm md:text-base mt-2 max-w-3xl transition-colors ${activeCluster === "02" ? 'text-muted-foreground' : 'text-muted-foreground'}`}>Applying scientific rigor to understand environmental systems and inform sustainability decisions.</p>
                   </div>
-                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeCluster === "02" ? 'text-primary' : 'text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary'}`}>
+                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 text-primary`}>
                     {activeCluster === "02" ? (
                       <>View Less <ChevronUp className="w-3 h-3 md:w-4 md:h-4" /></>
                     ) : (
@@ -583,7 +583,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className={`transition-all duration-500 ${activeCluster === "02" ? 'pt-4' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
+                <div className={`transition-all duration-500 ${activeCluster === "02" ? 'p-6 md:p-8 pt-6 md:pt-8' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
                   <div className={`grid gap-4 md:gap-6 ${activeCluster === "02" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                     {scienceProjects.map((item, idx) => (
                       <CardItem 
@@ -612,22 +612,22 @@ export default function Home() {
               <motion.div 
                 initial={false}
                 animate={{ 
-                  backgroundColor: activeCluster === "03" ? "transparent" : "hsl(var(--secondary)/0.3)",
+                  backgroundColor: "hsl(var(--secondary)/0.3)",
                 }}
-                className={`rounded-3xl transition-all duration-500 overflow-hidden relative ${activeCluster === "03" ? '' : 'border border-border/40 hover:border-primary/20'}`}
+                className={`group cursor-pointer rounded-3xl transition-all duration-500 overflow-hidden relative ${activeCluster === "03" ? 'border border-border/20' : 'border border-border/40 hover:border-primary/30 shadow-sm hover:shadow-md'} ${activeCluster !== "03" && 'hover:-translate-y-1'}`}
+                onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}
               >
                 <div 
-                  className={`cursor-pointer group select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "03" ? 'py-4' : 'p-6 md:p-8'}`} 
-                  onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}
+                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "03" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`} 
                 >
                   <div>
                     <div className="flex items-center gap-4">
-                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "03" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>03</h3>
-                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "03" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>Strategy & Impact Execution</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "03" ? 'text-primary' : 'text-foreground/80 group-hover:text-primary'}`}>03</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "03" ? 'text-foreground' : 'text-foreground/80 group-hover:text-primary'}`}>Strategy & Impact Execution</h3>
                     </div>
                     <p className={`text-sm md:text-base mt-2 max-w-3xl transition-colors ${activeCluster === "03" ? 'text-muted-foreground' : 'text-muted-foreground'}`}>Turning insights into programs that deliver measurable social and organizational impact.</p>
                   </div>
-                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeCluster === "03" ? 'text-primary' : 'text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary'}`}>
+                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 text-primary`}>
                     {activeCluster === "03" ? (
                       <>View Less <ChevronUp className="w-3 h-3 md:w-4 md:h-4" /></>
                     ) : (
@@ -636,7 +636,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className={`transition-all duration-500 relative ${activeCluster === "03" ? 'pt-4' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
+                <div className={`transition-all duration-500 relative ${activeCluster === "03" ? 'p-6 md:p-8 pt-6 md:pt-8' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
                   {activeCluster === "03" && (
                     <motion.div 
                       initial={{ scaleX: 0, opacity: 0 }}
