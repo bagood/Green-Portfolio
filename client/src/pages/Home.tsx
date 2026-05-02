@@ -410,7 +410,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground leading-[1.05] mb-8">
               Turning Sustainability Data <br /><span className="text-primary italic">into Strategic Impact.</span>
             </h1>
-            <p className="text-xl md:text-2xl font-medium text-primary leading-tight max-w-xl mb-10">
+            <p className="md:text-2xl font-medium max-w-xl mb-10 text-[#628471] text-[20px]">
               Biology-trained researcher translating complex ESG data into actionable insights, scalable programs, and real-world outcomes.
             </p>
             <div className="flex flex-wrap gap-6">
@@ -488,7 +488,6 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-
       {/* Experience Clusters */}
       <section id="projects" className="py-10 pb-32">
         <div className="container mx-auto px-4 md:px-6">
@@ -669,7 +668,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-32 bg-secondary/30 relative border-t border-border/50">
         <div className="container mx-auto px-6">
@@ -979,7 +977,6 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-
       {/* Experience Deep Dive Modal */}
       <AnimatePresence>
         {selectedExperience && (
@@ -1094,7 +1091,6 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-
       {/* Science Project Modal */}
       <AnimatePresence>
         {selectedScienceProject && (
@@ -1232,7 +1228,6 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-
       <footer className="py-20 text-center border-t border-border/20">
         <p className="text-xs font-black tracking-[0.4em] text-primary/40 uppercase">Novia Amanda Dwiputri • 2026</p>
       </footer>
