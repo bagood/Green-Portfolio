@@ -17,6 +17,8 @@ import {
   Globe,
   Settings,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   Download,
   Search,
   CheckCircle2,
@@ -63,10 +65,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.1 }}
-          transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-          whileHover={{ y: -4, scale: 1.02 }}
+          transition={{ duration: 0.3, delay: index * 0.05, ease: "easeOut" }}
+          whileHover={{ y: -4, scale: 1.02, transition: { duration: 0.15, delay: 0 } }}
           onClick={(e: any) => { e.stopPropagation(); onClick(); }}
-          className="group bg-card rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full p-4"
+          className="group bg-card rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer border border-border/40 flex flex-col h-full p-4"
         >
           <h4 className="text-[13px] md:text-sm font-bold mb-2 group-hover:text-primary transition-colors leading-tight line-clamp-2">{title}</h4>
           <p className="text-[11px] md:text-xs text-muted-foreground flex-1 mb-3 line-clamp-2">{description}</p>
@@ -84,10 +86,10 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.1 }}
-        transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+        whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.15, delay: 0 } }}
         onClick={(e: any) => { e.stopPropagation(); onClick(); }}
-        className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full"
+        className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/40 flex flex-col h-full"
       >
         {image && type !== "journey" && (
           <div className="h-40 overflow-hidden relative">
@@ -109,13 +111,13 @@ export default function Home() {
             <p className="text-sm font-serif italic text-muted-foreground mb-3">{item.company}</p>
           )}
           <p className="text-xs md:text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{description}</p>
-          <div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
+          <div className="mt-auto flex flex-col items-start gap-3">
             <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[9px] md:text-[10px] font-medium px-2.5 py-0.5">
               {category}
             </Badge>
-            <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
+            <div className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
               {type === "project" ? "View Case Study" : "View Details"} <ArrowRight className="w-3 h-3" />
-            </span>
+            </div>
           </div>
         </div>
       </motion.div>
@@ -490,45 +492,58 @@ export default function Home() {
       {/* Experience Clusters */}
       <section id="projects" className="py-10 pb-32">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-7xl mx-auto relative border-l-2 border-border/60 pl-6 md:pl-12 ml-4 md:ml-6 space-y-24">
-            <div className="absolute top-0 bottom-0 left-[-2px] w-[2px] bg-gradient-to-b from-primary via-primary to-transparent" />
+          <div className="max-w-7xl mx-auto relative border-l border-border/30 pl-6 md:pl-12 ml-4 md:ml-6 space-y-16 md:space-y-24">
+            <div className="absolute top-0 bottom-0 left-[-1px] w-[1px] bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
             
             {/* Cluster 01 */}
             <div className="relative">
               <div 
-                className={`absolute -left-[35px] md:-left-[59px] top-1 w-8 h-8 rounded-full border-4 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "01" ? 'bg-primary border-primary/20' : 'bg-background border-border hover:border-primary'}`} 
+                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "01" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`} 
                 onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}
               >
-                <div className={`w-2.5 h-2.5 rounded-full transition-colors ${activeCluster === "01" ? 'bg-primary-foreground' : 'bg-primary/50'}`} />
+                <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeCluster === "01" ? 'bg-primary' : 'bg-primary/40'}`} />
               </div>
               
-              <div className="cursor-pointer group select-none" onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}>
-                <div className="flex items-center gap-4">
-                  <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "01" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>01</h3>
-                  <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "01" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>ESG & Sustainability Analysis</h3>
-                </div>
-                <p className="text-sm md:text-base mt-2 text-muted-foreground max-w-3xl">Analyzing ESG risks, performance, and disclosures to drive better decisions.</p>
-              </div>
-
               <motion.div 
                 initial={false}
                 animate={{ 
                   backgroundColor: activeCluster === "01" ? "transparent" : "hsl(var(--secondary)/0.3)",
-                  padding: activeCluster === "01" ? "1.5rem 0" : "1.5rem"
                 }}
-                className="mt-6 rounded-3xl transition-all duration-500"
+                className={`rounded-3xl transition-all duration-500 overflow-hidden ${activeCluster === "01" ? '' : 'border border-border/40 hover:border-primary/20'}`}
               >
-                <div className={`grid gap-4 md:gap-6 ${activeCluster === "01" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
-                  {bootcampProjects.map((project, idx) => (
-                    <CardItem 
-                      key={idx} 
-                      isOpen={activeCluster === "01"} 
-                      item={project} 
-                      type="project" 
-                      index={idx}
-                      onClick={() => setSelectedProject(project)} 
-                    />
-                  ))}
+                <div 
+                  className={`cursor-pointer group select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "01" ? 'py-4' : 'p-6 md:p-8'}`} 
+                  onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}
+                >
+                  <div>
+                    <div className="flex items-center gap-4">
+                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "01" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>01</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "01" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>ESG & Sustainability Analysis</h3>
+                    </div>
+                    <p className={`text-sm md:text-base mt-2 max-w-3xl transition-colors ${activeCluster === "01" ? 'text-muted-foreground' : 'text-muted-foreground'}`}>Analyzing ESG risks, performance, and disclosures to drive better decisions.</p>
+                  </div>
+                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeCluster === "01" ? 'text-primary' : 'text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary'}`}>
+                    {activeCluster === "01" ? (
+                      <>View Less <ChevronUp className="w-3 h-3 md:w-4 md:h-4" /></>
+                    ) : (
+                      <>View More <ChevronDown className="w-3 h-3 md:w-4 md:h-4" /></>
+                    )}
+                  </div>
+                </div>
+
+                <div className={`transition-all duration-500 ${activeCluster === "01" ? 'pt-4' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
+                  <div className={`grid gap-4 md:gap-6 ${activeCluster === "01" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                    {bootcampProjects.map((project, idx) => (
+                      <CardItem 
+                        key={idx} 
+                        isOpen={activeCluster === "01"} 
+                        item={project} 
+                        type="project" 
+                        index={idx}
+                        onClick={() => setSelectedProject(project)} 
+                      />
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -536,39 +551,52 @@ export default function Home() {
             {/* Cluster 02 */}
             <div className="relative">
               <div 
-                className={`absolute -left-[35px] md:-left-[59px] top-1 w-8 h-8 rounded-full border-4 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "02" ? 'bg-primary border-primary/20' : 'bg-background border-border hover:border-primary'}`} 
+                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "02" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`} 
                 onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}
               >
-                <div className={`w-2.5 h-2.5 rounded-full transition-colors ${activeCluster === "02" ? 'bg-primary-foreground' : 'bg-primary/50'}`} />
+                <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeCluster === "02" ? 'bg-primary' : 'bg-primary/40'}`} />
               </div>
               
-              <div className="cursor-pointer group select-none" onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}>
-                <div className="flex items-center gap-4">
-                  <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "02" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>02</h3>
-                  <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "02" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>Scientific Research & Environmental Systems</h3>
-                </div>
-                <p className="text-sm md:text-base mt-2 text-muted-foreground max-w-3xl">Applying scientific rigor to understand environmental systems and inform sustainability decisions.</p>
-              </div>
-
               <motion.div 
                 initial={false}
                 animate={{ 
                   backgroundColor: activeCluster === "02" ? "transparent" : "hsl(var(--secondary)/0.3)",
-                  padding: activeCluster === "02" ? "1.5rem 0" : "1.5rem"
                 }}
-                className="mt-6 rounded-3xl transition-all duration-500"
+                className={`rounded-3xl transition-all duration-500 overflow-hidden ${activeCluster === "02" ? '' : 'border border-border/40 hover:border-primary/20'}`}
               >
-                <div className={`grid gap-4 md:gap-6 ${activeCluster === "02" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
-                  {scienceProjects.map((item, idx) => (
-                    <CardItem 
-                      key={idx} 
-                      isOpen={activeCluster === "02"} 
-                      item={item} 
-                      type="science" 
-                      index={idx}
-                      onClick={() => setSelectedScienceProject(item)} 
-                    />
-                  ))}
+                <div 
+                  className={`cursor-pointer group select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "02" ? 'py-4' : 'p-6 md:p-8'}`} 
+                  onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}
+                >
+                  <div>
+                    <div className="flex items-center gap-4">
+                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "02" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>02</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "02" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>Scientific Research & Environmental Systems</h3>
+                    </div>
+                    <p className={`text-sm md:text-base mt-2 max-w-3xl transition-colors ${activeCluster === "02" ? 'text-muted-foreground' : 'text-muted-foreground'}`}>Applying scientific rigor to understand environmental systems and inform sustainability decisions.</p>
+                  </div>
+                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeCluster === "02" ? 'text-primary' : 'text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary'}`}>
+                    {activeCluster === "02" ? (
+                      <>View Less <ChevronUp className="w-3 h-3 md:w-4 md:h-4" /></>
+                    ) : (
+                      <>View More <ChevronDown className="w-3 h-3 md:w-4 md:h-4" /></>
+                    )}
+                  </div>
+                </div>
+
+                <div className={`transition-all duration-500 ${activeCluster === "02" ? 'pt-4' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
+                  <div className={`grid gap-4 md:gap-6 ${activeCluster === "02" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                    {scienceProjects.map((item, idx) => (
+                      <CardItem 
+                        key={idx} 
+                        isOpen={activeCluster === "02"} 
+                        item={item} 
+                        type="science" 
+                        index={idx}
+                        onClick={() => setSelectedScienceProject(item)} 
+                      />
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -576,51 +604,64 @@ export default function Home() {
             {/* Cluster 03 */}
             <div className="relative">
               <div 
-                className={`absolute -left-[35px] md:-left-[59px] top-1 w-8 h-8 rounded-full border-4 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "03" ? 'bg-primary border-primary/20' : 'bg-background border-border hover:border-primary'}`} 
+                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "03" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`} 
                 onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}
               >
-                <div className={`w-2.5 h-2.5 rounded-full transition-colors ${activeCluster === "03" ? 'bg-primary-foreground' : 'bg-primary/50'}`} />
+                <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeCluster === "03" ? 'bg-primary' : 'bg-primary/40'}`} />
               </div>
               
-              <div className="cursor-pointer group select-none" onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}>
-                <div className="flex items-center gap-4">
-                  <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "03" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>03</h3>
-                  <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "03" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>Strategy & Impact Execution</h3>
-                </div>
-                <p className="text-sm md:text-base mt-2 text-muted-foreground max-w-3xl">Turning insights into programs that deliver measurable social and organizational impact.</p>
-              </div>
-
               <motion.div 
                 initial={false}
                 animate={{ 
                   backgroundColor: activeCluster === "03" ? "transparent" : "hsl(var(--secondary)/0.3)",
-                  padding: activeCluster === "03" ? "1.5rem 0" : "1.5rem"
                 }}
-                className="mt-6 rounded-3xl transition-all duration-500 relative"
+                className={`rounded-3xl transition-all duration-500 overflow-hidden relative ${activeCluster === "03" ? '' : 'border border-border/40 hover:border-primary/20'}`}
               >
-                {activeCluster === "03" && (
-                  <motion.div 
-                    initial={{ scaleX: 0, opacity: 0 }}
-                    animate={{ scaleX: 1, opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="absolute top-[80px] left-8 right-8 h-0.5 bg-border/60 rounded-full hidden lg:block origin-left z-0"
-                  >
-                    {combinedJourney.map((_, i) => (
-                      <div key={i} className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary/50" style={{ left: `calc(${(i / (combinedJourney.length - 1 || 1)) * 100}% - 4px)` }} />
+                <div 
+                  className={`cursor-pointer group select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "03" ? 'py-4' : 'p-6 md:p-8'}`} 
+                  onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}
+                >
+                  <div>
+                    <div className="flex items-center gap-4">
+                      <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "03" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>03</h3>
+                      <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "03" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>Strategy & Impact Execution</h3>
+                    </div>
+                    <p className={`text-sm md:text-base mt-2 max-w-3xl transition-colors ${activeCluster === "03" ? 'text-muted-foreground' : 'text-muted-foreground'}`}>Turning insights into programs that deliver measurable social and organizational impact.</p>
+                  </div>
+                  <div className={`flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeCluster === "03" ? 'text-primary' : 'text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary'}`}>
+                    {activeCluster === "03" ? (
+                      <>View Less <ChevronUp className="w-3 h-3 md:w-4 md:h-4" /></>
+                    ) : (
+                      <>View More <ChevronDown className="w-3 h-3 md:w-4 md:h-4" /></>
+                    )}
+                  </div>
+                </div>
+
+                <div className={`transition-all duration-500 relative ${activeCluster === "03" ? 'pt-4' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
+                  {activeCluster === "03" && (
+                    <motion.div 
+                      initial={{ scaleX: 0, opacity: 0 }}
+                      animate={{ scaleX: 1, opacity: 1 }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      className="absolute top-1/2 -translate-y-1/2 left-8 right-8 h-0.5 bg-border/60 rounded-full hidden lg:block origin-left z-0"
+                    >
+                      {combinedJourney.map((_, i) => (
+                        <div key={i} className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary/50" style={{ left: `calc(${(i / (combinedJourney.length - 1 || 1)) * 100}% - 4px)` }} />
+                      ))}
+                    </motion.div>
+                  )}
+                  <div className={`grid gap-4 md:gap-6 relative z-10 ${activeCluster === "03" ? 'md:grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                    {combinedJourney.map((exp, idx) => (
+                      <CardItem 
+                        key={idx} 
+                        isOpen={activeCluster === "03"} 
+                        item={exp} 
+                        type="journey" 
+                        index={idx}
+                        onClick={() => setSelectedExperience(exp)} 
+                      />
                     ))}
-                  </motion.div>
-                )}
-                <div className={`grid gap-4 md:gap-6 relative z-10 ${activeCluster === "03" ? 'md:grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
-                  {combinedJourney.map((exp, idx) => (
-                    <CardItem 
-                      key={idx} 
-                      isOpen={activeCluster === "03"} 
-                      item={exp} 
-                      type="journey" 
-                      index={idx}
-                      onClick={() => setSelectedExperience(exp)} 
-                    />
-                  ))}
+                  </div>
                 </div>
               </motion.div>
             </div>
