@@ -40,14 +40,86 @@ export default function Home() {
   const [selectedScienceProject, setSelectedScienceProject] = useState<any>(null);
 
   const [selectedExperience, setSelectedExperience] = useState<any>(null);
-  const [expandedScience, setExpandedScience] = useState(false);
-  const [expandedJourney, setExpandedJourney] = useState(false);
+  const [activeCluster, setActiveCluster] = useState<string>("01");
 
   // Animation variants
   const fadeIn = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 }
+    viewport: { once: false, amount: 0.1 },
+    transition: { duration: 0.8, ease: "easeOut" }
+  };
+
+  const CardItem = ({ isOpen, item, type, index, onClick }: any) => {
+    const title = item.title || item.role;
+    const description = item.description;
+    const category = item.category || item.badge || item.type;
+    const icon = item.icon || (type === "science" ? <Globe className="w-4 h-4"/> : <Zap className="w-4 h-4"/>);
+    const image = item.image;
+    
+    if (!isOpen) {
+      return (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.1 }}
+          transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+          whileHover={{ y: -4, scale: 1.02 }}
+          onClick={(e: any) => { e.stopPropagation(); onClick(); }}
+          className="group bg-card rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full p-4"
+        >
+          <h4 className="text-[13px] md:text-sm font-bold mb-2 group-hover:text-primary transition-colors leading-tight line-clamp-2">{title}</h4>
+          <p className="text-[11px] md:text-xs text-muted-foreground flex-1 mb-3 line-clamp-2">{description}</p>
+          <div className="mt-auto">
+            <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[8px] md:text-[9px] font-medium px-2 py-0.5 whitespace-nowrap overflow-hidden text-ellipsis max-w-full block">
+              {category}
+            </Badge>
+          </div>
+        </motion.div>
+      );
+    }
+
+    return (
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+        whileHover={{ y: -8, scale: 1.02 }}
+        onClick={(e: any) => { e.stopPropagation(); onClick(); }}
+        className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full"
+      >
+        {image && type !== "journey" && (
+          <div className="h-40 overflow-hidden relative">
+            <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
+          </div>
+        )}
+        <div className="p-6 flex-1 flex flex-col">
+          <div className="flex items-center gap-2 text-primary mb-3">
+            <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              {icon}
+            </div>
+            {type === "journey" && item.period && (
+              <span className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground ml-auto">{item.period}</span>
+            )}
+          </div>
+          <h4 className="text-base md:text-lg font-bold mb-2 group-hover:text-primary transition-colors leading-tight">{title}</h4>
+          {type === "journey" && item.company && (
+            <p className="text-sm font-serif italic text-muted-foreground mb-3">{item.company}</p>
+          )}
+          <p className="text-xs md:text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{description}</p>
+          <div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
+            <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[9px] md:text-[10px] font-medium px-2.5 py-0.5">
+              {category}
+            </Badge>
+            <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
+              {type === "project" ? "View Case Study" : "View Details"} <ArrowRight className="w-3 h-3" />
+            </span>
+          </div>
+        </div>
+      </motion.div>
+    );
   };
 
   const staggerContainer = {
@@ -388,8 +460,8 @@ export default function Home() {
                 <div className="space-y-6 text-xl md:text-2xl font-serif leading-tight">
                   <p>Hi, I'm <span className="text-primary underline decoration-2 underline-offset-8 italic font-bold">Novia Amanda</span>.</p>
                   <p className="text-muted-foreground">I work at the intersection of science, sustainability, and strategy—translating complex environmental data into actionable ESG insights and scalable impact.</p>
-                  <p>With a background in Biology, I bring a rigorous, investigative approach to analyzing complex systems. I connect data to real-world decisions, identifying risks, opportunities, and pathways for sustainable growth.</p>
-                  <p>Beyond research, I've led initiatives reaching 17,000+ beneficiaries, turning insights into programs that create measurable impact.</p>
+                  <p>With a background in <span className="font-bold text-[#2e5c43]">biology</span>, I bring a <span className="font-bold text-[#2e5c43]">rigorous, investigative approach to analyzing complex systems</span>. I connect data to real-world decisions, identifying risks, opportunities, and pathways for sustainable growth.</p>
+                  <p>Beyond research, I've led initiatives reaching <span className="font-bold text-[#2e5c43]">17,000+ beneficiaries</span>, turning insights into <span className="font-bold text-[#2e5c43]">programs that create measurable impact</span>.</p>
                   <p className="text-muted-foreground text-lg italic border-l-4 border-primary pl-6 py-2">I bridge research and execution—so sustainability strategies don't just exist, but work in practice.</p>
                 </div>
                 <div className="pt-8">
@@ -405,7 +477,7 @@ export default function Home() {
       {/* Capabilities & Experience Section */}
       <section id="skills" className="pt-32 container mx-auto px-6">
         <motion.div {...fadeIn} className="text-center mb-16">
-          <h2 className="text-5xl font-serif font-bold mb-6 italic">Capabilities & Experience.</h2>
+          <h2 className="text-5xl font-serif font-bold mb-6 italic text-[#2e5c43]">Capabilities & Experience.</h2>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto mb-8">I turn analysis, research, and strategy into measurable sustainability impact.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {["ESG Analysis & Reporting", "Carbon Accounting", "Materiality Assessment", "Environmental Systems Analysis", "Project & Stakeholder Management", "Data Analysis & Reporting", "Sustainability Strategy Execution"].map((skill, idx) => (
@@ -415,190 +487,144 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Engagement Gallery (ESG Projects) */}
-      <section id="projects" className="pt-10">
-        <div className="container mx-auto px-6">
-          
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="md:col-span-2 lg:col-span-3 mb-6">
-            <div className="flex items-center justify-between border-b border-border/50 pb-4">
-              <div className="flex items-center gap-4">
-                <h3 className="text-xl font-bold font-serif text-primary">01</h3>
-                <h3 className="text-xl font-bold text-foreground">ESG & Sustainability Analysis</h3>
+      {/* Experience Clusters */}
+      <section id="projects" className="py-10 pb-32">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-7xl mx-auto relative border-l-2 border-border/60 pl-6 md:pl-12 ml-4 md:ml-6 space-y-24">
+            <div className="absolute top-0 bottom-0 left-[-2px] w-[2px] bg-gradient-to-b from-primary via-primary to-transparent" />
+            
+            {/* Cluster 01 */}
+            <div className="relative">
+              <div 
+                className={`absolute -left-[35px] md:-left-[59px] top-1 w-8 h-8 rounded-full border-4 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "01" ? 'bg-primary border-primary/20' : 'bg-background border-border hover:border-primary'}`} 
+                onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}
+              >
+                <div className={`w-2.5 h-2.5 rounded-full transition-colors ${activeCluster === "01" ? 'bg-primary-foreground' : 'bg-primary/50'}`} />
               </div>
-            </div>
-            <p className="text-sm mt-4 text-muted-foreground">Analyzing ESG risks, performance, and disclosures to drive better decisions.</p>
-          </div>
-          
-          {bootcampProjects.map((project, idx) => (
-            <motion.div 
-              key={idx} 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              onClick={() => setSelectedProject(project)}
-              className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full"
-            >
-              <div className="h-40 overflow-hidden relative">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
-              </div>
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="flex items-center gap-2 text-primary mb-3">
-                  <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    {project.icon}
-                  </div>
-                </div>
-                <h4 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors leading-tight">{project.title}</h4>
-                <p className="text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{project.description}</p>
-                <div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[10px] font-medium px-2.5 py-0.5">
-                      {project.category}
-                    </Badge>
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
-                    View Case Study <ArrowRight className="w-3 h-3" />
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        </div>
-      </section>
-
-      {/* Science-Driven Sustainability Section */}
-      <section id="science" className="pt-20 pb-10 relative">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-            <div className="md:col-span-2 lg:col-span-3 mb-6">
-              <div className="flex items-center justify-between border-b border-border/50 pb-4">
+              
+              <div className="cursor-pointer group select-none" onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}>
                 <div className="flex items-center gap-4">
-                  <h3 className="text-xl font-bold font-serif text-primary">02</h3>
-                  <h3 className="text-xl font-bold text-foreground">Scientific Research & Environmental Systems</h3>
+                  <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "01" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>01</h3>
+                  <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "01" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>ESG & Sustainability Analysis</h3>
                 </div>
-                {scienceProjects.length > 3 && (
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    onClick={() => setExpandedScience(!expandedScience)}
-                    className="text-xs font-bold hover:bg-primary/5 rounded-full"
-                  >
-                    {expandedScience ? "View Less" : "View More"} <ChevronRight className={`w-3 h-3 ml-1 transition-transform ${expandedScience ? "-rotate-90" : ""}`} />
-                  </Button>
-                )}
+                <p className="text-sm md:text-base mt-2 text-muted-foreground max-w-3xl">Analyzing ESG risks, performance, and disclosures to drive better decisions.</p>
               </div>
-              <p className="text-sm mt-4 text-muted-foreground">Applying scientific rigor to understand environmental systems and inform sustainability decisions.</p>
+
+              <motion.div 
+                initial={false}
+                animate={{ 
+                  backgroundColor: activeCluster === "01" ? "transparent" : "hsl(var(--secondary)/0.3)",
+                  padding: activeCluster === "01" ? "1.5rem 0" : "1.5rem"
+                }}
+                className="mt-6 rounded-3xl transition-all duration-500"
+              >
+                <div className={`grid gap-4 md:gap-6 ${activeCluster === "01" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                  {bootcampProjects.map((project, idx) => (
+                    <CardItem 
+                      key={idx} 
+                      isOpen={activeCluster === "01"} 
+                      item={project} 
+                      type="project" 
+                      index={idx}
+                      onClick={() => setSelectedProject(project)} 
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Cluster 02 */}
+            <div className="relative">
+              <div 
+                className={`absolute -left-[35px] md:-left-[59px] top-1 w-8 h-8 rounded-full border-4 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "02" ? 'bg-primary border-primary/20' : 'bg-background border-border hover:border-primary'}`} 
+                onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}
+              >
+                <div className={`w-2.5 h-2.5 rounded-full transition-colors ${activeCluster === "02" ? 'bg-primary-foreground' : 'bg-primary/50'}`} />
+              </div>
+              
+              <div className="cursor-pointer group select-none" onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}>
+                <div className="flex items-center gap-4">
+                  <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "02" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>02</h3>
+                  <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "02" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>Scientific Research & Environmental Systems</h3>
+                </div>
+                <p className="text-sm md:text-base mt-2 text-muted-foreground max-w-3xl">Applying scientific rigor to understand environmental systems and inform sustainability decisions.</p>
+              </div>
+
+              <motion.div 
+                initial={false}
+                animate={{ 
+                  backgroundColor: activeCluster === "02" ? "transparent" : "hsl(var(--secondary)/0.3)",
+                  padding: activeCluster === "02" ? "1.5rem 0" : "1.5rem"
+                }}
+                className="mt-6 rounded-3xl transition-all duration-500"
+              >
+                <div className={`grid gap-4 md:gap-6 ${activeCluster === "02" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                  {scienceProjects.map((item, idx) => (
+                    <CardItem 
+                      key={idx} 
+                      isOpen={activeCluster === "02"} 
+                      item={item} 
+                      type="science" 
+                      index={idx}
+                      onClick={() => setSelectedScienceProject(item)} 
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Cluster 03 */}
+            <div className="relative">
+              <div 
+                className={`absolute -left-[35px] md:-left-[59px] top-1 w-8 h-8 rounded-full border-4 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "03" ? 'bg-primary border-primary/20' : 'bg-background border-border hover:border-primary'}`} 
+                onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}
+              >
+                <div className={`w-2.5 h-2.5 rounded-full transition-colors ${activeCluster === "03" ? 'bg-primary-foreground' : 'bg-primary/50'}`} />
+              </div>
+              
+              <div className="cursor-pointer group select-none" onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}>
+                <div className="flex items-center gap-4">
+                  <h3 className={`text-2xl md:text-3xl font-bold font-serif transition-colors ${activeCluster === "03" ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'}`}>03</h3>
+                  <h3 className={`text-2xl md:text-3xl font-bold transition-colors ${activeCluster === "03" ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>Strategy & Impact Execution</h3>
+                </div>
+                <p className="text-sm md:text-base mt-2 text-muted-foreground max-w-3xl">Turning insights into programs that deliver measurable social and organizational impact.</p>
+              </div>
+
+              <motion.div 
+                initial={false}
+                animate={{ 
+                  backgroundColor: activeCluster === "03" ? "transparent" : "hsl(var(--secondary)/0.3)",
+                  padding: activeCluster === "03" ? "1.5rem 0" : "1.5rem"
+                }}
+                className="mt-6 rounded-3xl transition-all duration-500 relative"
+              >
+                {activeCluster === "03" && (
+                  <motion.div 
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    animate={{ scaleX: 1, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="absolute top-[80px] left-8 right-8 h-0.5 bg-border/60 rounded-full hidden lg:block origin-left z-0"
+                  >
+                    {combinedJourney.map((_, i) => (
+                      <div key={i} className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary/50" style={{ left: `calc(${(i / (combinedJourney.length - 1 || 1)) * 100}% - 4px)` }} />
+                    ))}
+                  </motion.div>
+                )}
+                <div className={`grid gap-4 md:gap-6 relative z-10 ${activeCluster === "03" ? 'md:grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                  {combinedJourney.map((exp, idx) => (
+                    <CardItem 
+                      key={idx} 
+                      isOpen={activeCluster === "03"} 
+                      item={exp} 
+                      type="journey" 
+                      index={idx}
+                      onClick={() => setSelectedExperience(exp)} 
+                    />
+                  ))}
+                </div>
+              </motion.div>
             </div>
             
-            <AnimatePresence>
-              {(expandedScience ? scienceProjects : scienceProjects.slice(0, 3)).map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  onClick={() => setSelectedScienceProject(item)}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full"
-                >
-                  <div className="h-40 overflow-hidden relative">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
-                  </div>
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center gap-2 text-primary mb-3">
-                      <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <Globe className="w-4 h-4" />
-                      </div>
-                    </div>
-                    <h4 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors leading-tight">{item.title}</h4>
-                    <p className="text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{item.description}</p>
-                    <div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
-                      <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[10px] font-medium px-2.5 py-0.5">
-                          {item.badge}
-                        </Badge>
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
-                        View Details <ArrowRight className="w-3 h-3" />
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Journey & Social Impact (Centered Timeline) */}
-      <section id="journey" className="pt-10 pb-32 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-            <div className="md:col-span-2 lg:col-span-4 mb-6">
-              <div className="flex items-center justify-between border-b border-border/50 pb-4">
-                <div className="flex items-center gap-4">
-                  <h3 className="text-xl font-bold font-serif text-primary">03</h3>
-                  <h3 className="text-xl font-bold text-foreground">Strategy & Impact Execution</h3>
-                </div>
-                {combinedJourney.length > 4 && (
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    onClick={() => setExpandedJourney(!expandedJourney)}
-                    className="text-xs font-bold hover:bg-primary/5 rounded-full"
-                  >
-                    {expandedJourney ? "View Less" : "View More"} <ChevronRight className={`w-3 h-3 ml-1 transition-transform ${expandedJourney ? "-rotate-90" : ""}`} />
-                  </Button>
-                )}
-              </div>
-              <p className="text-sm mt-4 text-muted-foreground">Turning insights into programs that deliver measurable social and organizational impact.</p>
-            </div>
-            
-            <AnimatePresence>
-              {(expandedJourney ? combinedJourney : combinedJourney.slice(0, 4)).map((exp, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  onClick={() => setSelectedExperience(exp)}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/50 flex flex-col h-full"
-                >
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex items-center gap-2 text-primary mb-4">
-                      <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <Zap className="w-4 h-4" />
-                      </div>
-                      <span className="text-xs font-bold tracking-widest uppercase text-muted-foreground ml-auto">{exp.period}</span>
-                    </div>
-                    <h4 className="text-base font-bold mb-1 group-hover:text-primary transition-colors leading-tight">{exp.role}</h4>
-                    <p className="text-sm font-serif italic text-muted-foreground mb-4">{exp.company}</p>
-                    <p className="text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{exp.description}</p>
-                    <div className="flex flex-wrap items-center justify-between gap-2 mt-auto">
-                      <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[10px] font-medium px-2.5 py-0.5">
-                          {exp.type}
-                        </Badge>
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
-                        View Details <ArrowRight className="w-3 h-3" />
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
           </div>
         </div>
       </section>
@@ -610,8 +636,8 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.1 }}
             >
               <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Let's Turn Sustainability Insights <br /><span className="text-primary italic">into Impact.</span></h2>
               <p className="text-xl text-muted-foreground mb-8">Open to opportunities in ESG, sustainability strategy, research, and impact-driven project management.</p>
@@ -619,8 +645,8 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.1 }}
               className="bg-background p-8 md:p-10 rounded-3xl border border-border shadow-lg"
             >
                <div className="flex flex-col gap-6">
