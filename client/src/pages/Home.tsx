@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ArrowRight, 
-  Mail, 
-  Linkedin, 
-  Leaf, 
-  BarChart3, 
-  ShieldCheck, 
-  FileText, 
+import {
+  ArrowRight,
+  Mail,
+  Linkedin,
+  Leaf,
+  BarChart3,
+  ShieldCheck,
+  FileText,
   Droplets,
   ExternalLink,
   GraduationCap,
@@ -56,9 +56,9 @@ export default function Home() {
     const title = item.title || item.role;
     const description = item.description;
     const category = item.category || item.badge || item.type;
-    const icon = item.icon || (type === "science" ? <Globe className="w-4 h-4"/> : <Zap className="w-4 h-4"/>);
+    const icon = item.icon || (type === "science" ? <Globe className="w-4 h-4" /> : <Zap className="w-4 h-4" />);
     const image = item.image;
-    
+
     if (!isOpen) {
       return (
         <motion.div
@@ -82,7 +82,7 @@ export default function Home() {
     }
 
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.1 }}
@@ -373,9 +373,9 @@ export default function Home() {
               { id: "intro", label: "About" },
               { id: "skills", label: "Capabilities & Experience" }
             ].map(item => (
-              <a 
+              <a
                 key={item.id}
-                href={`#${item.id}`} 
+                href={`#${item.id}`}
                 className={`transition-all relative group ${activeSection === item.id ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}
               >
                 {item.label}
@@ -422,7 +422,7 @@ export default function Home() {
               </Button>
             </div>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
@@ -441,7 +441,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -462,7 +462,7 @@ export default function Home() {
                 <div className="space-y-6 text-xl md:text-2xl font-serif leading-tight">
                   <p>Hi, I'm <span className="text-primary underline decoration-2 underline-offset-8 italic font-bold">Novia Amanda</span>.</p>
                   <p className="text-muted-foreground">I work at the intersection of science, sustainability, and strategy—translating complex environmental data into actionable ESG insights and scalable impact.</p>
-                  <p>With a background in <span className="font-bold text-[#2e5c43]">biology</span>, I bring a <span className="font-bold text-[#2e5c43]">rigorous, investigative approach to analyzing complex systems</span>. I connect data to real-world decisions, identifying risks, opportunities, and pathways for sustainable growth.</p>
+                  <p>With a background in <span className="font-bold text-[#2e5c43]">Biology</span>, I bring a <span className="font-bold text-[#2e5c43]">rigorous, investigative approach to analyzing complex systems</span>. I connect data to real-world decisions, identifying risks, opportunities, and pathways for sustainable growth.</p>
                   <p>Beyond research, I've led initiatives reaching <span className="font-bold text-[#2e5c43]">17,000+ beneficiaries</span>, turning insights into <span className="font-bold text-[#2e5c43]">programs that create measurable impact</span>.</p>
                   <p className="text-muted-foreground text-lg italic border-l-4 border-primary pl-6 py-2">I bridge research and execution—so sustainability strategies don't just exist, but work in practice.</p>
                 </div>
@@ -493,26 +493,26 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-7xl mx-auto relative border-l border-border/30 pl-6 md:pl-12 ml-4 md:ml-6 space-y-16 md:space-y-24">
             <div className="absolute top-0 bottom-0 left-[-1px] w-[1px] bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
-            
+
             {/* Cluster 01 */}
             <div className="relative">
-              <div 
-                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "01" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`} 
+              <div
+                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "01" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`}
                 onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}
               >
                 <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeCluster === "01" ? 'bg-primary' : 'bg-primary/40'}`} />
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={false}
-                animate={{ 
+                animate={{
                   backgroundColor: "hsl(var(--secondary)/0.3)",
                 }}
                 className={`group cursor-pointer rounded-3xl transition-all duration-500 overflow-hidden ${activeCluster === "01" ? 'border border-border/20' : 'border border-border/40 hover:border-primary/30 shadow-sm hover:shadow-md'} ${activeCluster !== "01" && 'hover:-translate-y-1'}`}
                 onClick={() => setActiveCluster(activeCluster === "01" ? "" : "01")}
               >
-                <div 
-                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "01" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`} 
+                <div
+                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "01" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`}
                 >
                   <div>
                     <div className="flex items-center gap-4">
@@ -533,13 +533,13 @@ export default function Home() {
                 <div className={`transition-all duration-500 ${activeCluster === "01" ? 'p-6 md:p-8 pt-6 md:pt-8' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
                   <div className={`grid gap-4 md:gap-6 ${activeCluster === "01" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                     {bootcampProjects.map((project, idx) => (
-                      <CardItem 
-                        key={idx} 
-                        isOpen={activeCluster === "01"} 
-                        item={project} 
-                        type="project" 
+                      <CardItem
+                        key={idx}
+                        isOpen={activeCluster === "01"}
+                        item={project}
+                        type="project"
                         index={idx}
-                        onClick={() => setSelectedProject(project)} 
+                        onClick={() => setSelectedProject(project)}
                       />
                     ))}
                   </div>
@@ -549,23 +549,23 @@ export default function Home() {
 
             {/* Cluster 02 */}
             <div className="relative">
-              <div 
-                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "02" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`} 
+              <div
+                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "02" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`}
                 onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}
               >
                 <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeCluster === "02" ? 'bg-primary' : 'bg-primary/40'}`} />
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={false}
-                animate={{ 
+                animate={{
                   backgroundColor: "hsl(var(--secondary)/0.3)",
                 }}
                 className={`group cursor-pointer rounded-3xl transition-all duration-500 overflow-hidden ${activeCluster === "02" ? 'border border-border/20' : 'border border-border/40 hover:border-primary/30 shadow-sm hover:shadow-md'} ${activeCluster !== "02" && 'hover:-translate-y-1'}`}
                 onClick={() => setActiveCluster(activeCluster === "02" ? "" : "02")}
               >
-                <div 
-                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "02" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`} 
+                <div
+                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "02" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`}
                 >
                   <div>
                     <div className="flex items-center gap-4">
@@ -586,13 +586,13 @@ export default function Home() {
                 <div className={`transition-all duration-500 ${activeCluster === "02" ? 'p-6 md:p-8 pt-6 md:pt-8' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
                   <div className={`grid gap-4 md:gap-6 ${activeCluster === "02" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                     {scienceProjects.map((item, idx) => (
-                      <CardItem 
-                        key={idx} 
-                        isOpen={activeCluster === "02"} 
-                        item={item} 
-                        type="science" 
+                      <CardItem
+                        key={idx}
+                        isOpen={activeCluster === "02"}
+                        item={item}
+                        type="science"
                         index={idx}
-                        onClick={() => setSelectedScienceProject(item)} 
+                        onClick={() => setSelectedScienceProject(item)}
                       />
                     ))}
                   </div>
@@ -602,23 +602,23 @@ export default function Home() {
 
             {/* Cluster 03 */}
             <div className="relative">
-              <div 
-                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "03" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`} 
+              <div
+                className={`absolute -left-[32px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-500 z-10 cursor-pointer ${activeCluster === "03" ? 'bg-primary border-primary/30' : 'bg-background border-border/40 hover:border-primary/50'}`}
                 onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}
               >
                 <div className={`w-1.5 h-1.5 rounded-full transition-colors ${activeCluster === "03" ? 'bg-primary' : 'bg-primary/40'}`} />
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={false}
-                animate={{ 
+                animate={{
                   backgroundColor: "hsl(var(--secondary)/0.3)",
                 }}
                 className={`group cursor-pointer rounded-3xl transition-all duration-500 overflow-hidden relative ${activeCluster === "03" ? 'border border-border/20' : 'border border-border/40 hover:border-primary/30 shadow-sm hover:shadow-md'} ${activeCluster !== "03" && 'hover:-translate-y-1'}`}
                 onClick={() => setActiveCluster(activeCluster === "03" ? "" : "03")}
               >
-                <div 
-                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "03" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`} 
+                <div
+                  className={`select-none flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-500 ${activeCluster === "03" ? 'p-6 md:p-8 pb-0 md:pb-0' : 'p-6 md:p-8'}`}
                 >
                   <div>
                     <div className="flex items-center gap-4">
@@ -638,7 +638,7 @@ export default function Home() {
 
                 <div className={`transition-all duration-500 relative ${activeCluster === "03" ? 'p-6 md:p-8 pt-6 md:pt-8' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
                   {activeCluster === "03" && (
-                    <motion.div 
+                    <motion.div
                       initial={{ scaleX: 0, opacity: 0 }}
                       animate={{ scaleX: 1, opacity: 1 }}
                       transition={{ duration: 0.8, delay: 0.2 }}
@@ -651,20 +651,20 @@ export default function Home() {
                   )}
                   <div className={`grid gap-4 md:gap-6 relative z-10 ${activeCluster === "03" ? 'md:grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                     {combinedJourney.map((exp, idx) => (
-                      <CardItem 
-                        key={idx} 
-                        isOpen={activeCluster === "03"} 
-                        item={exp} 
-                        type="journey" 
+                      <CardItem
+                        key={idx}
+                        isOpen={activeCluster === "03"}
+                        item={exp}
+                        type="journey"
                         index={idx}
-                        onClick={() => setSelectedExperience(exp)} 
+                        onClick={() => setSelectedExperience(exp)}
                       />
                     ))}
                   </div>
                 </div>
               </motion.div>
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -672,7 +672,7 @@ export default function Home() {
       <section id="contact" className="py-32 bg-secondary/30 relative border-t border-border/50">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -681,44 +681,44 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Let's Turn Sustainability Insights <br /><span className="text-primary italic">into Impact.</span></h2>
               <p className="text-xl text-muted-foreground mb-8">Open to opportunities in ESG, sustainability strategy, research, and impact-driven project management.</p>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.1 }}
               className="bg-background p-8 md:p-10 rounded-3xl border border-border shadow-lg"
             >
-               <div className="flex flex-col gap-6">
-                 <a href="mailto:noviamnda09@gmail.com" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
-                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
-                     <Mail className="w-5 h-5" />
-                   </div>
-                   <div>
-                     <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Direct Email</p>
-                     <p className="text-lg font-bold group-hover:text-primary transition-colors">noviamnda09@gmail.com</p>
-                   </div>
-                 </a>
-                 <div className="w-full h-px bg-border/50" />
-                 <a href="https://linkedin.com/in/novia-amanda" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
-                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
-                     <Linkedin className="w-5 h-5" />
-                   </div>
-                   <div>
-                     <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Professional Network</p>
-                     <p className="text-lg font-bold group-hover:text-primary transition-colors">in/novia-amanda</p>
-                   </div>
-                 </a>
-                 <div className="w-full h-px bg-border/50" />
-                 <a href="https://docs.google.com/document/d/1dShDcLryJxTyye3mo5ZwpyfmGmqnxxPj/edit?usp=sharing&ouid=113258424421884384056&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
-                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
-                     <Download className="w-5 h-5" />
-                   </div>
-                   <div>
-                     <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Curriculum Vitae</p>
-                     <p className="text-lg font-bold group-hover:text-primary transition-colors">Download CV</p>
-                   </div>
-                 </a>
-               </div>
+              <div className="flex flex-col gap-6">
+                <a href="mailto:noviamnda09@gmail.com" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Direct Email</p>
+                    <p className="text-lg font-bold group-hover:text-primary transition-colors">noviamnda09@gmail.com</p>
+                  </div>
+                </a>
+                <div className="w-full h-px bg-border/50" />
+                <a href="https://linkedin.com/in/novia-amanda" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
+                    <Linkedin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Professional Network</p>
+                    <p className="text-lg font-bold group-hover:text-primary transition-colors">in/novia-amanda</p>
+                  </div>
+                </a>
+                <div className="w-full h-px bg-border/50" />
+                <a href="https://docs.google.com/document/d/1dShDcLryJxTyye3mo5ZwpyfmGmqnxxPj/edit?usp=sharing&ouid=113258424421884384056&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-secondary/50 transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform">
+                    <Download className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase font-black tracking-widest text-muted-foreground mb-1">Curriculum Vitae</p>
+                    <p className="text-lg font-bold group-hover:text-primary transition-colors">Download CV</p>
+                  </div>
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -726,21 +726,21 @@ export default function Home() {
       {/* Project Modal */}
       <AnimatePresence>
         {selectedProject && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
             onClick={() => setSelectedProject(null)}
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.95, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.95, y: 20, opacity: 0 }}
               className="bg-card w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative flex flex-col md:flex-row"
               onClick={e => e.stopPropagation()}
             >
-              <button 
+              <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
               >
@@ -773,7 +773,7 @@ export default function Home() {
                 </div>
 
                 <h3 className="text-3xl md:text-5xl font-serif font-bold mb-10 leading-tight text-foreground">{selectedProject.title}</h3>
-                
+
                 <div className="space-y-12">
                   <section className="relative pl-8 border-l-2 border-primary/10">
                     <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
@@ -784,7 +784,7 @@ export default function Home() {
                       "{selectedProject.details.objective || selectedProject.details.problem}"
                     </p>
                   </section>
-                  
+
                   {selectedProject.details.technical && (
                     <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
                       <div className="flex items-center gap-3 mb-6">
@@ -794,7 +794,7 @@ export default function Home() {
                       <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
                         <div className="space-y-4">
                           {selectedProject.details.technical.split('\n\n').map((para: string, idx: number) => {
-                             if (para.startsWith('###')) {
+                            if (para.startsWith('###')) {
                               return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                             }
                             return (
@@ -831,7 +831,7 @@ export default function Home() {
                       <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
                         <div className="space-y-4">
                           {selectedProject.details.process.split('\n\n').map((para: string, idx: number) => {
-                             if (para.startsWith('###')) {
+                            if (para.startsWith('###')) {
                               return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                             }
                             return (
@@ -868,7 +868,7 @@ export default function Home() {
                       <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
                         <div className="space-y-4">
                           {selectedProject.details.highlights.split('\n\n').map((para: string, idx: number) => {
-                             if (para.startsWith('###')) {
+                            if (para.startsWith('###')) {
                               return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                             }
                             return (
@@ -898,7 +898,7 @@ export default function Home() {
                       <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
                         <div className="space-y-4">
                           {selectedProject.details.outcome.split('\n\n').map((para: string, idx: number) => {
-                             if (para.startsWith('###')) {
+                            if (para.startsWith('###')) {
                               return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
                             }
                             return (
@@ -935,7 +935,7 @@ export default function Home() {
                       <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
                         <div className="space-y-4">
                           {(selectedProject.details.impact || selectedProject.details.conclusion).split('\n\n').map((para: string, idx: number) => {
-                             if (para.startsWith('###')) {
+                            if (para.startsWith('###')) {
                               return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
                             }
                             return (
@@ -980,27 +980,27 @@ export default function Home() {
       {/* Experience Deep Dive Modal */}
       <AnimatePresence>
         {selectedExperience && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
             onClick={() => setSelectedExperience(null)}
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.95, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.95, y: 20, opacity: 0 }}
               className="bg-card w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative p-8 md:p-16 custom-scrollbar"
               onClick={e => e.stopPropagation()}
             >
-              <button 
+              <button
                 onClick={() => setSelectedExperience(null)}
                 className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
               >
                 <X className="w-5 h-5" />
               </button>
-              
+
               <div className="flex flex-wrap items-center gap-3 mb-8">
                 <Badge className="bg-accent text-accent-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
                   {selectedExperience.type}
@@ -1025,7 +1025,7 @@ export default function Home() {
                     "{selectedExperience.details.objective}"
                   </p>
                 </section>
-                
+
                 <section className="grid gap-12">
                   <div>
                     <div className="flex items-center gap-3 mb-8">
@@ -1094,21 +1094,21 @@ export default function Home() {
       {/* Science Project Modal */}
       <AnimatePresence>
         {selectedScienceProject && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
             onClick={() => setSelectedScienceProject(null)}
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.95, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.95, y: 20, opacity: 0 }}
               className="bg-card w-full max-w-5xl max-h-[90vh] overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative flex flex-col md:flex-row"
               onClick={e => e.stopPropagation()}
             >
-              <button 
+              <button
                 onClick={() => setSelectedScienceProject(null)}
                 className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
               >
@@ -1141,7 +1141,7 @@ export default function Home() {
                 </div>
 
                 <h3 className="text-3xl md:text-5xl font-serif font-bold mb-10 leading-tight text-foreground">{selectedScienceProject.title}</h3>
-                
+
                 <div className="space-y-12">
                   <section className="relative pl-8 border-l-2 border-primary/10">
                     <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
@@ -1152,40 +1152,40 @@ export default function Home() {
                       "{selectedScienceProject.details.objective}"
                     </p>
                   </section>
-                  
+
                   <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
                     <div className="flex items-center gap-3 mb-6">
                       <Globe className="w-5 h-5 text-primary" />
                       <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Program Highlights</h4>
                     </div>
-                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
-                        <div className="space-y-4">
-                          {selectedScienceProject.details.highlights.split('\n\n').map((para: string, idx: number) => {
-                            if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
-                            }
-                            return (
-                              <div key={idx} className="space-y-2">
-                                {para.split('\n').map((line: string, lIdx: number) => {
-                                  if (line.startsWith('- ')) {
-                                    return (
-                                      <div key={lIdx} className="flex gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p>{line.substring(2).replace(/\*\*/g, '')}</p>
-                                      </div>
-                                    );
-                                  }
+                    <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
+                      <div className="space-y-4">
+                        {selectedScienceProject.details.highlights.split('\n\n').map((para: string, idx: number) => {
+                          if (para.startsWith('###')) {
+                            return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                          }
+                          return (
+                            <div key={idx} className="space-y-2">
+                              {para.split('\n').map((line: string, lIdx: number) => {
+                                if (line.startsWith('- ')) {
                                   return (
-                                    <p key={lIdx} className="mb-2 leading-relaxed">
-                                      {line.replace(/\*\*/g, '')}
-                                    </p>
+                                    <div key={lIdx} className="flex gap-3">
+                                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                      <p>{line.substring(2).replace(/\*\*/g, '')}</p>
+                                    </div>
                                   );
-                                })}
-                              </div>
-                            );
-                          })}
-                        </div>
+                                }
+                                return (
+                                  <p key={lIdx} className="mb-2 leading-relaxed">
+                                    {line.replace(/\*\*/g, '')}
+                                  </p>
+                                );
+                              })}
+                            </div>
+                          );
+                        })}
                       </div>
+                    </div>
                   </section>
 
                   <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
