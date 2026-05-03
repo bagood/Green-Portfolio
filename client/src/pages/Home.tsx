@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
+  Activity,
+  ArrowLeft,
+  CornerUpLeft,
   Mail,
   Linkedin,
   Leaf,
@@ -27,6 +30,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import QRCode from "react-qr-code";
 
 // Import generated images
 import heroBg from "@/assets/images/hero-bg.jpg";
@@ -56,70 +60,72 @@ export default function Home() {
     const title = item.title || item.role;
     const description = item.description;
     const category = item.category || item.badge || item.type;
+    const tags = item.tags || [category].filter(Boolean);
     const icon = item.icon || (type === "science" ? <Globe className="w-4 h-4" /> : <Zap className="w-4 h-4" />);
     const image = item.image;
 
-    if (!isOpen) {
-      return (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.1 }}
-          transition={{ duration: 0.3, delay: index * 0.05, ease: "easeOut" }}
-          whileHover={{ y: -4, scale: 1.02, transition: { duration: 0.15, delay: 0 } }}
-          onClick={(e: any) => { e.stopPropagation(); onClick(); }}
-          className="group bg-card rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer border border-border/40 flex flex-col h-full p-4"
-        >
-          <h4 className="text-[13px] md:text-sm font-bold mb-2 group-hover:text-primary transition-colors leading-tight line-clamp-2">{title}</h4>
-          <p className="text-[11px] md:text-xs text-muted-foreground flex-1 mb-3 line-clamp-2">{description}</p>
-          <div className="mt-auto">
-            <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[8px] md:text-[9px] font-medium px-2 py-0.5 whitespace-nowrap overflow-hidden text-ellipsis max-w-full block">
-              {category}
-            </Badge>
-          </div>
-        </motion.div>
-      );
-    }
-
     return (
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        layout
+        initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.1 }}
-        transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-        whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.15, delay: 0 } }}
+        transition={{ layout: { duration: 0.4, ease: "circOut" }, opacity: { duration: 0.3 }, y: { duration: 0.3, delay: index * 0.02 } }}
+        whileHover={{ y: -4, scale: 1.02, transition: { duration: 0.15, delay: 0 } }}
         onClick={(e: any) => { e.stopPropagation(); onClick(); }}
-        className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer border border-border/40 flex flex-col h-full"
+        className={`group bg-card shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer border border-border/40 flex flex-col h-full ${isOpen ? 'rounded-2xl overflow-hidden hover:shadow-2xl' : 'rounded-2xl p-4'}`}
       >
-        {image && type !== "journey" && (
-          <div className="h-40 overflow-hidden relative">
-            <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-            <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
-          </div>
-        )}
-        <div className="p-6 flex-1 flex flex-col">
-          <div className="flex items-center gap-2 text-primary mb-3">
-            <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-              {icon}
+        {!isOpen ? (
+          <motion.div layout="position" className="flex flex-col h-full">
+            <h4 className="text-[13px] md:text-sm font-bold mb-2 group-hover:text-primary transition-colors leading-tight line-clamp-2">{title}</h4>
+            <p className="text-[11px] md:text-xs text-muted-foreground flex-1 mb-3 line-clamp-2">{description}</p>
+            <div className="mt-auto">
+              <div className="flex flex-wrap gap-1.5 overflow-hidden max-h-[22px]">
+                {tags.map((tag: string, i: number) => (
+                  <Badge key={i} variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[8px] md:text-[9px] font-medium px-2 py-0.5 whitespace-nowrap block">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
             </div>
-            {type === "journey" && item.period && (
-              <span className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground ml-auto">{item.period}</span>
+          </motion.div>
+        ) : (
+          <motion.div layout="position" className="flex flex-col h-full">
+            {image && type !== "journey" && (
+              <div className="h-40 overflow-hidden relative shrink-0">
+                <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
+              </div>
             )}
-          </div>
-          <h4 className="text-base md:text-lg font-bold mb-2 group-hover:text-primary transition-colors leading-tight">{title}</h4>
-          {type === "journey" && item.company && (
-            <p className="text-sm font-serif italic text-muted-foreground mb-3">{item.company}</p>
-          )}
-          <p className="text-xs md:text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{description}</p>
-          <div className="mt-auto flex flex-col items-start gap-3">
-            <Badge variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[9px] md:text-[10px] font-medium px-2.5 py-0.5">
-              {category}
-            </Badge>
-            <div className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
-              {type === "project" ? "View Case Study" : "View Details"} <ArrowRight className="w-3 h-3" />
+            <div className="p-6 flex-1 flex flex-col">
+              <div className="flex items-center gap-2 text-primary mb-3">
+                <div className="p-1.5 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  {icon}
+                </div>
+                {type === "journey" && item.period && (
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground ml-auto">{item.period}</span>
+                )}
+              </div>
+              <h4 className="text-base md:text-lg font-bold mb-2 group-hover:text-primary transition-colors leading-tight">{title}</h4>
+              {type === "journey" && item.company && (
+                <p className="text-sm font-serif italic text-muted-foreground mb-3">{item.company}</p>
+              )}
+              <p className="text-xs md:text-sm text-muted-foreground flex-1 mb-6 line-clamp-3">{description}</p>
+              <div className="mt-auto flex flex-col items-start gap-3">
+                <div className="flex flex-wrap gap-1.5">
+                  {tags.map((tag: string, i: number) => (
+                    <Badge key={i} variant="secondary" className="bg-secondary/50 text-secondary-foreground text-[9px] md:text-[10px] font-medium px-2.5 py-0.5">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1">
+                  {type === "project" ? "View Case Study" : "View Details"} <ArrowRight className="w-3 h-3" />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        )}
       </motion.div>
     );
   };
@@ -134,7 +140,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "intro", "skills", "projects", "science", "journey", "contact"];
+      const sections = ["about", "intro", "skills", "contact"];
       const current = sections.find(section => {
         const el = document.getElementById(section);
         if (el) {
@@ -175,87 +181,111 @@ export default function Home() {
   const bootcampProjects = [
     {
       id: "carbon",
-      title: "Carbon Accounting & GHG Inventory",
-      category: "Sustainability Implementation",
-      description: "Carbon Accounting: Conducted Greenhouse Gas (GHG) emission inventories and simplified calculations for corporate operations.",
+      title: "Built Multi-Sector GHG Inventory Model",
+      tags: ["ESG Analysis", "Data Analysis", "GHG Protocol", "Carbon Accounting"],
+      description: "Conducted Greenhouse Gas (GHG) emission inventories and simplified calculations for corporate operations.",
       image: projectCarbon,
       icon: <BarChart3 className="w-5 h-5" />,
       details: {
-        problem: "Corporate operations often lack clear visibility into their indirect emission sources, leading to incomplete sustainability disclosures.",
-        methodology: "GHG Protocol Corporate Standard, simplified emission factors for scope 1 and 2 emissions.",
-        conclusion: "Identified that energy-intensive office cooling accounted for 65% of indirect emissions, suggesting targeted renewable energy procurement.",
-        objective: "To demonstrate technical mastery of the GHG Protocol by calculating and classifying carbon emissions across complex industrial scenarios, specifically for the Finance and Mining sectors.",
-        technical: "Scope Classification\nI accurately categorized organizational activities into the three standard reporting tiers:\n- Scope 1 (Direct): Diesel combustion from onsite gensets.\n- Scope 2 (Indirect): Purchased electricity from the national grid.\n- Scope 3 (Value Chain): Downstream impacts, focusing on aviation-based business travel.\n\nQuantification Methodology\nApplied a rigorous investigative approach using the standard carbon accounting formula:\n GHG Emission = Data Aktivitas * EF * Global Warming Potential*\n\n### Renewable Energy Integration\nAnalyzed the decarbonization impact of a **2,000 kWp solar panel system**, calculating how it offsets direct grid dependence and reduces overall Scope 2 totals.",
-        highlights: "### Financial Sector Simulation\nCalculated the monthly footprint for a 10-branch network consuming *1,000,000 kWh* and *5,000 liters* of diesel.\n\n### Mining Sector Simulation\nModeled high-intensity emissions for a facility consuming *3.4 million kWh* and *1 million liters* of diesel per month.",
-        impact: "Analytical Accuracy\nEnsured all outputs were measured in **ton CO2eq**, aligning with international sustainability reporting requirements.",
+        overview: "Built a multi-sector carbon accounting model applying GHG Protocol to quantify emissions and evaluate renewable energy impact.",
+        impacts: [
+           { subtitle: "tCO₂eq Outputs", title: "Delivered Audit-Ready Emissions Data", description: "Produced standardized emissions outputs across finance and mining scenarios aligned with global reporting standards." },
+           { subtitle: "2,000 kWp Solar Model", title: "Quantified Scope 2 Reduction Potential", description: "Modeled renewable energy integration to estimate measurable reduction in grid-based emissions." },
+           { subtitle: "Decarbonization Pathways", title: "Built Scalable Carbon Framework", description: "Developed a reusable model for structured emissions tracking and future corporate use." }
+        ],
+        approach: [
+           "Classified emissions into Scope 1, 2, and 3 categories",
+           "Applied carbon calculation methodology to operational datasets",
+           "Modeled solar integration (2,000 kWp) and multi-sector scenarios"
+        ],
         cta: "https://docs.google.com/document/d/1gZ2QhxNor1ai8Lnx121xVPXr238DJ-8B0W6V-WxQq98/edit?usp=drive_link"
       }
     },
     {
       id: "greenwash",
-      title: "Greenwashing Risk & Compliance",
-      category: "Strategic Analysis",
-      description: "Greenwashing Risk & Compliance Analysis: Analyzed corporate disclosures against GRI 2021 standards to identify potential greenwashing risks and verify alignment with sustainability commitments.",
+      title: "Identified Greenwashing Risks in ESG Disclosures",
+      tags: ["ESG Analysis", "GRI Compliance", "Risk Assessment", "Disclosure Audit"],
+      description: "Audited corporate sustainability reports against GRI 2021 standards.",
       image: heroBg,
       icon: <ShieldCheck className="w-5 h-5" />,
       details: {
-        problem: "Vague environmental claims in annual reports often misalign with actual project implementation, creating legal and reputational risks.",
-        methodology: "GRI 2021 Disclosure Gap Analysis, verification against external sustainability commitments.",
-        conclusion: "Found discrepancies in 'Net Zero' timelines where carbon offsets were prioritized over absolute reduction strategies.",
-        objective: "To analyze corporate sustainability disclosures for **Bayan Resources** against GRI 2021 Standards, identifying specific greenwashing risks and verifying if operational activities truly align with their stated environmental and social commitments.",
-        process: "### Investigative Disclosure Audit\nPerformed a deep-dive audit of the 2023 Sustainability Report for Bayan Resources, scrutinizing the **\"Evidence Gaps\"** between their public narratives and their technical performance data.\n\n### Compliance Screening\nEvaluated the company against **GRI 2** (General Disclosures) and **GRI 3** (Material Topics) to detect common greenwashing red flags, such as *\"Selective Disclosure\"* or *\"Vague Commitments\"* regarding their core environmental impact.\n\n### Sector-Specific Analysis (Mining)\n- **The Narrative Risk**: Analyzed how Bayan Resources emphasizes social programs and land reclamation while potentially providing less granular, year-by-year data on Scope 1 and 2 emissions or direct biodiversity loss.\n- **Accountability Check**: Investigated the presence (or absence) of time-bound, measurable targets for decarbonization, contrasting active programs with the lack of a clear, verifiable roadmap to Net Zero.\n- **Operational Verification**: Analyzed whether community-focused programs (Social pillar) were being used as a *\"green distraction\"* to shift focus away from the inherent environmental risks of coal mining operations.",
-        outcome: "The project resulted in a **Forensic ESG Audit Report** that provided:\n\n- **Risk Identification**: A technical breakdown of where corporate narratives failed to provide the quantitative evidence required by **GRI 302 (Energy)**, **GRI 304 (Biodiversity)**, and **GRI 305 (Emissions)**.\n- **Governance Corrective Actions**: Developed a series of recommendations for how Bayan Resources to improve transparency by adopting the target-setting rigor required for investor-grade reporting.\n- **Strategic Compliance Roadmap**: Proved that for a mining firm to be *\"future-proof,\"* it must move away from general CSR storytelling and toward the goal-based outcomes mandated by **SEOJK 16**.",
+        overview: "Conducted a forensic ESG audit to identify greenwashing risks and evaluate alignment with GRI 2021 standards.",
+        impacts: [
+           { subtitle: "Disclosure Gap Analysis", title: "Identified High-Risk Reporting Gaps", description: "Detected inconsistencies between narrative claims and quantitative disclosures across key ESG metrics." },
+           { subtitle: "GRI Compliance Screening", title: "Improved Transparency Benchmarking", description: "Evaluated alignment with GRI 2 & 3, highlighting missing targets and vague commitments." },
+           { subtitle: "Governance Roadmap", title: "Enabled Shift Toward Measurable ESG Targets", description: "Proposed actionable improvements aligned with SEOJK 16 and investor-grade reporting expectations." }
+        ],
+        approach: [
+           "Audited sustainability report against GRI 2021 standards",
+           "Identified selective disclosure and vague commitments",
+           "Analyzed gaps in emissions, biodiversity, and energy reporting"
+        ],
         cta: "https://drive.google.com/file/d/1WZw56we-EUp-oZzYIsnBeccswmaNp4KM/view?usp=sharing"
       }
     },
     {
       id: "materiality",
-      title: "Strategic Program Alignment",
-      category: "ESG Strategy",
-      description: "Strategic Program Alignment: Mapped corporate initiatives to relevant GRI materiality topics and evaluate the consistency between program implementation and company sustainability strategy.",
+      title: "Mapped ESG Programs to GRI Materiality Framework",
+      tags: ["ESG Strategy", "Materiality Analysis", "Governance"],
+      description: "Evaluated corporate initiatives against sustainability strategy and GRI topics.",
       image: projectReport,
       icon: <FileText className="w-5 h-5" />,
       details: {
-        problem: "CSR programs often operate in silos, disconnected from the core business's most significant environmental and social impacts.",
-        methodology: "Double Materiality Assessment, Stakeholder Engagement Matrix.",
-        conclusion: "Proposed realigning the community fund toward water sanitation projects to match the company's high local water dependency.",
-        objective: "To perform a rigorous strategic audit of a corporate campaign to evaluate its disclosure quality against **GRI 2021 Materiality Topics** and determine if it authentically fulfills the company’s stated sustainability commitments.",
-        process: "### Investigative Program Audit\nI selected **SheHacks 2023**, a program by Indosat Ooredoo Hutchison designed to reduce the gender gap in Indonesia’s tech industry by providing mentorship and funding to female entrepreneurs.\n\n### GRI Materiality Mapping\nI conducted a deep-dive analysis to find the technical *\"address\"* for this social program within the GRI 2021 framework:\n- **Social (S): GRI 413 (Local Communities)**: Evaluated how the program functions as a community engagement tool that drives local economic inclusion.\n- **Governance (G): GRI 3-3 (Management of Material Topics)**: Analyzed how Indosat manages *\"Digital Inclusion\"* as a material topic to mitigate social risk and drive sustainable growth.\n\n### Commitment Verification\nI investigated whether this program truly answered Indosat’s sustainability pillar of **\"Digital Nation,\"** verifying that the initiative provides the evidence required to back up their high-level ESG claims.",
-        outcome: "The result is a **Strategic Alignment Matrix** that provides a blueprint for authentic corporate transparency:\n\n- **Verified Social Impact**: Successfully translated a *\"Community Development\"* campaign into a technical disclosure, proving that female empowerment is a measurable driver of ESG performance.\n- **Governance Audit**: Provided a clear rationale for how Indosat uses digital literacy as a tool to meet **GRI 413** requirements for social responsibility to local communities.\n- **Strategic Roadmap**: Demonstrated that the program is not just a *\"cost center\"* but a core component of Indosat's long-term commitment to a more inclusive digital economy in Indonesia.",
+        overview: "Performed a strategic ESG audit to evaluate whether corporate programs align with sustainability commitments and GRI materiality topics.",
+        impacts: [
+           { subtitle: "GRI Materiality Mapping", title: "Converted Programs into Measurable ESG Contributions", description: "Mapped social initiatives to GRI disclosures, enabling structured ESG reporting." },
+           { subtitle: "Impact Verification", title: "Validated Strategic Consistency", description: "Confirmed alignment between program execution and corporate sustainability priorities." },
+           { subtitle: "Strategic Positioning", title: "Reframed Initiative as ESG Value Driver", description: "Positioned community programs as contributors to long-term ESG performance." }
+        ],
+        approach: [
+           "Mapped SheHacks 2023 to GRI material topics (GRI 413, GRI 3)",
+           "Evaluated alignment with digital inclusion strategy",
+           "Assessed program contribution to ESG disclosures"
+        ],
         cta: "https://drive.google.com/file/d/1kQBjhYNLxetBqvWydqxV9TLtePyljhf_/view?usp=sharing"
       }
     },
     {
       id: "benchmarking",
-      title: "Sustainability Reporting Benchmarking",
-      category: "Disclosure Quality",
-      description: "Sustainability Reporting & Framework Benchmarking: Benchmarked disclosure quality between two companies against GRI 2021 and SASB standards to determine the relationship between strategic reporting and ESG ratings.",
+      title: "Benchmarked ESG Reporting Across GRI & SASB",
+      tags: ["ESG Reporting", "Data Analysis", "Compliance Analysis"],
+      description: "Compared disclosure quality between telecom companies using global frameworks.",
       image: projectReport,
       icon: <Search className="w-5 h-5" />,
       details: {
-        problem: "Companies often struggle to understand how their disclosures impact their ESG ratings relative to industry peers.",
-        methodology: "GRI 2021 vs. SASB Comparison Framework.",
-        conclusion: "Telkomsel showed higher quantitative transparency in data privacy compared to Indosat, leading to better social pillar scores.",
-        objective: "To conduct a comparative technical audit of the sustainability reports of two leading telecommunications providers (**Telkomsel** and **Indosat Ooredoo Hutchison**) to evaluate their disclosure quality against **GRI 2021** and **SASB** standards and determine the direct relationship between strategic reporting and global **ESG Ratings**.",
-        process: "### Investigative Benchmarking\nI performed a deep-dive analysis of the 2022–2023 disclosures for both companies, comparing how each organization manages industry-specific material risks.\n\n### Dual-Framework Mapping\nI audited the reports across two critical international standards to ensure a holistic evaluation:\n- **GRI 2021 (Impact-Focused)**: Evaluated how each company reports its multi-pillar impact on the economy, environment, and people.\n- **SASB (Investor-Focused)**: Focused on the Telecommunications Services Standard, specifically auditing disclosures on *Data Privacy, Data Security, and Product End-of-Life Management*.\n\n### ESG Rating Correlation\nI researched the external ESG scores, **Sustainalytics** used by IDX, for both firms to verify if superior disclosure quality—such as Telkomsel’s comprehensive Greenhouse Gas (GHG) reporting—resulted in a higher market rating.\n\n### Gap Analysis\nI identified critical *\"blind spots\"* in reporting, such as using year-by-year benchmarks to prove genuine progress toward net-zero and social inclusion goals.",
-        outcome: "The project resulted in a **Strategic Reporting Audit** that provides:\n\n- **Compliance Leadership Assessment**: Evidence that Telkomsel’s integration of national regulations into their corporate strategy provides a more *\"future-proof\"* ESG profile than Indosat’s.\n- **Transparency Gap Analysis**: A technical breakdown showing that *\"telling a story\"* (Indosat) is not a substitute for *\"setting a target\"* (Telkomsel) when it comes to investor-grade reporting.\n- **Governance Roadmap**: A series of recommendations for how telecommunications firms can bridge the gap between reporting on activities and reporting on goal-based outcomes.",
+        overview: "Conducted a comparative ESG reporting audit to evaluate disclosure quality and its relationship to ESG ratings.",
+        impacts: [
+           { subtitle: "Cross-Company Benchmarking", title: "Identified Reporting Strength Gaps", description: "Compared disclosure depth across two companies, highlighting differences in transparency and rigor." },
+           { subtitle: "Framework Integration", title: "Bridged Impact and Investor Reporting", description: "Aligned GRI and SASB frameworks for a more comprehensive evaluation approach." },
+           { subtitle: "ESG Rating Correlation", title: "Linked Reporting to Market Credibility", description: "Demonstrated how stronger disclosure practices contribute to improved ESG ratings." }
+        ],
+        approach: [
+           "Benchmarked Telkomsel vs Indosat sustainability reports",
+           "Evaluated GRI 2021 and SASB alignment",
+           "Analyzed disclosures on emissions, data privacy, and governance"
+        ],
         cta: "https://drive.google.com/file/d/1taLIHKW7spFJQ25edL6yrQIV6YcI_7Od/view?usp=sharing"
       }
     },
     {
       id: "report-dev",
-      title: "Sustainability Report Development",
-      category: "Reporting Frameworks",
-      description: "Data Collection & Sustainability Report Development: Conducted end-to-end data collection and report structure for a telecommunications sector sustainability report in compliance with SEOJK 16 and GRI 2021 requirements.",
+      title: "Developed GRI-Compliant Sustainability Report Model",
+      tags: ["ESG Reporting", "Data Management", "Strategy"],
+      description: "Built a structured report using multi-year ESG data aligned with GRI and SEOJK 16.",
       image: projectReport,
       icon: <CheckCircle2 className="w-5 h-5" />,
       details: {
-        problem: "Merging SEOJK 16 (local) and GRI 2021 (global) requirements into a single, cohesive reporting structure.",
-        methodology: "SEOJK 16 & GRI 2021 Integration Mapping.",
-        conclusion: "Streamlined data collection by 20% by creating a unified template that satisfied both regulatory and international standards.",
-        objective: "To develop a comprehensive, **\"dummy\" 2025 Sustainability Report for Telkom Indonesia** by performing quantitative data forensics on historical disclosures (2022–2024) and applying trend-based forecasting to ensure strategic GRI compliance.",
-        process: "### Investigative Data Collection\nConducted a deep-dive analysis of Telkom’s 2024 Sustainability Report to extract multi-year quantitative performance metrics across the **E, S, and G pillars**.\n\n### Predictive Trend Modeling\nUsed a researcher’s lens to analyze historical performance patterns and project **2025 data points**, transforming a static report into a forward-looking strategic model.\n\n### Customized GRI Framework\nSelected and implemented industry-specific GRI standards to address the material risks unique to the telecommunications sector:\n- **Foundational Standards**: General Disclosures (GRI 2-1 to 2-5, 2-7, 2-8, 2-29) and Materiality Analysis (GRI 3-1, 3-2, 3-3).\n- **Governance (G)**: Investigated metrics for Anti-corruption (GRI 205) and Anti-competitive Behavior (GRI 206) to ensure corporate integrity.\n- **Environmental (E)**: Quantified impacts for Energy (GRI 302), Emissions (GRI 305), and Waste (GRI 306).\n- **Social (S)**: Focused on Employment (GRI 401), Training (GRI 404), Diversity (GRI 405), and the industry-critical Customer Privacy (GRI 418).\n\n### Technical Compliance\nBridged the gap between raw data and professional disclosure requirements, ensuring the final report structure met the transparency expectations of **GRI 2021** and **SEOJK 16**.",
-        outcome: "The project resulted in two high-stakes technical deliverables that serve as a professional model for corporate transparency:\n\n- **Consolidated ESG Data Matrix (2022–2025)**: A 4-year quantitative inventory that aligns historical data with projected 2025 performance. This matrix centralizes critical KPIs, transforming hundreds of pages of fragmented reporting into a single, scannable, and audit-ready data asset.\n- **GRI-Compliant Transparency Blueprint**: A structured Sustainability Report draft that maps corporate activities to international disclosure requirements. This deliverable proves the ability to translate complex *\"Social\"* and *\"Governance\"* data into the precise technical language required by global investors and the **SEOJK 16** regulatory framework.",
+        overview: "Developed a forward-looking sustainability reporting model by consolidating historical ESG data and applying GRI 2021 and SEOJK 16 standards.",
+        impacts: [
+           { subtitle: "Multi-Year ESG Data Matrix", title: "Centralized 4-Year ESG Performance Data", description: "Structured fragmented disclosures into a single dataset spanning 2022–2025." },
+           { subtitle: "Predictive ESG Modeling", title: "Enabled Forward-Looking Planning", description: "Projected ESG performance trends to support strategic sustainability decisions." },
+           { subtitle: "GRI-Compliant Framework", title: "Built Investor-Ready Sustainability Report", description: "Developed a structured report aligned with global standards and regulatory requirements." }
+        ],
+        approach: [
+           "Consolidated ESG performance metrics across E, S, and G pillars",
+           "Applied trend-based forecasting to project 2025 performance data",
+           "Structured reporting structure aligned with GRI and SEOJK 16"
+        ],
         cta: "https://docs.google.com/document/d/1w_xZMDbmiP_9XJ8Z1n0I0MyCnVTOswUMf9QOZ-_lhQg/edit?usp=drive_link"
       }
     }
@@ -487,9 +517,8 @@ export default function Home() {
             ))}
           </div>
         </motion.div>
-      </section>
       {/* Experience Clusters */}
-      <section id="projects" className="py-10 pb-32">
+      <div id="projects" className="py-10 pb-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-7xl mx-auto relative border-l border-border/30 pl-6 md:pl-12 ml-4 md:ml-6 space-y-16 md:space-y-24">
             <div className="absolute top-0 bottom-0 left-[-1px] w-[1px] bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
@@ -531,7 +560,7 @@ export default function Home() {
                 </div>
 
                 <div className={`transition-all duration-500 ${activeCluster === "01" ? 'p-6 md:p-8 pt-6 md:pt-8' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
-                  <div className={`grid gap-4 md:gap-6 ${activeCluster === "01" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                  <motion.div layout className={`grid gap-4 md:gap-6 ${activeCluster === "01" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                     {bootcampProjects.map((project, idx) => (
                       <CardItem
                         key={idx}
@@ -542,7 +571,7 @@ export default function Home() {
                         onClick={() => setSelectedProject(project)}
                       />
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
@@ -584,7 +613,7 @@ export default function Home() {
                 </div>
 
                 <div className={`transition-all duration-500 ${activeCluster === "02" ? 'p-6 md:p-8 pt-6 md:pt-8' : 'px-6 pb-6 md:px-8 md:pb-8 pt-0'}`}>
-                  <div className={`grid gap-4 md:gap-6 ${activeCluster === "02" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                  <motion.div layout className={`grid gap-4 md:gap-6 ${activeCluster === "02" ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                     {scienceProjects.map((item, idx) => (
                       <CardItem
                         key={idx}
@@ -595,7 +624,7 @@ export default function Home() {
                         onClick={() => setSelectedScienceProject(item)}
                       />
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
@@ -649,7 +678,7 @@ export default function Home() {
                       ))}
                     </motion.div>
                   )}
-                  <div className={`grid gap-4 md:gap-6 relative z-10 ${activeCluster === "03" ? 'md:grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
+                  <motion.div layout className={`grid gap-4 md:gap-6 relative z-10 ${activeCluster === "03" ? 'md:grid-cols-2' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                     {combinedJourney.map((exp, idx) => (
                       <CardItem
                         key={idx}
@@ -660,13 +689,14 @@ export default function Home() {
                         onClick={() => setSelectedExperience(exp)}
                       />
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
 
           </div>
         </div>
+      </div>
       </section>
       {/* Contact Section */}
       <section id="contact" className="py-32 bg-secondary/30 relative border-t border-border/50">
@@ -725,257 +755,325 @@ export default function Home() {
       </section>
       {/* Project Modal */}
       <AnimatePresence>
-        {selectedProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
-            onClick={() => setSelectedProject(null)}
-          >
+        {selectedProject && (() => {
+          let currentArray = [];
+          let currentIndex = -1;
+          
+          if (bootcampProjects.find(p => p.title === selectedProject.title)) {
+            currentArray = bootcampProjects;
+          } else if (scienceProjects.find(p => p.title === selectedProject.title)) {
+            currentArray = scienceProjects;
+          }
+
+          if (currentArray.length > 0) {
+            currentIndex = currentArray.findIndex(p => p.title === selectedProject.title);
+          }
+
+          const handleNext = (e) => {
+            e.stopPropagation();
+            if (currentIndex >= 0 && currentIndex < currentArray.length - 1) {
+              setSelectedProject(currentArray[currentIndex + 1]);
+            }
+          };
+
+          const handlePrev = (e) => {
+            e.stopPropagation();
+            if (currentIndex > 0) {
+              setSelectedProject(currentArray[currentIndex - 1]);
+            }
+          };
+
+          return (
             <motion.div
-              initial={{ scale: 0.95, y: 20, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.95, y: 20, opacity: 0 }}
-              className="bg-card w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative flex flex-col md:flex-row"
-              onClick={e => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
+              onClick={() => setSelectedProject(null)}
             >
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
+              <motion.div
+                initial={{ scale: 0.95, y: 20, opacity: 0 }}
+                animate={{ scale: 1, y: 0, opacity: 1 }}
+                exit={{ scale: 0.95, y: 20, opacity: 0 }}
+                className="bg-card w-[95vw] max-w-7xl h-[90vh] max-h-[850px] overflow-hidden rounded-[2rem] shadow-2xl border border-border/50 relative flex flex-col"
+                onClick={e => e.stopPropagation()}
               >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="w-full md:w-2/5 h-48 md:h-auto relative group overflow-hidden">
-                <a href={selectedProject.details.cta} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
-                  <img src={selectedProject.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={selectedProject.title} />
-                  <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white backdrop-blur-sm">
-                    <ExternalLink className="w-10 h-10 mb-2" />
-                    <span className="font-bold uppercase tracking-widest text-xs">Preview Project Files</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:bg-gradient-to-r" />
-                </a>
-              </div>
-
-              <div className="w-full md:w-3/5 p-8 md:p-16 overflow-y-auto custom-scrollbar">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <Badge className="bg-primary/10 text-primary border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                    {selectedProject.category}
-                  </Badge>
-                  {selectedProject.details.cta && (
-                    <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-8 hover:bg-primary/5" asChild>
-                      <a href={selectedProject.details.cta} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 w-3.5 h-3.5" /> Open Document
-                      </a>
-                    </Button>
-                  )}
-                </div>
-
-                <h3 className="text-3xl md:text-5xl font-serif font-bold mb-10 leading-tight text-foreground">{selectedProject.title}</h3>
-
-                <div className="space-y-12">
-                  <section className="relative pl-8 border-l-2 border-primary/10">
-                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
+                {/* Header Area */}
+                <div className="flex-none p-6 md:p-8 border-b border-border/40 flex justify-between items-start gap-4">
+                  <div className="flex-1">
+                    <button onClick={() => setSelectedProject(null)} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase tracking-wider mb-4">
+                      <CornerUpLeft className="w-4 h-4" /> Back to Portfolio
+                    </button>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {selectedProject.tags ? selectedProject.tags.map((tag, i) => (
+                        <Badge key={i} className="bg-primary/10 text-primary border-none px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{tag}</Badge>
+                      )) : (
+                        <Badge className="bg-primary/10 text-primary border-none px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{selectedProject.category || selectedProject.badge || selectedProject.type}</Badge>
+                      )}
                     </div>
-                    <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-4">Core Objective</h4>
-                    <p className="text-lg md:text-xl font-medium leading-relaxed italic text-foreground/90">
-                      "{selectedProject.details.objective || selectedProject.details.problem}"
-                    </p>
-                  </section>
-
-                  {selectedProject.details.technical && (
-                    <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
-                      <div className="flex items-center gap-3 mb-6">
-                        <Settings className="w-5 h-5 text-primary" />
-                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Technical Application</h4>
-                      </div>
-                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
-                        <div className="space-y-4">
-                          {selectedProject.details.technical.split('\n\n').map((para: string, idx: number) => {
-                            if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
-                            }
-                            return (
-                              <div key={idx} className="space-y-2">
-                                {para.split('\n').map((line: string, lIdx: number) => {
-                                  if (line.startsWith('- ')) {
-                                    return (
-                                      <div key={lIdx} className="flex gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p>{line.substring(2).replace(/\*\*/g, '')}</p>
-                                      </div>
-                                    );
-                                  }
-                                  return (
-                                    <p key={lIdx} className="mb-2">
-                                      {line.replace(/\*\*/g, '')}
-                                    </p>
-                                  );
-                                })}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </section>
-                  )}
-
-                  {selectedProject.details.process && (
-                    <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
-                      <div className="flex items-center gap-3 mb-6">
-                        <Search className="w-5 h-5 text-primary" />
-                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Process & Highlights</h4>
-                      </div>
-                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
-                        <div className="space-y-4">
-                          {selectedProject.details.process.split('\n\n').map((para: string, idx: number) => {
-                            if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
-                            }
-                            return (
-                              <div key={idx} className="space-y-2">
-                                {para.split('\n').map((line: string, lIdx: number) => {
-                                  if (line.startsWith('- ')) {
-                                    return (
-                                      <div key={lIdx} className="flex gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p>{line.substring(2).replace(/\*\*/g, '')}</p>
-                                      </div>
-                                    );
-                                  }
-                                  return (
-                                    <p key={lIdx} className="mb-2">
-                                      {line.replace(/\*\*/g, '')}
-                                    </p>
-                                  );
-                                })}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </section>
-                  )}
-
-                  {selectedProject.details.highlights && !selectedProject.details.technical && !selectedProject.details.process && (
-                    <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
-                      <div className="flex items-center gap-3 mb-6">
-                        <Zap className="w-5 h-5 text-primary" />
-                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Highlights</h4>
-                      </div>
-                      <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
-                        <div className="space-y-4">
-                          {selectedProject.details.highlights.split('\n\n').map((para: string, idx: number) => {
-                            if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
-                            }
-                            return (
-                              <div key={idx} className="space-y-2">
-                                {para.split('\n').map((line: string, lIdx: number) => {
-                                  const parts = line.split(/(\*\*.*?\*\*|\*.*?\*)/);
-                                  return (
-                                    <p key={lIdx}>
-                                      {line.replace(/\*\*/g, '').replace(/\*/g, '')}
-                                    </p>
-                                  );
-                                })}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </section>
-                  )}
-
-                  {selectedProject.details.outcome && (
-                    <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
-                      <div className="flex items-center gap-3 mb-6">
-                        <CheckCircle2 className="w-6 h-6 text-primary" />
-                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Strategic Outcome</h4>
-                      </div>
-                      <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
-                        <div className="space-y-4">
-                          {selectedProject.details.outcome.split('\n\n').map((para: string, idx: number) => {
-                            if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
-                            }
-                            return (
-                              <div key={idx} className="space-y-4">
-                                {para.split('\n').map((line: string, lIdx: number) => {
-                                  if (line.startsWith('- ')) {
-                                    return (
-                                      <div key={lIdx} className="flex gap-4 items-start py-1">
-                                        <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0 shadow-sm shadow-primary/20" />
-                                        <p className="flex-1">{line.substring(2).replace(/\*\*/g, '').replace(/\*/g, '')}</p>
-                                      </div>
-                                    );
-                                  }
-                                  return (
-                                    <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
-                                      {line.replace(/\*\*/g, '').replace(/\*/g, '')}
-                                    </p>
-                                  );
-                                })}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </section>
-                  )}
-
-                  {!selectedProject.details.outcome && (selectedProject.details.impact || selectedProject.details.conclusion) && (
-                    <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
-                      <div className="flex items-center gap-3 mb-6">
-                        <Target className="w-6 h-6 text-primary" />
-                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact & Conclusion</h4>
-                      </div>
-                      <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
-                        <div className="space-y-4">
-                          {(selectedProject.details.impact || selectedProject.details.conclusion).split('\n\n').map((para: string, idx: number) => {
-                            if (para.startsWith('###')) {
-                              return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
-                            }
-                            return (
-                              <div key={idx} className="space-y-4">
-                                {para.split('\n').map((line: string, lIdx: number) => {
-                                  if (line.startsWith('- ')) {
-                                    return (
-                                      <div key={lIdx} className="flex gap-4 items-start py-1">
-                                        <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0 shadow-sm shadow-primary/20" />
-                                        <p className="flex-1">{line.substring(2)}</p>
-                                      </div>
-                                    );
-                                  }
-                                  const parts = line.split(/(\*\*.*?\*\*|:)/);
-                                  return (
-                                    <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
-                                      {parts.map((part, pIdx) => {
-                                        if (part.startsWith('**') && part.endsWith('**')) {
-                                          return <span key={pIdx} className="text-primary underline decoration-primary/30 underline-offset-4">{part.slice(2, -2)}</span>;
-                                        }
-                                        if (part === ':') {
-                                          return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
-                                        }
-                                        return part;
-                                      })}
-                                    </p>
-                                  );
-                                })}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </section>
-                  )}
+                    <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground leading-tight max-w-4xl">{selectedProject.title}</h3>
+                  </div>
+                  
+                  {/* Navigation */}
+                  <div className="flex items-center gap-2 mt-4 md:mt-0 shrink-0">
+                    <Button variant="outline" size="icon" className="rounded-full w-10 h-10 border-border/50 hover:bg-primary/5 hover:text-primary hover:border-primary/30" onClick={handlePrev} disabled={currentIndex <= 0}>
+                      <ArrowLeft className="w-4 h-4" />
+                    </Button>
+                    <Button variant="outline" size="icon" className="rounded-full w-10 h-10 border-border/50 hover:bg-primary/5 hover:text-primary hover:border-primary/30" onClick={handleNext} disabled={currentIndex === -1 || currentIndex >= currentArray.length - 1}>
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
-              </div>
+
+                {/* Content Area */}
+                <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
+                  <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 h-full">
+                    
+                    {/* Left Column: Details */}
+                    <div className="lg:col-span-8 space-y-10">
+                      
+                      {/* Overview */}
+                      {selectedProject.details.overview && (
+                        <section className="relative pl-6 border-l-2 border-primary">
+                          <h4 className="text-xs uppercase font-black tracking-widest text-primary mb-3">Overview</h4>
+                          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90">{selectedProject.details.overview}</p>
+                        </section>
+                      )}
+
+                      {/* Impacts */}
+                      {selectedProject.details.impacts && (
+                        <section>
+                          <div className="flex items-center gap-3 mb-6">
+                            <Zap className="w-5 h-5 text-primary" />
+                            <h4 className="text-xs uppercase font-black tracking-widest text-primary">Key Impact</h4>
+                          </div>
+                          <div className="grid md:grid-cols-2 gap-6">
+                            {selectedProject.details.impacts.map((impact, idx) => (
+                              <div key={idx} className="bg-secondary/30 p-6 rounded-2xl border border-border/40 hover:border-primary/30 transition-colors group">
+                                <div className="text-[10px] uppercase font-bold tracking-wider text-primary mb-2 group-hover:underline decoration-primary/30 underline-offset-4">{impact.subtitle}</div>
+                                <h5 className="font-bold text-base mb-3 leading-tight text-foreground">{impact.title}</h5>
+                                <p className="text-sm text-muted-foreground">{impact.description}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </section>
+                      )}
+
+                      {/* Selected Approach */}
+                      {selectedProject.details.approach && (
+                        <section>
+                          <div className="flex items-center gap-3 mb-6">
+                            <CheckCircle2 className="w-5 h-5 text-primary" />
+                            <h4 className="text-xs uppercase font-black tracking-widest text-primary">Selected Approach</h4>
+                          </div>
+                          <div className="bg-primary/[0.02] p-6 md:p-8 rounded-[2rem] border border-primary/10">
+                            <ul className="space-y-4">
+                              {selectedProject.details.approach.map((point, idx) => (
+                                <li key={idx} className="flex gap-4">
+                                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <div className="w-2 h-2 rounded-full bg-primary" />
+                                  </div>
+                                  <p className="text-[15px] text-foreground/80 font-medium leading-relaxed">{point}</p>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </section>
+                      )}
+
+                      {/* Fallback for other projects that still use old fields */}
+                      {!selectedProject.details.overview && selectedProject.details.objective && (
+                        <section className="relative pl-6 border-l-2 border-primary">
+                          <h4 className="text-xs uppercase font-black tracking-widest text-primary mb-3">Objective</h4>
+                          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90">{selectedProject.details.objective}</p>
+                        </section>
+                      )}
+                      
+                      {/* Process & Highlights Fallback */}
+                      {!selectedProject.details.impacts && selectedProject.details.process && (
+                        <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
+                          <div className="flex items-center gap-3 mb-6">
+                            <Search className="w-5 h-5 text-primary" />
+                            <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Process & Highlights</h4>
+                          </div>
+                          <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
+                            <div className="space-y-4">
+                              {selectedProject.details.process.split('\n\n').map((para, idx) => {
+                                if (para.startsWith('###')) {
+                                  return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                                }
+                                return (
+                                  <div key={idx} className="space-y-2">
+                                    {para.split('\n').map((line, lIdx) => {
+                                      if (line.startsWith('- ')) {
+                                        return (
+                                          <div key={lIdx} className="flex gap-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                            <p>{line.substring(2).replace(/\*\*/g, '')}</p>
+                                          </div>
+                                        );
+                                      }
+                                      return (
+                                        <p key={lIdx} className="mb-2">
+                                          {line.replace(/\*\*/g, '')}
+                                        </p>
+                                      );
+                                    })}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </section>
+                      )}
+
+                      {/* Highlights Fallback */}
+                      {!selectedProject.details.impacts && selectedProject.details.highlights && !selectedProject.details.technical && !selectedProject.details.process && (
+                        <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
+                          <div className="flex items-center gap-3 mb-6">
+                            <Zap className="w-5 h-5 text-primary" />
+                            <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Highlights</h4>
+                          </div>
+                          <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
+                            <div className="space-y-4">
+                              {selectedProject.details.highlights.split('\n\n').map((para, idx) => {
+                                if (para.startsWith('###')) {
+                                  return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
+                                }
+                                return (
+                                  <div key={idx} className="space-y-2">
+                                    {para.split('\n').map((line, lIdx) => {
+                                      const parts = line.split(/(\*\*.*?\*\*|\*.*?\*)/);
+                                      return (
+                                        <p key={lIdx}>
+                                          {line.replace(/\*\*/g, '').replace(/\*/g, '')}
+                                        </p>
+                                      );
+                                    })}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </section>
+                      )}
+
+                      {/* Strategic Outcome Fallback */}
+                      {!selectedProject.details.impacts && selectedProject.details.outcome && (
+                        <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
+                          <div className="flex items-center gap-3 mb-6">
+                            <CheckCircle2 className="w-6 h-6 text-primary" />
+                            <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Strategic Outcome</h4>
+                          </div>
+                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
+                            <div className="space-y-4">
+                              {selectedProject.details.outcome.split('\n\n').map((para, idx) => {
+                                if (para.startsWith('###')) {
+                                  return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
+                                }
+                                return (
+                                  <div key={idx} className="space-y-4">
+                                    {para.split('\n').map((line, lIdx) => {
+                                      if (line.startsWith('- ')) {
+                                        return (
+                                          <div key={lIdx} className="flex gap-4 items-start py-1">
+                                            <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0 shadow-sm shadow-primary/20" />
+                                            <p className="flex-1">{line.substring(2).replace(/\*\*/g, '').replace(/\*/g, '')}</p>
+                                          </div>
+                                        );
+                                      }
+                                      return (
+                                        <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
+                                          {line.replace(/\*\*/g, '').replace(/\*/g, '')}
+                                        </p>
+                                      );
+                                    })}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </section>
+                      )}
+
+                      {/* Impact & Conclusion Fallback */}
+                      {!selectedProject.details.impacts && !selectedProject.details.outcome && (selectedProject.details.impact || selectedProject.details.conclusion) && (
+                        <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
+                          <div className="flex items-center gap-3 mb-6">
+                            <Target className="w-6 h-6 text-primary" />
+                            <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact & Conclusion</h4>
+                          </div>
+                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
+                            <div className="space-y-4">
+                              {(selectedProject.details.impact || selectedProject.details.conclusion).split('\n\n').map((para, idx) => {
+                                if (para.startsWith('###')) {
+                                  return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
+                                }
+                                return (
+                                  <div key={idx} className="space-y-4">
+                                    {para.split('\n').map((line, lIdx) => {
+                                      if (line.startsWith('- ')) {
+                                        return (
+                                          <div key={lIdx} className="flex gap-4 items-start py-1">
+                                            <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0 shadow-sm shadow-primary/20" />
+                                            <p className="flex-1">{line.substring(2)}</p>
+                                          </div>
+                                        );
+                                      }
+                                      const parts = line.split(/(\*\*.*?\*\*|:)/);
+                                      return (
+                                        <p key={lIdx} className="mb-2 text-sm md:text-base leading-relaxed">
+                                          {parts.map((part, pIdx) => {
+                                            if (part.startsWith('**') && part.endsWith('**')) {
+                                              return <span key={pIdx} className="text-primary underline decoration-primary/30 underline-offset-4">{part.slice(2, -2)}</span>;
+                                            }
+                                            if (part === ':') {
+                                              return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
+                                            }
+                                            return part;
+                                          })}
+                                        </p>
+                                      );
+                                    })}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </section>
+                      )}
+
+                    </div>
+
+                    {/* Right Column: Visuals & QR */}
+                    <div className="lg:col-span-4 flex flex-col gap-6">
+                      {selectedProject.image && currentArray !== bootcampProjects && (
+                        <div className="rounded-3xl overflow-hidden shadow-lg border border-border/50 relative group h-48 lg:h-auto lg:aspect-square">
+                          <img src={selectedProject.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project Cover" />
+                          <div className="absolute inset-0 bg-primary/10 transition-colors group-hover:bg-transparent" />
+                        </div>
+                      )}
+
+                      {selectedProject.details.cta && (
+                        <a href={selectedProject.details.cta} target="_blank" rel="noopener noreferrer" className="bg-card hover:bg-secondary/30 transition-colors rounded-[24px] p-5 border border-border/60 flex items-center justify-between gap-4 shadow-sm group mt-auto">
+                          <div className="flex-1">
+                            <h4 className="font-bold text-sm uppercase tracking-widest mb-1 text-foreground">View Project File</h4>
+                            <p className="text-[13px] text-muted-foreground leading-snug">Scan or click to read full report</p>
+                          </div>
+                          <div className="bg-white p-2 rounded-[14px] shadow-sm shrink-0 border border-border/40 group-hover:scale-105 transition-transform">
+                            <QRCode value={selectedProject.details.cta} size={70} />
+                          </div>
+                        </a>
+                      )}
+                    </div>
+
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
+          );
+        })()}
+
       </AnimatePresence>
       {/* Experience Deep Dive Modal */}
       <AnimatePresence>
