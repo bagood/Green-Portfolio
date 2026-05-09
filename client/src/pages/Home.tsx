@@ -43,9 +43,9 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
-  const [selectedScienceProject, setSelectedScienceProject] = useState<any>(null);
 
-  const [selectedExperience, setSelectedExperience] = useState<any>(null);
+
+
   const [activeCluster, setActiveCluster] = useState<string>("01");
 
   // Animation variants
@@ -140,7 +140,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "intro", "skills", "contact"];
+      const sections = ["about", "intro", "what-i-do", "skills", "contact"];
       const current = sections.find(section => {
         const el = document.getElementById(section);
         if (el) {
@@ -293,41 +293,71 @@ export default function Home() {
 
   const scienceProjects = [
     {
-      title: "Oil Spill Policy Documentation",
-      role: "Policy Review",
-      description: "Conducted a policy review of the PT PHE ONWJ oil spill incident for academic and stakeholder reference.",
-      image: projectOcean,
-      badge: "Oil Spill Research",
-      details: {
-        objective: "To investigate an unresolved real-world marine crisis, **2019 and 2021 oil spill incidents by PT Pertamina Hulu Energi Offshore North West Java (PHE ONWJ)**, evaluating corporate accountability against Indonesian environmental law and researching bioremediation as a sustainable, low-toxicity alternative to traditional chemical and physical responses.",
-        highlights: "### Identification of an Unresolved Crisis\nInvestigated the root causes of two major spills—from the July 2019 gas bubble failure at well YYA-1 to the April 2021 subsea pipeline corrosion—which together severely impacted over **12 coastal villages**.\n\n### Legal & Policy Audit\nPerformed a rigorous analysis of corporate responses based on **Law No. 32 of 2009**, focusing on *Article 54 (Environmental Restoration)* and *Article 88 (Absolute Responsibility/Polluter Pays Principle)*.\n\n### Technical Critique\nEvaluated the limitations of physical and chemical responses, identifying that the use of chemical dispersants can lead to higher toxicity levels in marine ecosystems than the crude oil itself.\n\n### Bioremediation Research\nDeveloped a strategic alternative using a microbial consortium of **Bacillus subtilis** and **Pseudomonas putida**, capable of achieving **70–95% hydrocarbon removal** within a 1–2 month timeframe.",
-        impact: "A comprehensive **investigative report and technical roadmap** proving that bioremediation is a viable, cost-effective, and low-impact solution for long-term industrial environmental recovery.",
-        cta: "https://drive.google.com/file/d/1uKmiWsIIQ0ePt-EbW5AsxoFKdGKGj6rc/view?usp=sharing"
-      }
-    },
-    {
-      title: "SDGs Data Matrix",
-      role: "Classified Database",
-      description: "A classified database of 169 targets relevant to Renewable Energy and Bioremediation.",
+      id: "sdg-matrix",
+      title: "Mapped Bioremediation Impact Across 169 SDG Targets",
+      tags: ["Systems Analysis", "Data Analysis", "Impact Mapping", "Sustainability Strategy"],
+      description: "Analyzed alignment between bioremediation technologies and UN SDGs using a systems-level, evidence-based approach.",
       image: projectCarbon,
-      badge: "Renewable Energy",
+      icon: <Globe className="w-5 h-5" />,
       details: {
-        objective: "To conduct a comprehensive investigative analysis of the **169 UN SDG targets** to determine the technical and strategic alignment of bioremediation and renewable energy technologies with global sustainability goals.",
-        highlights: "### Systems-Level Analysis\nEvaluated each of the 17 Sustainable Development Goals to identify where technical biological processes (bioremediation) intersect with **social, environmental, and economic targets**.\n\n### Evidence-Based Mapping\nSynthesized findings from over **10+ academic sources** (including *Bala et al., 2022* and *Arora, 2018*) to justify the relationship between microbial technology and specific targets like food security (**SDG 2**) and clean water (**SDG 6**).\n\n### Critical Evaluation\nBeyond identifying \"green\" benefits, I applied a rigorous lens to identify **\"no-relationship\" zones** (such as gender parity or financial regulations), ensuring a realistic and transparent assessment of the technology’s scope.\n\n### Multi-Pillar Integration\nAnalyzed the **\"Social\"** impact of environmental technology, such as how soil restoration directly improves agricultural productivity for small-scale farmers (**Target 2.3**).",
-        impact: "The result is a **169-target classified matrix** that serves as a strategic reference for how bioremediation acts as a catalyst for:\n\n- **Resource Security**: Enhancing food safety and water accessibility through the removal of heavy metals and pollutants.\n- **Decarbonization**: Linking phytoremediation to the production of clean biofuels, contributing to a **14% potential share** of global energy demand.\n- **Responsible Industry**: Providing a low-cost, low-energy alternative for industrial waste management and urban air quality (**Target 11.6**).",
+        overview: "Developed a comprehensive SDG alignment model to evaluate how bioremediation contributes to environmental, social, and economic sustainability targets.",
+        impacts: [
+           { subtitle: "Matrix Development", title: "169 SDG Targets Mapped", description: "Built a structured matrix linking bioremediation to global sustainability priorities." },
+           { subtitle: "Scientific Validation", title: "Evidence-Based Insights", description: "Validated impact using 10+ academic sources across environmental and social domains." },
+           { subtitle: "Scope Analysis", title: "Realistic Scope Definition", description: "Identified both impact areas and non-relevant targets to ensure analytical accuracy." }
+        ],
+        approach: [
+           "Evaluated all 17 SDGs to identify technical intersections",
+           "Synthesized findings from academic research (Bala et al., 2022; Arora, 2018)",
+           "Mapped environmental technologies to specific SDG targets (e.g. SDG 2, SDG 6)",
+           "Assessed cross-pillar impact across environmental and social dimensions"
+        ],
         cta: "https://docs.google.com/spreadsheets/d/1am_qHhNfdAHt1lKa04R2J-6WCauwCrZykGl6GdBuGeY/edit?usp=sharing"
       }
     },
     {
-      title: "The Biological Exhibition",
-      role: "Leadership",
-      description: "Leadership of a 50+ member team for a biodiversity-focused educational event for 300+ participants.",
-      image: heroBg,
-      badge: "Conservation Education",
+      id: "oil-spill",
+      title: "Evaluated Oil Spill Response and Proposed Bioremediation Strategy",
+      tags: ["Risk Analysis", "Environmental Policy", "Sustainability Research", "Impact Assessment"],
+      description: "Investigated major oil spill incidents and assessed environmental, legal, and technical response effectiveness.",
+      image: projectOcean,
+      icon: <ShieldCheck className="w-5 h-5" />,
       details: {
-        objective: "To lead a high-stakes educational initiative designed to bridge the gap between biological research and community awareness through strategic large-scale coordination.",
-        highlights: "### Team Governance\nDirected a 50+ member multidisciplinary team, managing the end-to-end project lifecycle from initial logistics to final educational content design.\n\n### Resource Coordination\nOversaw complex registration systems, participant documentation, and venue logistics to ensure seamless execution for hundreds of stakeholders.\n\n### Content Integration\nFacilitated the curation of biological photography and imaging from the team, transforming raw field data into an engaging public exhibition focused on the Padjadjaran University Arboretum.\n\n### Quality Assurance\nImplemented a rigorous internal evaluation process to ensure all educational materials met high academic and professional standards.",
-        impact: "### Large-Scale Engagement\nSuccessfully delivered the program to 300+ participants, significantly increasing local awareness of regional biodiversity and ecological conservation.\n\n### Performance Excellence\nAchieved an A-grade evaluation for project execution and a 93% positive feedback score from participants.\n\n### Professional Leadership\nDemonstrated the ability to manage large human systems and complex data sets, providing a foundation for future corporate ESG coordination.",
+        overview: "Conducted an investigative analysis of oil spill incidents to evaluate corporate accountability and develop a sustainable, low-impact remediation strategy.",
+        impacts: [
+           { subtitle: "Incident Investigation", title: "Crisis Root Cause Analysis", description: "Identified technical and operational failures across major spill incidents." },
+           { subtitle: "Legal Audit", title: "Regulatory Compliance Assessment", description: "Evaluated corporate response against Indonesian environmental law." },
+           { subtitle: "Technical Strategy", title: "Bioremediation Solution Model", description: "Proposed a microbial-based recovery strategy with 70–95% effectiveness." }
+        ],
+        approach: [
+           "Investigated 2019 and 2021 oil spill incidents",
+           "Analyzed compliance with Law No. 32 (Articles 54 & 88)",
+           "Evaluated limitations of chemical and physical remediation",
+           "Designed microbial bioremediation strategy (Bacillus & Pseudomonas)"
+        ],
+        cta: "https://drive.google.com/file/d/1uKmiWsIIQ0ePt-EbW5AsxoFKdGKGj6rc/view?usp=sharing"
+      }
+    },
+    {
+      id: "bio-exhibition",
+      title: "Led Biodiversity Exhibition with 300+ Participants Engagement",
+      tags: ["Project Management", "Stakeholder Engagement", "Science Communication", "Program Delivery"],
+      description: "Directed a large-scale educational program translating biological research into public awareness.",
+      image: heroBg,
+      icon: <Users className="w-5 h-5" />,
+      details: {
+        overview: "Led the execution of a large-scale biological exhibition, transforming research outputs into an accessible and engaging public experience.",
+        impacts: [
+           { subtitle: "Public Engagement", title: "300+ Participants Engaged", description: "Successfully delivered a large-scale educational program." },
+           { subtitle: "Program Quality", title: "93% Positive Feedback", description: "Achieved high satisfaction through structured program delivery." },
+           { subtitle: "Performance Review", title: "A-Grade Project Evaluation", description: "Recognized for strong execution and quality assurance." }
+        ],
+        approach: [
+           "Led a 50+ member multidisciplinary team",
+           "Managed logistics, registration, and program coordination",
+           "Curated biological content into public-facing exhibition",
+           "Ensured quality through structured evaluation processes"
+        ],
         cta: "https://www.youtube.com/watch?v=AVgHvqpRUOA"
       }
     }
@@ -335,55 +365,99 @@ export default function Home() {
 
   const combinedJourney = [
     {
-      role: "B2B Project Officer",
+      id: "binar-2024",
+      title: "B2B Project Officer",
       company: "Binar Academy",
       type: "Professional Experience",
       period: "Sept 2024 – Nov 2024",
       description: "Managed logistics and documentation for employee innovation bootcamp, achieving 4.6/5 participant satisfaction.",
+      tags: ["Project Management", "Stakeholder Management", "Program Delivery"],
+      icon: <Users className="w-5 h-5" />,
       details: {
-        role: "Role: B2B Project Officer",
-        objective: "To lead the governance and execution of employee innovation bootcamps, driving cross-functional engagement and internal social development through rigorous project management.",
-        highlights: "### Operational Governance\nManaged the end to end lifecycle of **logistics, schedules, and documentation** for a specialized innovation bootcamp.\n\n### Stakeholder Coordination\nFacilitated internal social development and cross-functional engagement for **18 participants**, ensuring seamless project flow.\n\n### Deliverable Management\nMaintained a high volume of **20+ program deliverables**, ensuring every milestone met corporate quality standards.\n\n### Proactive Communication\nExecuted a **stakeholder communication strategy** that ensured transparency and alignment throughout the event execution.",
-        impact: "### Excellence in Execution\nAchieved a **4.6/5 participant satisfaction score**, proving the efficacy of the event’s design and logistical management.\n\n### Organizational Development\nSuccessfully fostered a **collaborative environment** that strengthened internal bonds and social engagement within the cohort.\n\n### Quality Assurance\nDelivered **100% of program requirements** on schedule, establishing a baseline for professional B2B service delivery."
+        overview: "Led the execution of a corporate innovation bootcamp, managing operations, stakeholders, and deliverables to ensure high-quality program delivery and participant experience.",
+        impacts: [
+           { subtitle: "Program Feedback", title: "4.6/5 Satisfaction Score", description: "Achieved high participant satisfaction through structured execution and experience design." },
+           { subtitle: "Delivery Excellence", title: "100% On-Time Delivery", description: "Delivered 20+ program outputs on schedule with full compliance to quality standards." },
+           { subtitle: "Team Dynamics", title: "Cross-Functional Engagement", description: "Facilitated collaboration across participants, strengthening internal engagement." }
+        ],
+        approach: [
+           "Managed end-to-end logistics, scheduling, and documentation",
+           "Coordinated stakeholders and participant engagement",
+           "Maintained delivery of 20+ structured outputs",
+           "Ensured transparent communication across all phases"
+        ]
       }
     },
     {
-      role: "Employee Innovation Project Officer",
+      id: "bsi-2024",
+      title: "Employee Innovation Project Officer",
       company: "Bank Syariah Indonesia",
       type: "Professional Experience",
       period: "Dec 2023 – Mar 2024",
       description: "Directed company-wide innovation program for 17,000+ participants, increasing program satisfaction by 15%.",
+      tags: ["Program Management", "Data Analysis", "Stakeholder Management"],
+      icon: <Settings className="w-5 h-5" />,
       details: {
-        role: "Role: Project Officer (Employee Innovation)",
-        objective: "To direct the end-to-end execution of a company-wide innovation program for a top-tier financial institution, ensuring strategic alignment between corporate growth and massive-scale participant engagement.",
-        highlights: "### Operational Governance\nDirected the management of a **17,000+ participant pool**, overseeing the complex logistics of registration, data verification, and communication flows to foster a culture of corporate innovation.\n\n### Investigative Feedback Synthesis\nApplied a researcher’s lens to analyze participant sentiment and program data, identifying friction points to optimize the user experience.\n\n### Stakeholder Liaison\nServed as the primary bridge between technical innovation teams and executive leadership, optimizing vendor management and logistics for executive-level demo days.\n\n### Data-Driven Reporting\nDeveloped comprehensive performance reports for the board of directors, translating raw engagement numbers into actionable strategic insights.",
-        impact: "### Strategic Growth\nSuccessfully increased overall program satisfaction by **15%** through targeted improvements in communication and logistical coordination.\n\n### Scaled Impact\nManaged one of the largest talent innovation programs in the Indonesian banking sector, proving the capacity to maintain rigorous standards under massive organizational scale.\n\n### Efficiency Gains\nStreamlined the documentation and verification process for **thousands of concurrent users**, reducing administrative bottlenecks for high-stakes deliverables."
+        overview: "Directed execution of a large-scale corporate innovation program, aligning operational delivery with strategic business objectives and participant experience.",
+        impacts: [
+           { subtitle: "Scale & Reach", title: "17,000+ Participants Managed", description: "Handled one of the largest innovation programs in the sector with structured operations." },
+           { subtitle: "Program Feedback", title: "+15% Satisfaction Increase", description: "Improved program experience through targeted operational and communication enhancements." },
+           { subtitle: "Process Optimization", title: "Operational Efficiency Gains", description: "Streamlined verification and documentation processes at scale." }
+        ],
+        approach: [
+           "Oversaw large-scale participant operations and data flows",
+           "Analyzed feedback to identify experience gaps",
+           "Coordinated between technical teams and executives",
+           "Developed reports translating data into strategic insights"
+        ]
       }
     },
     {
-      role: "Vice President of Branding",
+      id: "student-energy-2023",
+      title: "Vice President of Branding",
       company: "Student Energy at Padjadjaran University",
       type: "Community Leadership",
       period: "Jun 2023 – Dec 2023",
       description: "Directed Renewable Energy advocacy and youth awareness, building partnerships with 3 renewable energy stakeholders.",
+      tags: ["Sustainability Strategy", "Stakeholder Management", "Communication Strategy"],
+      icon: <Globe className="w-5 h-5" />,
       details: {
-        role: "Role: Vice President of Branding",
-        objective: "To direct large-scale communication strategies and build strategic partnerships that accelerate renewable energy literacy and stakeholder engagement.",
-        highlights: "### Cross-Functional Leadership\nDirected diverse, multidisciplinary teams to design and deliver **large-scale renewable energy advocacy programs**.\n\n### Strategic Partnership Building\nFormulated and executed a networking strategy that secured **three high-value partnerships** with renewable energy and youth-led stakeholders, expanding the organization’s professional ecosystem.\n\n### Digital Infrastructure Management\nOversaw the governance of digital communication platforms to ensure consistent messaging and high-impact outreach across all stakeholder groups.\n\n### Training & Capacity Building\nFacilitated the development of educational content designed to translate **complex energy transition data** into actionable insights for the community.",
-        impact: "### Measurable Network Expansion\nSuccessfully expanded the organization’s total digital reach by **15%** through targeted branding and engagement strategies.\n\n### Community Growth\nBoosted active community engagement by **30%**, turning passive followers into active advocates for the energy transition.\n\n### Stakeholder Value\nDelivered a professional-grade networking framework that bridged the gap between student innovators and industrial energy leaders."
+        overview: "Directed branding strategy and stakeholder partnerships to strengthen renewable energy advocacy and expand organizational reach.",
+        impacts: [
+           { subtitle: "Audience Conversion", title: "+30% Community Engagement", description: "Converted passive audiences into active participants in sustainability initiatives." },
+           { subtitle: "Brand Visibility", title: "+15% Digital Reach Growth", description: "Expanded visibility through targeted communication strategies." },
+           { subtitle: "Network Expansion", title: "Strategic Partnerships Established", description: "Secured 3 key collaborations with energy and youth stakeholders." }
+        ],
+        approach: [
+           "Led cross-functional teams for program execution",
+           "Built partnership strategy with external stakeholders",
+           "Managed digital communication platforms",
+           "Developed educational content for energy literacy"
+        ]
       }
     },
     {
-      role: "B2B Project Officer",
+      id: "binar-2023",
+      title: "B2B Project Officer",
       company: "Binar Academy",
       type: "Professional Experience",
       period: "Aug 2023 – Dec 2023",
       description: "Executed 7 student-centric training programs, reducing operational costs by 10% and improving outcomes by 20%.",
+      tags: ["Project Management", "Data Analysis", "Program Delivery"],
+      icon: <CheckCircle2 className="w-5 h-5" />,
       details: {
-        role: "Role: B2B Project Officer",
-        objective: "To execute large scale training programs that bridge the gap between student needs and organizational social impact goals while maximizing operational resource efficiency.",
-        highlights: "### Program Engineering\nExecuted **7 student-centric training programs**, focusing on aligning participant development with broader social impact objectives.\n\n### Database Leveraging\nUtilized feedback databases to identify performance gaps and drive **evidence-based program improvements**.\n\n### Resource Optimization\nManaged operational workflows to maximize output while maintaining high standards of educational quality.\n\n### Cross-Functional Leadership\nCoordinated between diverse learning tracks to ensure a **unified and consistent experience** for all participants.",
-        impact: "Financial Efficiency\nSuccessfully reduced operational costs by 10% through strategic resource management and workflow optimization.\n\n### Outcome Improvement\nImproved overall participant outcomes by 20%, demonstrating the power of data-driven instructional adjustments.\n\n Total Engagement\nAchieved **100% participant engagement** across multiple learning tracks, proving the programs' relevance and quality."
+        overview: "Managed execution of training programs, aligning participant development with organizational goals through structured operations and data-driven improvements.",
+        impacts: [
+           { subtitle: "Performance Growth", title: "+20% Outcome Improvement", description: "Enhanced participant performance through feedback-driven program adjustments." },
+           { subtitle: "Resource Management", title: "-10% Operational Cost Reduction", description: "Optimized workflows and resource allocation." },
+           { subtitle: "Participation Rate", title: "100% Participant Engagement", description: "Maintained full engagement across multiple learning tracks." }
+        ],
+        approach: [
+           "Executed 7 structured training programs",
+           "Leveraged feedback data for continuous improvement",
+           "Optimized workflows for efficiency and quality",
+           "Coordinated across multiple learning tracks"
+        ]
       }
     }
   ];
@@ -400,8 +474,9 @@ export default function Home() {
           <div className="hidden lg:flex gap-10 text-[13px] font-bold uppercase tracking-wider">
             {[
               { id: "about", label: "Home" },
-              { id: "intro", label: "About" },
-              { id: "skills", label: "Capabilities & Experience" }
+              { id: "intro", label: "About Me" },
+              { id: "what-i-do", label: "What I Do" },
+              { id: "skills", label: "My Work" }
             ].map(item => (
               <a
                 key={item.id}
@@ -494,7 +569,7 @@ export default function Home() {
                   <p className="text-muted-foreground">I work at the intersection of science, sustainability, and strategy—translating complex environmental data into actionable ESG insights and scalable impact.</p>
                   <p>With a background in <span className="font-bold text-[#2e5c43]">Biology</span>, I bring a <span className="font-bold text-[#2e5c43]">rigorous, investigative approach to analyzing complex systems</span>. I connect data to real-world decisions, identifying risks, opportunities, and pathways for sustainable growth.</p>
                   <p>Beyond research, I've led initiatives reaching <span className="font-bold text-[#2e5c43]">17,000+ beneficiaries</span>, turning insights into <span className="font-bold text-[#2e5c43]">programs that create measurable impact</span>.</p>
-                  <p className="text-muted-foreground text-lg italic border-l-4 border-primary pl-6 py-2">I bridge research and execution—so sustainability strategies don't just exist, but work in practice.</p>
+                  <p className="text-muted-foreground text-lg italic border-l-4 border-primary pl-6 py-2">I turn sustainability insights into systems organizations can actually use.</p>
                 </div>
                 <div className="pt-8">
                   <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground h-16 px-10 font-bold uppercase tracking-wider" asChild>
@@ -506,15 +581,92 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Capabilities & Experience Section */}
+      {/* What I Do Section */}
+      <section id="what-i-do" className="py-32 bg-primary/5 relative border-t border-border/20">
+        <div className="container mx-auto px-6">
+          <motion.div {...fadeIn} className="text-center mb-20">
+            <h2 className="text-5xl font-serif font-bold mb-6 italic text-[#2e5c43]">What I Do.</h2>
+            <p className="text-muted-foreground text-xl max-w-3xl mx-auto italic">
+              I combine analytical depth with structured execution to turn sustainability challenges into implementable solutions.
+            </p>
+          </motion.div>
+          <div className="grid lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+            {/* Card 1 */}
+            <motion.div {...fadeIn} className="bg-card border border-border/40 rounded-3xl p-8 shadow-sm flex flex-col relative group hover:border-primary/30 transition-all duration-300">
+              <div className="mb-6 p-4 bg-primary/10 w-fit rounded-2xl group-hover:bg-primary/20 transition-colors">
+                <Leaf className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 leading-tight">ESG & Sustainability Analysis</h3>
+              <p className="text-muted-foreground text-sm mb-8 font-medium">Not just reporting—structuring ESG into decision-making tools.</p>
+              <div className="mt-auto">
+                <div className="w-full h-px bg-border/50 mb-6" />
+                <h4 className="text-[10px] uppercase font-black tracking-widest text-primary mb-4">What I do:</h4>
+                <ul className="space-y-3">
+                  {["Carbon accounting & GHG inventory (Scope 1–3)", "Sustainability reporting (GRI, SASB, SEOJK 16)", "ESG compliance & greenwashing risk analysis", "Materiality mapping & disclosure evaluation"].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Card 2 */}
+            <motion.div {...fadeIn} className="bg-card border border-border/40 rounded-3xl p-8 shadow-sm flex flex-col relative group hover:border-primary/30 transition-all duration-300">
+              <div className="mb-6 p-4 bg-primary/10 w-fit rounded-2xl group-hover:bg-primary/20 transition-colors">
+                <BarChart3 className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 leading-tight">Data Analysis & Research</h3>
+              <p className="text-muted-foreground text-sm mb-8 font-medium">Turning complex data into clear direction and usable insight.</p>
+              <div className="mt-auto">
+                <div className="w-full h-px bg-border/50 mb-6" />
+                <h4 className="text-[10px] uppercase font-black tracking-widest text-primary mb-4">What I do:</h4>
+                <ul className="space-y-3">
+                  {["Data synthesis & trend analysis", "Evidence-based research & validation", "Systems thinking (science → strategy)", "Impact modeling & scenario analysis"].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Card 3 */}
+            <motion.div {...fadeIn} className="bg-card border border-border/40 rounded-3xl p-8 shadow-sm flex flex-col relative group hover:border-primary/30 transition-all duration-300">
+              <div className="mb-6 p-4 bg-primary/10 w-fit rounded-2xl group-hover:bg-primary/20 transition-colors">
+                <Target className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 leading-tight">Program Execution & Delivery</h3>
+              <p className="text-muted-foreground text-sm mb-8 font-medium">Where strategy becomes real-world implementation.</p>
+              <div className="mt-auto">
+                <div className="w-full h-px bg-border/50 mb-6" />
+                <h4 className="text-[10px] uppercase font-black tracking-widest text-primary mb-4">What I do:</h4>
+                <ul className="space-y-3">
+                  {["End-to-end project management", "Stakeholder coordination & communication", "Program optimization & performance tracking", "Translating insights into operational programs"].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* My Work Section */}
       <section id="skills" className="pt-32 container mx-auto px-6">
         <motion.div {...fadeIn} className="text-center mb-16">
-          <h2 className="text-5xl font-serif font-bold mb-6 italic text-[#2e5c43]">Capabilities & Experience.</h2>
-          <p className="text-muted-foreground text-xl max-w-2xl mx-auto mb-8">I turn analysis, research, and strategy into measurable sustainability impact.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {["ESG Analysis & Reporting", "Carbon Accounting", "Materiality Assessment", "Environmental Systems Analysis", "Project & Stakeholder Management", "Data Analysis & Reporting", "Sustainability Strategy Execution"].map((skill, idx) => (
-              <Badge key={idx} variant="secondary" className="px-4 py-2 rounded-full text-sm font-medium bg-primary/5 text-primary border-primary/20">{skill}</Badge>
-            ))}
+          <div className="inline-flex flex-col items-center mb-6">
+            <span className="text-xs font-black tracking-[0.3em] uppercase text-primary/60 mb-3">Portfolio</span>
+            <h2 className="text-5xl md:text-6xl font-serif font-bold italic text-[#2e5c43] relative pb-6">
+              My Work.
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-primary/20 rounded-full"></div>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-1.5 bg-primary rounded-full"></div>
+            </h2>
           </div>
         </motion.div>
       {/* Experience Clusters */}
@@ -621,7 +773,7 @@ export default function Home() {
                         item={item}
                         type="science"
                         index={idx}
-                        onClick={() => setSelectedScienceProject(item)}
+                        onClick={() => setSelectedProject(item)}
                       />
                     ))}
                   </motion.div>
@@ -686,7 +838,7 @@ export default function Home() {
                         item={exp}
                         type="journey"
                         index={idx}
-                        onClick={() => setSelectedExperience(exp)}
+                        onClick={() => setSelectedProject(exp)}
                       />
                     ))}
                   </motion.div>
@@ -759,14 +911,15 @@ export default function Home() {
           let currentArray = [];
           let currentIndex = -1;
           
-          if (bootcampProjects.find(p => p.title === selectedProject.title)) {
+          if (bootcampProjects.find(p => p.id === selectedProject.id)) {
             currentArray = bootcampProjects;
-          } else if (scienceProjects.find(p => p.title === selectedProject.title)) {
+            currentIndex = currentArray.findIndex(p => p.id === selectedProject.id);
+          } else if (scienceProjects.find(p => p.id === selectedProject.id)) {
             currentArray = scienceProjects;
-          }
-
-          if (currentArray.length > 0) {
-            currentIndex = currentArray.findIndex(p => p.title === selectedProject.title);
+            currentIndex = currentArray.findIndex(p => p.id === selectedProject.id);
+          } else if (combinedJourney.find(p => p.id === selectedProject.id)) {
+            currentArray = combinedJourney;
+            currentIndex = currentArray.findIndex(p => p.id === selectedProject.id);
           }
 
           const handleNext = (e) => {
@@ -801,8 +954,8 @@ export default function Home() {
                 {/* Header Area */}
                 <div className="flex-none p-5 md:p-6 pb-4 md:pb-5 border-b border-border/40 flex justify-between items-start gap-4">
                   <div className="flex-1">
-                    <button onClick={() => setSelectedProject(null)} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase tracking-wider mb-6">
-                      <CornerUpLeft className="w-4 h-4" /> Back to Portfolio
+                    <button onClick={() => setSelectedProject(null)} className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase tracking-wider mb-6">
+                      <CornerUpLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" /> Back to Portfolio
                     </button>
                     <div className="flex flex-wrap gap-2 mb-2">
                       {selectedProject.tags ? selectedProject.tags.map((tag, i) => (
@@ -828,7 +981,7 @@ export default function Home() {
                 {/* Content Area */}
                 <div className="p-5 md:p-6">
                   {(() => {
-                    const hasImage = selectedProject.image && currentArray !== bootcampProjects;
+                    const hasImage = selectedProject.image && currentArray !== bootcampProjects && currentArray !== scienceProjects;
                     return (
                       <>
                         <div className={`grid gap-6 lg:gap-6 h-full ${hasImage ? 'lg:grid-cols-12' : 'grid-cols-1'}`}>
@@ -872,7 +1025,7 @@ export default function Home() {
                       )}
 
                       {/* Approach and QR Wrapper */}
-                      <div className="grid lg:grid-cols-2 gap-6 items-start">
+                      <div className={`grid ${!hasImage && selectedProject.details.cta ? 'lg:grid-cols-2' : 'grid-cols-1'} gap-6 items-start`}>
                         {/* Selected Approach */}
                         {selectedProject.details.approach && (
                           <section>
@@ -1117,257 +1270,8 @@ export default function Home() {
         })()}
 
       </AnimatePresence>
-      {/* Experience Deep Dive Modal */}
-      <AnimatePresence>
-        {selectedExperience && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
-            onClick={() => setSelectedExperience(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, y: 20, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.95, y: 20, opacity: 0 }}
-              className="bg-card w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative p-8 md:p-16 custom-scrollbar"
-              onClick={e => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setSelectedExperience(null)}
-                className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
-              >
-                <X className="w-5 h-5" />
-              </button>
 
-              <div className="flex flex-wrap items-center gap-3 mb-8">
-                <Badge className="bg-accent text-accent-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
-                  {selectedExperience.type}
-                </Badge>
-                <Badge className="bg-secondary text-secondary-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
-                  {selectedExperience.period}
-                </Badge>
-              </div>
 
-              <div className="mb-12">
-                <h3 className="text-3xl md:text-5xl font-serif font-bold mb-3 text-foreground">{selectedExperience.role}</h3>
-                <h4 className="text-xl md:text-2xl font-serif italic text-primary">{selectedExperience.company}</h4>
-              </div>
-
-              <div className="space-y-16">
-                <section className="relative pl-8 border-l-2 border-primary/10">
-                  <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                  </div>
-                  <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-2">Strategic Objective</h4>
-                  <p className="text-xl md:text-2xl font-medium leading-relaxed italic text-foreground/80">
-                    "{selectedExperience.details.objective}"
-                  </p>
-                </section>
-
-                <section className="grid gap-12">
-                  <div>
-                    <div className="flex items-center gap-3 mb-8">
-                      <Zap className="w-5 h-5 text-primary" />
-                      <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Execution & Highlights</h4>
-                    </div>
-                    <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-base md:text-lg space-y-6">
-                      <div className="space-y-3">
-                        {selectedExperience.details.highlights.split('\n').map((line: string, lIdx: number) => {
-                          const parts = line.split(/(\*\*.*?\*\*|:)/);
-                          return (
-                            <p key={lIdx}>
-                              {parts.map((part, pIdx) => {
-                                if (part.startsWith('**') && part.endsWith('**')) {
-                                  return <span key={pIdx} className="text-primary font-bold">{part.slice(2, -2)}</span>;
-                                }
-                                if (part === ':') {
-                                  return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
-                                }
-                                return part;
-                              })}
-                            </p>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-10 md:p-12 bg-primary/5 rounded-[3rem] border border-primary/10 shadow-sm relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-8 opacity-10">
-                      <CheckCircle2 className="w-24 h-24 text-primary" />
-                    </div>
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-3 mb-8">
-                        <Target className="w-6 h-6 text-primary" />
-                        <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Impact</h4>
-                      </div>
-                      <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-xl md:text-2xl font-serif italic">
-                        <div className="space-y-3">
-                          {selectedExperience.details.impact.split('\n').map((line: string, lIdx: number) => {
-                            const parts = line.split(/(\*\*.*?\*\*|:)/);
-                            return (
-                              <p key={lIdx}>
-                                {parts.map((part, pIdx) => {
-                                  if (part.startsWith('**') && part.endsWith('**')) {
-                                    return <span key={pIdx} className="text-primary underline decoration-primary/30 underline-offset-4">{part.slice(2, -2)}</span>;
-                                  }
-                                  if (part === ':') {
-                                    return <span key={pIdx} className="text-primary font-black mx-1">:</span>;
-                                  }
-                                  return part;
-                                })}
-                              </p>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {/* Science Project Modal */}
-      <AnimatePresence>
-        {selectedScienceProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-background/90 backdrop-blur-md"
-            onClick={() => setSelectedScienceProject(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, y: 20, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.95, y: 20, opacity: 0 }}
-              className="bg-card w-full max-w-5xl max-h-[90vh] overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-border/50 relative flex flex-col md:flex-row"
-              onClick={e => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setSelectedScienceProject(null)}
-                className="absolute top-6 right-6 p-3 bg-background/80 hover:bg-background rounded-full transition-all z-50 shadow-md"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="w-full md:w-2/5 h-48 md:h-auto relative group overflow-hidden">
-                <a href={selectedScienceProject.details.cta} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
-                  <img src={selectedScienceProject.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={selectedScienceProject.title} />
-                  <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white backdrop-blur-sm">
-                    <ExternalLink className="w-10 h-10 mb-2" />
-                    <span className="font-bold uppercase tracking-widest text-xs">Preview Project Files</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:bg-gradient-to-r" />
-                </a>
-              </div>
-
-              <div className="w-full md:w-3/5 p-8 md:p-16 overflow-y-auto custom-scrollbar">
-                <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <Badge className="bg-primary/10 text-primary border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-                    {selectedScienceProject.badge}
-                  </Badge>
-                  {selectedScienceProject.details.cta && (
-                    <Button variant="outline" size="sm" className="rounded-full border-primary/20 text-xs h-8 hover:bg-primary/5" asChild>
-                      <a href={selectedScienceProject.details.cta} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 w-3.5 h-3.5" /> Open Document
-                      </a>
-                    </Button>
-                  )}
-                </div>
-
-                <h3 className="text-3xl md:text-5xl font-serif font-bold mb-10 leading-tight text-foreground">{selectedScienceProject.title}</h3>
-
-                <div className="space-y-12">
-                  <section className="relative pl-8 border-l-2 border-primary/10">
-                    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                    </div>
-                    <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-2">Research Objective</h4>
-                    <p className="text-sm md:text-[15px] font-medium leading-relaxed italic text-foreground/90">
-                      "{selectedScienceProject.details.objective}"
-                    </p>
-                  </section>
-
-                  <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Globe className="w-5 h-5 text-primary" />
-                      <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Program Highlights</h4>
-                    </div>
-                    <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
-                      <div className="space-y-3">
-                        {selectedScienceProject.details.highlights.split('\n\n').map((para: string, idx: number) => {
-                          if (para.startsWith('###')) {
-                            return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
-                          }
-                          return (
-                            <div key={idx} className="space-y-2">
-                              {para.split('\n').map((line: string, lIdx: number) => {
-                                if (line.startsWith('- ')) {
-                                  return (
-                                    <div key={lIdx} className="flex gap-3">
-                                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                      <p>{line.substring(2).replace(/\*\*/g, '')}</p>
-                                    </div>
-                                  );
-                                }
-                                return (
-                                  <p key={lIdx} className="mb-2 leading-relaxed">
-                                    {line.replace(/\*\*/g, '')}
-                                  </p>
-                                );
-                              })}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </section>
-
-                  <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
-                    <div className="flex items-center gap-3 mb-4">
-                      <ShieldCheck className="w-6 h-6 text-primary" />
-                      <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact / Outcome</h4>
-                    </div>
-                    <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-[15px] md:text-base font-serif italic">
-                      <div className="space-y-3">
-                        {selectedScienceProject.details.impact.split('\n\n').map((para: string, idx: number) => {
-                          if (para.startsWith('###')) {
-                            return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
-                          }
-                          return (
-                            <div key={idx} className="space-y-3">
-                              {para.split('\n').map((line: string, lIdx: number) => {
-                                if (line.startsWith('- ')) {
-                                  return (
-                                    <div key={lIdx} className="flex gap-4 items-start py-1">
-                                      <div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0" />
-                                      <p className="flex-1">{line.substring(2).replace(/\*\*/g, '')}</p>
-                                    </div>
-                                  );
-                                }
-                                return (
-                                  <p key={lIdx} className="leading-relaxed">
-                                    {line.replace(/\*\*/g, '')}
-                                  </p>
-                                );
-                              })}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </section>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
       <footer className="py-20 text-center border-t border-border/20">
         <p className="text-xs font-black tracking-[0.4em] text-primary/40 uppercase">Novia Amanda Dwiputri • 2026</p>
       </footer>
