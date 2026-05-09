@@ -77,7 +77,7 @@ export default function Home() {
       >
         {!isOpen ? (
           <motion.div layout="position" className="flex flex-col h-full">
-            <h4 className="text-[13px] md:text-sm font-bold mb-2 group-hover:text-primary transition-colors leading-tight line-clamp-2">{title}</h4>
+            <h4 className="text-[13px] md:text-sm font-bold mb-1 group-hover:text-primary transition-colors leading-tight line-clamp-2">{title}</h4>
             <p className="text-[11px] md:text-xs text-muted-foreground flex-1 mb-3 line-clamp-2">{description}</p>
             <div className="mt-auto">
               <div className="flex flex-wrap gap-1.5 overflow-hidden max-h-[22px]">
@@ -106,7 +106,7 @@ export default function Home() {
                   <span className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground ml-auto">{item.period}</span>
                 )}
               </div>
-              <h4 className="text-base md:text-lg font-bold mb-2 group-hover:text-primary transition-colors leading-tight">{title}</h4>
+              <h4 className="text-base md:text-lg font-bold mb-1 group-hover:text-primary transition-colors leading-tight">{title}</h4>
               {type === "journey" && item.company && (
                 <p className="text-sm font-serif italic text-muted-foreground mb-3">{item.company}</p>
               )}
@@ -708,7 +708,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.1 }}
             >
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Let's Turn Sustainability Insights <br /><span className="text-primary italic">into Impact.</span></h2>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Let's Turn Sustainability Insights <br /><span className="text-primary italic">into Impact.</span></h2>
               <p className="text-xl text-muted-foreground mb-8">Open to opportunities in ESG, sustainability strategy, research, and impact-driven project management.</p>
             </motion.div>
             <motion.div
@@ -795,23 +795,23 @@ export default function Home() {
                 initial={{ scale: 0.95, y: 20, opacity: 0 }}
                 animate={{ scale: 1, y: 0, opacity: 1 }}
                 exit={{ scale: 0.95, y: 20, opacity: 0 }}
-                className="bg-card w-[95vw] max-w-7xl h-[90vh] max-h-[850px] overflow-hidden rounded-[2rem] shadow-2xl border border-border/50 relative flex flex-col"
+                className="bg-card w-[95vw] max-w-6xl max-h-[95vh] overflow-hidden rounded-[2rem] shadow-2xl border border-border/50 relative flex flex-col"
                 onClick={e => e.stopPropagation()}
               >
                 {/* Header Area */}
-                <div className="flex-none p-6 md:p-8 border-b border-border/40 flex justify-between items-start gap-4">
+                <div className="flex-none p-5 md:p-6 pb-4 md:pb-5 border-b border-border/40 flex justify-between items-start gap-4">
                   <div className="flex-1">
-                    <button onClick={() => setSelectedProject(null)} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase tracking-wider mb-4">
+                    <button onClick={() => setSelectedProject(null)} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-bold uppercase tracking-wider mb-6">
                       <CornerUpLeft className="w-4 h-4" /> Back to Portfolio
                     </button>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-2">
                       {selectedProject.tags ? selectedProject.tags.map((tag, i) => (
                         <Badge key={i} className="bg-primary/10 text-primary border-none px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{tag}</Badge>
                       )) : (
                         <Badge className="bg-primary/10 text-primary border-none px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{selectedProject.category || selectedProject.badge || selectedProject.type}</Badge>
                       )}
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground leading-tight max-w-4xl">{selectedProject.title}</h3>
+                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-tight max-w-4xl">{selectedProject.title}</h3>
                   </div>
                   
                   {/* Navigation */}
@@ -826,78 +826,112 @@ export default function Home() {
                 </div>
 
                 {/* Content Area */}
-                <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
-                  <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 h-full">
-                    
-                    {/* Left Column: Details */}
-                    <div className="lg:col-span-8 space-y-10">
+                <div className="p-5 md:p-6">
+                  {(() => {
+                    const hasImage = selectedProject.image && currentArray !== bootcampProjects;
+                    return (
+                      <>
+                        <div className={`grid gap-6 lg:gap-6 h-full ${hasImage ? 'lg:grid-cols-12' : 'grid-cols-1'}`}>
+                        
+                        {/* Left Column: Details */}
+                        <div className={`${hasImage ? 'lg:col-span-8' : ''} space-y-4 md:space-y-6 flex flex-col h-full`}>
+                          <div className="space-y-4 md:space-y-6 flex-1">
                       
                       {/* Overview */}
                       {selectedProject.details.overview && (
                         <section className="relative pl-6 border-l-2 border-primary">
-                          <h4 className="text-xs uppercase font-black tracking-widest text-primary mb-3">Overview</h4>
-                          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90">{selectedProject.details.overview}</p>
+                          <h4 className="text-xs uppercase font-black tracking-widest text-primary mb-2">Overview</h4>
+                          <p className="text-sm md:text-[15px] font-medium leading-relaxed text-foreground/90">{selectedProject.details.overview}</p>
                         </section>
                       )}
 
                       {/* Impacts */}
                       {selectedProject.details.impacts && (
                         <section>
-                          <div className="flex items-center gap-3 mb-6">
+                          <div className="flex items-center gap-3 mb-4">
                             <Zap className="w-5 h-5 text-primary" />
                             <h4 className="text-xs uppercase font-black tracking-widest text-primary">Key Impact</h4>
                           </div>
-                          <div className="grid md:grid-cols-2 gap-6">
-                            {selectedProject.details.impacts.map((impact, idx) => (
-                              <div key={idx} className="bg-secondary/30 p-6 rounded-2xl border border-border/40 hover:border-primary/30 transition-colors group">
-                                <div className="text-[10px] uppercase font-bold tracking-wider text-primary mb-2 group-hover:underline decoration-primary/30 underline-offset-4">{impact.subtitle}</div>
-                                <h5 className="font-bold text-base mb-3 leading-tight text-foreground">{impact.title}</h5>
-                                <p className="text-sm text-muted-foreground">{impact.description}</p>
-                              </div>
-                            ))}
+                          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                            {selectedProject.details.impacts.map((impact: any, idx: number) => {
+                              const iconMap = [<BarChart3 className="w-6 h-6 text-primary" />, <Target className="w-6 h-6 text-primary" />, <Activity className="w-6 h-6 text-primary" />];
+                              const IconToUse = iconMap[idx % iconMap.length];
+                              return (
+                                <div key={idx} className="bg-secondary/30 p-4 rounded-xl border border-border/40 hover:border-primary/30 transition-colors group flex flex-col">
+                                  <div className="mb-3 p-2.5 bg-primary/10 w-fit rounded-xl group-hover:bg-primary/20 transition-colors">
+                                    {IconToUse}
+                                  </div>
+                                  <div className="text-[10px] uppercase font-bold tracking-wider text-primary mb-1 group-hover:underline decoration-primary/30 underline-offset-4">{impact.subtitle}</div>
+                                  <h5 className="font-bold text-sm mb-2 leading-tight text-[15px] md:text-base text-foreground">{impact.title}</h5>
+                                  <p className="text-xs text-muted-foreground">{impact.description}</p>
+                                </div>
+                              );
+                            })}
                           </div>
                         </section>
                       )}
 
-                      {/* Selected Approach */}
-                      {selectedProject.details.approach && (
-                        <section>
-                          <div className="flex items-center gap-3 mb-6">
-                            <CheckCircle2 className="w-5 h-5 text-primary" />
-                            <h4 className="text-xs uppercase font-black tracking-widest text-primary">Selected Approach</h4>
-                          </div>
-                          <div className="bg-primary/[0.02] p-6 md:p-8 rounded-[2rem] border border-primary/10">
-                            <ul className="space-y-4">
-                              {selectedProject.details.approach.map((point, idx) => (
-                                <li key={idx} className="flex gap-4">
-                                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <div className="w-2 h-2 rounded-full bg-primary" />
-                                  </div>
-                                  <p className="text-[15px] text-foreground/80 font-medium leading-relaxed">{point}</p>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </section>
-                      )}
+                      {/* Approach and QR Wrapper */}
+                      <div className="grid lg:grid-cols-2 gap-6 items-start">
+                        {/* Selected Approach */}
+                        {selectedProject.details.approach && (
+                          <section>
+                            <div className="flex items-center gap-3 mb-4">
+                              <CheckCircle2 className="w-5 h-5 text-primary" />
+                              <h4 className="text-xs uppercase font-black tracking-widest text-primary">Selected Approach</h4>
+                            </div>
+                            <div className="bg-primary/[0.02] p-4 md:p-5 rounded-[1.2rem] border border-primary/10 h-full">
+                              <ul className="space-y-2">
+                                {selectedProject.details.approach.map((point: string, idx: number) => (
+                                  <li key={idx} className="flex gap-4">
+                                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                                      <div className="w-2 h-2 rounded-full bg-primary" />
+                                    </div>
+                                    <p className="text-[13px] md:text-sm text-foreground/80 font-medium leading-relaxed">{point}</p>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </section>
+                        )}
+
+                        {/* QR Code inline if no image */}
+                        {!hasImage && selectedProject.details.cta && (
+                          <section>
+                            <div className="flex items-center gap-3 mb-4">
+                              <ExternalLink className="w-5 h-5 text-primary" />
+                              <h4 className="text-xs uppercase font-black tracking-widest text-primary">Project Link</h4>
+                            </div>
+                            <a href={selectedProject.details.cta} target="_blank" rel="noopener noreferrer" className="bg-card hover:bg-secondary/30 transition-colors rounded-[20px] p-4 border border-border/60 flex items-center justify-between gap-4 shadow-sm group">
+                              <div className="flex-1">
+                                <h4 className="font-bold text-sm uppercase tracking-widest mb-1 text-foreground">View Project File</h4>
+                                <p className="text-[13px] text-muted-foreground leading-snug">Scan or click to read full report</p>
+                              </div>
+                              <div className="bg-white p-2 rounded-[14px] shadow-sm shrink-0 border border-border/40 group-hover:scale-105 transition-transform">
+                                <QRCode value={selectedProject.details.cta} size={70} />
+                              </div>
+                            </a>
+                          </section>
+                        )}
+                      </div>
 
                       {/* Fallback for other projects that still use old fields */}
                       {!selectedProject.details.overview && selectedProject.details.objective && (
                         <section className="relative pl-6 border-l-2 border-primary">
                           <h4 className="text-xs uppercase font-black tracking-widest text-primary mb-3">Objective</h4>
-                          <p className="text-lg md:text-xl font-medium leading-relaxed text-foreground/90">{selectedProject.details.objective}</p>
+                          <p className="text-sm md:text-[15px] font-medium leading-relaxed text-foreground/90">{selectedProject.details.objective}</p>
                         </section>
                       )}
                       
                       {/* Process & Highlights Fallback */}
                       {!selectedProject.details.impacts && selectedProject.details.process && (
                         <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
-                          <div className="flex items-center gap-3 mb-6">
+                          <div className="flex items-center gap-3 mb-4">
                             <Search className="w-5 h-5 text-primary" />
                             <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Process & Highlights</h4>
                           </div>
                           <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
-                            <div className="space-y-4">
+                            <div className="space-y-3">
                               {selectedProject.details.process.split('\n\n').map((para, idx) => {
                                 if (para.startsWith('###')) {
                                   return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
@@ -930,12 +964,12 @@ export default function Home() {
                       {/* Highlights Fallback */}
                       {!selectedProject.details.impacts && selectedProject.details.highlights && !selectedProject.details.technical && !selectedProject.details.process && (
                         <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
-                          <div className="flex items-center gap-3 mb-6">
+                          <div className="flex items-center gap-3 mb-4">
                             <Zap className="w-5 h-5 text-primary" />
                             <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Highlights</h4>
                           </div>
                           <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
-                            <div className="space-y-4">
+                            <div className="space-y-3">
                               {selectedProject.details.highlights.split('\n\n').map((para, idx) => {
                                 if (para.startsWith('###')) {
                                   return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
@@ -961,18 +995,18 @@ export default function Home() {
                       {/* Strategic Outcome Fallback */}
                       {!selectedProject.details.impacts && selectedProject.details.outcome && (
                         <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
-                          <div className="flex items-center gap-3 mb-6">
+                          <div className="flex items-center gap-3 mb-4">
                             <CheckCircle2 className="w-6 h-6 text-primary" />
                             <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Strategic Outcome</h4>
                           </div>
-                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
-                            <div className="space-y-4">
+                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-[15px] md:text-base font-serif">
+                            <div className="space-y-3">
                               {selectedProject.details.outcome.split('\n\n').map((para, idx) => {
                                 if (para.startsWith('###')) {
                                   return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
                                 }
                                 return (
-                                  <div key={idx} className="space-y-4">
+                                  <div key={idx} className="space-y-3">
                                     {para.split('\n').map((line, lIdx) => {
                                       if (line.startsWith('- ')) {
                                         return (
@@ -999,18 +1033,18 @@ export default function Home() {
                       {/* Impact & Conclusion Fallback */}
                       {!selectedProject.details.impacts && !selectedProject.details.outcome && (selectedProject.details.impact || selectedProject.details.conclusion) && (
                         <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
-                          <div className="flex items-center gap-3 mb-6">
+                          <div className="flex items-center gap-3 mb-4">
                             <Target className="w-6 h-6 text-primary" />
                             <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact & Conclusion</h4>
                           </div>
-                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif">
-                            <div className="space-y-4">
+                          <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-[15px] md:text-base font-serif">
+                            <div className="space-y-3">
                               {(selectedProject.details.impact || selectedProject.details.conclusion).split('\n\n').map((para, idx) => {
                                 if (para.startsWith('###')) {
                                   return <h5 key={idx} className="text-primary font-bold mt-6 mb-2 font-serif text-2xl">{para.replace('### ', '')}</h5>;
                                 }
                                 return (
-                                  <div key={idx} className="space-y-4">
+                                  <div key={idx} className="space-y-3">
                                     {para.split('\n').map((line, lIdx) => {
                                       if (line.startsWith('- ')) {
                                         return (
@@ -1045,9 +1079,12 @@ export default function Home() {
 
                     </div>
 
+                        </div>
+
                     {/* Right Column: Visuals & QR */}
-                    <div className="lg:col-span-4 flex flex-col gap-6">
-                      {selectedProject.image && currentArray !== bootcampProjects && (
+                    {hasImage && (
+                          <div className="lg:col-span-4 flex flex-col gap-6">
+                            {selectedProject.image && (
                         <div className="rounded-3xl overflow-hidden shadow-lg border border-border/50 relative group h-48 lg:h-auto lg:aspect-square">
                           <img src={selectedProject.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project Cover" />
                           <div className="absolute inset-0 bg-primary/10 transition-colors group-hover:bg-transparent" />
@@ -1064,10 +1101,15 @@ export default function Home() {
                             <QRCode value={selectedProject.details.cta} size={70} />
                           </div>
                         </a>
-                      )}
-                    </div>
+                            )}
+                          </div>
+                        )}
 
-                  </div>
+                      </div>
+                      
+                    </>
+                    );
+                  })()}
                 </div>
               </motion.div>
             </motion.div>
@@ -1118,7 +1160,7 @@ export default function Home() {
                   <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-primary" />
                   </div>
-                  <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-4">Strategic Objective</h4>
+                  <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-2">Strategic Objective</h4>
                   <p className="text-xl md:text-2xl font-medium leading-relaxed italic text-foreground/80">
                     "{selectedExperience.details.objective}"
                   </p>
@@ -1131,7 +1173,7 @@ export default function Home() {
                       <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Execution & Highlights</h4>
                     </div>
                     <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-base md:text-lg space-y-6">
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         {selectedExperience.details.highlights.split('\n').map((line: string, lIdx: number) => {
                           const parts = line.split(/(\*\*.*?\*\*|:)/);
                           return (
@@ -1162,7 +1204,7 @@ export default function Home() {
                         <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">The Impact</h4>
                       </div>
                       <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-xl md:text-2xl font-serif italic">
-                        <div className="space-y-4">
+                        <div className="space-y-3">
                           {selectedExperience.details.impact.split('\n').map((line: string, lIdx: number) => {
                             const parts = line.split(/(\*\*.*?\*\*|:)/);
                             return (
@@ -1225,7 +1267,7 @@ export default function Home() {
               </div>
 
               <div className="w-full md:w-3/5 p-8 md:p-16 overflow-y-auto custom-scrollbar">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
                   <Badge className="bg-primary/10 text-primary border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                     {selectedScienceProject.badge}
                   </Badge>
@@ -1245,19 +1287,19 @@ export default function Home() {
                     <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-primary" />
                     </div>
-                    <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-4">Research Objective</h4>
-                    <p className="text-lg md:text-xl font-medium leading-relaxed italic text-foreground/90">
+                    <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mb-2">Research Objective</h4>
+                    <p className="text-sm md:text-[15px] font-medium leading-relaxed italic text-foreground/90">
                       "{selectedScienceProject.details.objective}"
                     </p>
                   </section>
 
                   <section className="bg-primary/[0.02] p-8 rounded-[2rem] border border-primary/5">
-                    <div className="flex items-center gap-3 mb-6">
+                    <div className="flex items-center gap-3 mb-4">
                       <Globe className="w-5 h-5 text-primary" />
                       <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Program Highlights</h4>
                     </div>
                     <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap text-sm md:text-[13px] prose prose-invert prose-sm max-w-none">
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         {selectedScienceProject.details.highlights.split('\n\n').map((para: string, idx: number) => {
                           if (para.startsWith('###')) {
                             return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
@@ -1287,18 +1329,18 @@ export default function Home() {
                   </section>
 
                   <section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10 shadow-sm">
-                    <div className="flex items-center gap-3 mb-6">
+                    <div className="flex items-center gap-3 mb-4">
                       <ShieldCheck className="w-6 h-6 text-primary" />
                       <h4 className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60">Impact / Outcome</h4>
                     </div>
-                    <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-lg md:text-xl font-serif italic">
-                      <div className="space-y-4">
+                    <div className="text-foreground font-bold leading-relaxed whitespace-pre-wrap text-[15px] md:text-base font-serif italic">
+                      <div className="space-y-3">
                         {selectedScienceProject.details.impact.split('\n\n').map((para: string, idx: number) => {
                           if (para.startsWith('###')) {
                             return <h5 key={idx} className="text-primary font-bold mt-6 mb-2">{para.replace('### ', '')}</h5>;
                           }
                           return (
-                            <div key={idx} className="space-y-4">
+                            <div key={idx} className="space-y-3">
                               {para.split('\n').map((line: string, lIdx: number) => {
                                 if (line.startsWith('- ')) {
                                   return (
